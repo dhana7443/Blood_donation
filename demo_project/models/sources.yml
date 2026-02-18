@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: blood_inventory
+      - name: blood_tests
+      - name: blood_type_compatibility
+      - name: donations
+      - name: donors
+      - name: donor_history
+      - name: hospitals
+      - name: recipients
+      - name: tasks
+      - name: technicians
+      - name: technician_tasks
