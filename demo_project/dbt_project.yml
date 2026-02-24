@@ -32,5 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   demo_project:
     staging:
-      +schema: staging
+      +schema: landing
       +materialized: view
+    analytics:
+      +schema: analytics
+      +materialized: table
