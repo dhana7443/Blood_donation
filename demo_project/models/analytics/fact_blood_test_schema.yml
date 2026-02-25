@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_blood_tests
+    description: "Fact table at the grain of one row per blood test event. Stores test details for donors along with the test date as a foreign key to the date dimension."
+
+    columns:
+      - name: test_id
+        description: "Primary key for the blood test event. Uniquely identifies each test."
+        data_type: int
+        tests:
+          - not_null
+          - unique
+
+      - name: donor_id
+        description: "Foreign key to dim_donors identifying the donor who was tested."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_donors')
+                field: donor_id
+
+      - name: test_date_id
+        description: "Foreign key to dim_date representing the date the test was performed."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_id
+
+      - name: disease_tested
+        description: "Name of the disease or condition tested (e.g., HIV, Hepatitis, etc.)."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: result
+        description: "Result of the test (e.g., Positive, Negative)."
+        data_type: varchar
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Positive','Negative']
+
+      - name: test_type
+        description: "Type of test performed (e.g., screening, confirmatory, blood typing)."
+        data_type: varchar
+        tests:
+          - not_null

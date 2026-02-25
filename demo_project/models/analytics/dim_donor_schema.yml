@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dim_donors
+    description: "Donor dimension table containing descriptive attributes about blood donors."
+    columns:
+      - name: donor_id
+        description: "Primary key for the donor dimension.Uniquely identifies each donor."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: name
+        description: "Full name of the donor."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: gender
+        description: "Gender of the donor."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Male', 'Female', 'Other']
+
+      - name: donor_blood_group
+        description: "Blood group of the donor (e.g., A+, O-, etc.)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+','A-','B+','B-','AB+','AB-','O+','O-']
+
+      - name: is_eligible
+        description: "Indicates whether the donor is currently eligible to donate blood."
+        data_type: boolean
+        tests:
+          - not_null
+
+      - name: location
+        description: "Current location or city of the donor."
+        data_type: varchar
+        

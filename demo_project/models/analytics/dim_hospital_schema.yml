@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_hospitals
+    description: "Hospital dimension table containing descriptive attributes about hospitals."
+    columns:
+      - name: hospital_id
+        description: "Primary key for the hospital dimension. Uniquely identifies each hospital."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: name
+        description: "Name of the hospital."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: city
+        description: "City where the hospital is located."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: country
+        description: "Country where the hospital is located."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: hospital_type
+        description: "Type or category of hospital (e.g., General,Specialized etc.)."
+        data_type: varchar
+        
+      - name: accreditation_status
+        description: "Accreditation or certification status of the hospital."
+        data_type: varchar
+        

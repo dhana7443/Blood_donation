@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: fact_blood_inventory
+    description: "Fact table representing the inventory of blood units. Each row corresponds to an inventory record with lifecycle attributes such as received date, expiration date, status, quality, and available units."
+
+    columns:
+      - name: inventory_id
+        description: "Primary key for the inventory fact table. Uniquely identifies each inventory record."
+        data_type: int
+        tests:
+          - not_null
+          - unique
+
+      - name: donation_id
+        description: "Foreign key to fact_donations identifying the donation that produced this inventory unit."
+        data_type: int
+        tests:
+          - relationships:
+              arguments:
+                  to: ref('fact_donations')
+                  field: donation_id
+
+      - name: blood_group
+        description: "Blood group of the inventory unit (e.g., A+, O-, etc.)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+','A-','B+','B-','AB+','AB-','O+','O-']
+
+
+      - name: status
+        description: "Current status of the inventory unit (e.g., stored,tested,distributed,discarded)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['stored','tested','distributed','discarded']
+
+      - name: quality
+        description: "Quality classification of the inventory unit (e.g., good, contaminated)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Good','Contaminated']
+
+          
+      - name: date_received_id
+        description: "Foreign key to dim_date representing the date the inventory unit was received."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_id
+
+      - name: expiration_date_id
+        description: "Foreign key to dim_date representing the expiration date of the inventory unit."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_id
+
+      - name: units_available
+        description: "Number of units available in this inventory record."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: volume
+        description: "Volume of blood in the inventory unit (in milliliters)."
+        data_type: int
+        tests:
+          - not_null
+
+     

@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_recipients
+    description: "Recipient dimension table containing descriptive attributes about blood recipients."
+    columns:
+      - name: recipient_id
+        description: "Primary key for the recipient dimension. Uniquely identifies each recipient."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: name
+        description: "Full name of the recipient."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: recipient_blood_group
+        description: "Blood group of the recipient (e.g., A+, O-, etc.)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+','A-','B+','B-','AB+','AB-','O+','O-']
+        
+
+
+      - name: location
+        description: "Current location or city of the recipient."
+        data_type: varchar
+        

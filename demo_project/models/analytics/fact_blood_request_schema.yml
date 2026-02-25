@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fact_blood_requests
+    description: "Fact table at the grain of one row per blood request. Contains foreign keys to recipient, hospital, and date dimensions along with the urgency of the request."
+    columns:
+      - name: request_id
+        description: "Surrogate primary key for the blood request event."
+        data_type: int
+        tests:
+          - not_null
+          - unique
+
+      - name: recipient_id
+        description: "Foreign key to dim_recipients."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_recipients')
+                field: recipient_id
+
+      - name: hospital_id
+        description: "Foreign key to dim_hospitals."
+        data_type: int
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_hospitals')
+                field: hospital_id
+
+      - name: required_date_id
+        description: "Foreign key to dim_date representing the date when blood is required."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_id
+
+      - name: urgency
+        description: "Urgency level of the blood request (e.g., low, medium, high)."
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['low','medium','high']

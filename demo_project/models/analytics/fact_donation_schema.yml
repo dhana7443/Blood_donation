@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: fact_donations
+    description: "Fact table at the grain of one row per donation event. Contains foreign keys to donor, hospital, recipient, and date dimensions along with measures and status attributes."
+    columns:
+      - name: donation_id
+        description: "Business key for the donation event (degenerate dimension). Uniquely identifies each donation."
+        data_type: int
+        tests:
+          - not_null
+          - unique
+
+      - name: donor_id
+        description: "Foreign key to dim_donors."
+        data_type: int
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_donors')
+                field: donor_id
+
+      - name: hospital_id
+        description: "Foreign key to dim_hospitals."
+        data_type: int
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_hospitals')
+                field: hospital_id
+
+      - name: recipient_id
+        description: "Foreign key to dim_recipients."
+        data_type: int
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_recipients')
+                field: recipient_id
+
+      - name: donation_date_id
+        description: "Foreign key to dim_date representing the date of donation."
+        data_type: int
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_id
+
+      - name: status
+        description: "Status of the donation (e.g., pending,complete,tested,distributed etc.)."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: donation_type
+        description: "Type of donation (e.g., whole_blood, platelets, plasma)."
+        data_type: varchar
+        
+      - name: quantity
+        description: "Quantity of blood or component collected in the donation."
+        data_type: varchar
+        tests:
+          - not_null
