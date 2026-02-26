@@ -12,6 +12,10 @@ with source as (
 ),
 final as(
     select
+        {{ dbt_utils.generate_surrogate_key([
+            'donor_id',
+            'dbt_valid_from'
+        ])}} as donor_sk,
         *,
         case
             when dbt_valid_to is null then true

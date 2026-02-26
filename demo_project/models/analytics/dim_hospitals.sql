@@ -15,6 +15,12 @@ with source as (
 ),
 final as (
     select 
+        {{ 
+            dbt_utils.generate_surrogate_key([
+                'hospital_id',
+                'dbt_valid_from'
+            ])
+        }} as hospital_sk,
         *,
         case
             when dbt_valid_to is null then true

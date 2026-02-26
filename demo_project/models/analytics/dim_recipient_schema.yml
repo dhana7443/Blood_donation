@@ -4,6 +4,13 @@ models:
   - name: dim_recipients
     description: "Recipient dimension table containing descriptive attributes about blood recipients."
     columns:
+      - name: recipient_sk
+        description: "Surrogate primary key for the recipient dimension. Uniquely identifies each version of a recipient record."
+        data_type: varchar
+        tests:
+          - not_null
+          - unique
+      
       - name: recipient_id
         description: "Primary key for the recipient dimension. Uniquely identifies each recipient."
         data_type: int
@@ -13,8 +20,7 @@ models:
       - name: name
         description: "Full name of the recipient."
         data_type: varchar
-        tests:
-          - not_null
+        
 
       - name: recipient_blood_group
         description: "Blood group of the recipient (e.g., A+, O-, etc.)."
@@ -25,9 +31,22 @@ models:
               arguments:
                 values: ['A+','A-','B+','B-','AB+','AB-','O+','O-']
         
-
-
       - name: location
         description: "Current location or city of the recipient."
         data_type: varchar
         
+      - name: dbt_valid_from
+        description: "Timestamp indicating when this version of the recipient record became valid."
+        data_type: timestamp
+        tests:
+          - not_null
+
+      - name: dbt_valid_to
+        description: "Timestamp indicating when this version of the recipient record stopped being valid. NULL means current."
+        data_type: timestamp
+
+      - name: is_current
+        description: "Flag indicating whether this is the current active version of the recipient record."
+        data_type: boolean
+        tests:
+          - not_null
