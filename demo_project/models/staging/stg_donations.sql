@@ -16,3 +16,4 @@ SELECT
   LOWER(TRIM(donation_type))                   AS donation_type
 
 FROM {{ source('raw', 'donations') }}
+order by donation_id

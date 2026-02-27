@@ -12,18 +12,18 @@ models:
           - not_null
           - unique
 
-      - name: donor_id
-        description: "Foreign key to dim_donors identifying the donor who was tested."
-        data_type: int
+      - name: donor_sk
+        description: "Foreign key to dim_donors (surrogate key) identifying the donor version at the time of the test."
+        data_type: varchar
         tests:
           - not_null
           - relationships:
               arguments:
                 to: ref('dim_donors')
-                field: donor_id
+                field: donor_sk
 
       - name: test_date_id
-        description: "Foreign key to dim_date representing the date the test was performed."
+        description: "Foreign key to dim_dates representing the date the test was performed."
         data_type: int
         tests:
           - not_null
@@ -31,6 +31,7 @@ models:
               arguments:
                 to: ref('dim_dates')
                 field: date_id
+      
 
       - name: disease_tested
         description: "Name of the disease or condition tested (e.g., HIV, Hepatitis, etc.)."
@@ -47,7 +48,7 @@ models:
                 values: ['Positive','Negative']
 
       - name: test_type
-        description: "Type of test performed (e.g., screening, confirmatory, blood typing)."
+        description: "Type of test performed (e.g., screening, blood typing)."
         data_type: varchar
         tests:
           - not_null

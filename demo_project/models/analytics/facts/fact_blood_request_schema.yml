@@ -11,24 +11,24 @@ models:
           - not_null
           - unique
 
-      - name: recipient_id
-        description: "Foreign key to dim_recipients."
-        data_type: int
+      - name: recipient_sk
+        description: "Foreign key to dim_recipients (surrogate key) representing the recipient version at the time of the request."
+        data_type: varchar
         tests:
           - not_null
           - relationships:
               arguments:
                 to: ref('dim_recipients')
-                field: recipient_id
+                field: recipient_sk
 
-      - name: hospital_id
-        description: "Foreign key to dim_hospitals."
-        data_type: int
+      - name: hospital_sk
+        description: "Foreign key to dim_hospitals (surrogate key) representing the hospital version at the time of the request."
+        data_type: varchar
         tests:
           - relationships:
               arguments:
                 to: ref('dim_hospitals')
-                field: hospital_id
+                field: hospital_sk
 
       - name: required_date_id
         description: "Foreign key to dim_date representing the date when blood is required."
