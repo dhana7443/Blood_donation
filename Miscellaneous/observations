@@ -1,0 +1,4 @@
+observations
+-blood_tests test_date should not be null.
+-but in stg,we did NULLIF for dates like '0000-00-00' and given null values
+-now in fact,since we don't allow null test_dates those records were removed

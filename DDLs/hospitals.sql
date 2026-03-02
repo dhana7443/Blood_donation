@@ -1,0 +1,36 @@
+CREATE TABLE raw.hospitals (
+  hospital_id           TEXT,  -- Unique identifier for each hospital
+  name                  TEXT,  -- Name of the hospital
+  street_address        TEXT,  -- Street address
+  city                  TEXT,  -- City or municipality
+  province              TEXT,  -- Province or state
+  postal_code           TEXT,  -- Postal or ZIP code
+  country               TEXT,  -- Country
+  phone_number          TEXT,  -- Primary contact phone number
+  email_address         TEXT,  -- Primary contact email address
+  hospital_type         TEXT,  -- Type of hospital
+  operating_hours       TEXT,  -- Operating hours of the hospital
+  accreditation_status  TEXT,  -- Accreditation status
+  emergency_contact     TEXT   -- Emergency contact number
+);
+INSERT INTO raw.hospitals (hospital_id, name, street_address, city, province, postal_code, country, phone_number, email_address, hospital_type, operating_hours, accreditation_status, emergency_contact) VALUES
+(3, 'General Hospital', '123 Health St', 'Montreal', 'Quebec', 'H1A 2B3', 'Canada', '514-123-4567', 'info@generalhospital.com', 'General', '24/7', 'Accredited', '514-987-6543'),
+(4, 'Care Hospital', '456 Care Ave', 'Quebec City', 'Quebec', 'G1C 4D5', 'Canada', '418-234-5678', 'contact@carehospital.com', 'Specialized', '8 AM - 6 PM', 'Accredited', '418-876-5432'),
+(5, 'Mercy Health Center', '789 Mercy Blvd', 'Laval', 'Quebec', 'L2C 5H6', 'Canada', '450-345-6789', 'mercy@healthcenter.com', 'Clinic', '9 AM - 5 PM', 'Certified', '450-654-3210'),
+(6, 'Sainte-Marie Hospital', '101 Main St', 'Sherbrooke', 'Quebec', 'J3H 4K7', 'Canada', '819-456-7890', 'info@saintemarie.com', 'General', '24/7', 'Accredited', '819-987-6543'),
+(7, 'Northside Clinic', '202 North Rd', 'Gatineau', 'Quebec', 'G5N 6O8', 'Canada', '819-567-8901', 'north@clinic.com', 'Clinic', '10 AM - 8 PM', 'Certified', '819-876-5434'),
+(8, 'Riverdale Medical', '303 River St', 'Longueuil', 'Quebec', 'L4P 9Q1', 'Canada', '450-678-9012', 'contact@riverdalemed.com', 'Specialized', '8 AM - 4 PM', 'Certified', '450-654-3215'),
+(9, 'Eastview Health', '404 East Ave', 'Trois-Rivières', 'Quebec', 'T6R 7S2', 'Canada', '819-789-0123', 'info@eastview.com', 'General', 'Open 24 hours', 'Accredited', '819-987-6546'),
+(10, 'Sunrise Hospital', '505 Sunrise Way', 'Drummondville', 'Quebec', 'D8S 5T3', 'Canada', '819-890-1234', 'sunrise@hospital.com', 'General', '24/7', 'Accredited', '819-876-5437'),
+(11, 'Maplewood Clinic', '606 Maple St', 'Brossard', 'Quebec', 'B9R 8U4', 'Canada', '450-901-2345', 'maplewood@clinic.com', 'Clinic', '9 AM - 5 PM', 'Certified', '450-654-3218'),
+(12, 'Lakeside Health Center', '707 Lake Rd', 'Blainville', 'Quebec', 'B1N 2P5', 'Canada', '450-012-3456', 'lakeside@healthcenter.com', 'Specialized', '7 AM - 7 PM', 'Certified', '450-987-6549'),
+(13, 'Green Valley Hospital', '808 Green St', 'Saint-Jean-sur-Richelieu', 'Quebec', 'J2W 3E6', 'Canada', '450-123-4567', 'contact@greenvalley.com', 'General', '24/7', 'Accredited', '450-876-5430'),
+(14, 'Harborview Medical', '909 Harbor Blvd', 'Granby', 'Quebec', 'G3B 6H7', 'Canada', '450-234-5678', 'info@harborview.com', 'Clinic', '8 AM - 8 PM', 'Certified', '450-654-3211'),
+(15, 'Mountainview Clinic', '110 Mountain Rd', 'Repentigny', 'Quebec', 'R4H 8J9', 'Canada', '450-345-6789', 'mountainview@clinic.com', 'Clinic', '10 AM - 6 PM', 'Certified', '450-987-6541'),
+(16, 'Riverside Hospital', '121 Riverside Dr', 'Mascouche', 'Quebec', 'M5S 1R2', 'Canada', '450-456-7890', 'riverside@hospital.com', 'General', '24/7', 'Accredited', '450-876-5432'),
+(17, 'Valley Health Center', '131 Valley St', 'Côte-Saint-Luc', 'Quebec', 'C6V 4B3', 'Canada', '514-567-8901', 'valley@healthcenter.com', 'Specialized', '9 AM - 7 PM', 'Certified', '514-654-3213'),
+(18, 'West End Medical', '141 West Ave', 'Dollard-Des Ormeaux', 'Quebec', 'D9O 5L4', 'Canada', '514-678-9012', 'westend@medical.com', 'Clinic', '8 AM - 6 PM', 'Certified', '514-987-6544'),
+(19, 'Cityview Clinic', '151 City Rd', 'Pointe-Claire', 'Quebec', 'P7C 6K5', 'Canada', '514-789-0123', 'cityview@clinic.com', 'Clinic', '9 AM - 5 PM', 'Certified', '514-876-5435'),
+(20, 'Parkside Hospital', '161 Park St', 'Dorval', 'Quebec', 'D1V 7L6', 'Canada', '514-890-1234', 'parkside@hospital.com', 'General', '24/7', 'Accredited', '514-654-3216'),
+(21, 'Springfield Medical Center', '171 Spring Rd', 'Kirkland', 'Quebec', 'K2M 8N7', 'Canada', '514-901-2345', 'springfield@medcenter.com', 'Specialized', '7 AM - 10 PM', 'Certified', '514-987-6547'),
+(22, 'Oakwood Hospital', '181 Oak St', 'Beaconsfield', 'Quebec', 'B3C 9P8', 'Canada', '514-012-3456', 'oakwood@hospital.com', 'General', '24/7', 'Accredited', '514-876-5438');

@@ -1,0 +1,310 @@
+--
+-- Table structure for table `audit_log`
+--
+-- Independent table
+CREATE TABLE `audit_log` (
+  `audit_id` int(11) NOT NULL COMMENT 'Unique identifier for each audit log entry',
+  `table_name` varchar(255) NOT NULL COMMENT 'Name of the table where the change occurred',
+  `column_name` varchar(255) DEFAULT NULL COMMENT 'Name of the column that was changed',
+  `record_id` int(11) NOT NULL COMMENT 'ID of the record in the original table that was changed',
+  `action` enum('INSERT','UPDATE','DELETE') NOT NULL COMMENT 'Type of action performed',
+  `previous_value` text DEFAULT NULL COMMENT 'Previous value of the data, mainly for UPDATE actions',
+  `new_value` text DEFAULT NULL COMMENT 'New value of the data, mainly for INSERT and UPDATE actions',
+  `changed_by` varchar(255) NOT NULL COMMENT 'Identifier of the user who made the change',
+  `changed_at` datetime DEFAULT current_timestamp() COMMENT 'Timestamp when the change was made'
+)
+-- keys
+PRIMARY KEY (`audit_id`) AUTO_INCREMENT;
+
+
+-- donations and recipients should be created first
+CREATE TABLE `blood_inventory` (
+  `inventory_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for inventory items',
+  `donation_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Reference to the donation from which this blood unit originated',
+  `blood_group` varchar(3) NOT NULL COMMENT 'Blood group category',
+  `units_available` int(10) UNSIGNED NOT NULL COMMENT 'Number of units available',
+  `quality` enum('Good','Contaminated') NOT NULL DEFAULT 'Good' COMMENT 'Quality status of the blood',
+  `status` enum('stored','tested','distributed','discarded') NOT NULL DEFAULT 'stored' COMMENT 'Current status of the blood unit',
+  `date_received` date NOT NULL COMMENT 'The date when the blood unit was received',
+  `expiration_date` date NOT NULL COMMENT 'The expiration date for the blood unit, after which it cannot be used',
+  `temperature` decimal(3,1) NOT NULL COMMENT 'Storage temperature of the blood unit in Celsius',
+  `volume` int(10) UNSIGNED NOT NULL COMMENT 'Volume of the blood unit in milliliters (ml)',
+  `recipient_id` int(10) UNSIGNED DEFAULT NULL
+)
+-- keys
+ADD PRIMARY KEY (`inventory_id`) AUTO_INCREMENT,
+ADD KEY `fk_blood_inventory_donation_id` (`donation_id`),
+ADD KEY `fk_blood_inventory_recipient_id` (`recipient_id`);
+-- constraints
+ADD CONSTRAINT `fk_blood_inventory_donation_id` FOREIGN KEY (`donation_id`) REFERENCES `donations` (`donation_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_blood_inventory_recipient_id` FOREIGN KEY (`recipient_id`) REFERENCES `recipients` (`recipient_id`);
+
+-- this is not a table, but the structure of view to be created from blood_inventory by grouping some columns
+CREATE TABLE `blood_stock_levels` (
+`blood_group` varchar(3)
+,`quality` enum('Good','Contaminated')
+,`status` enum('stored','tested','distributed','discarded')
+,`total_units` decimal(32,0)
+);
+
+-- view to be created and before doing this drop the table.The table was just for us to know the structure of the view
+DROP TABLE IF EXISTS `blood_stock_levels`
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `blood_stock_levels`  AS SELECT `blood_inventory`.`blood_group` AS `blood_group`, `blood_inventory`.`quality` AS `quality`, `blood_inventory`.`status` AS `status`, sum(`blood_inventory`.`units_available`) AS `total_units` FROM `blood_inventory` GROUP BY `blood_inventory`.`blood_group`, `blood_inventory`.`quality`, `blood_inventory`.`status` ;
+-- keys
+
+-- technicians and donors should be created first
+CREATE TABLE `blood_tests` (
+  `test_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each blood test',
+  `donor_id` int(10) UNSIGNED NOT NULL COMMENT 'References the donor''s unique identifier',
+  `technician_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'References the technician responsible for the test',
+  `date` date NOT NULL COMMENT 'Date the test was performed',
+  `disease_tested` varchar(255) NOT NULL COMMENT 'Name of the disease tested',
+  `result` enum('Positive','Negative') DEFAULT NULL COMMENT 'Result of the test',
+  `test_type` varchar(255) NOT NULL COMMENT 'The type of test performed, such as blood typing or disease screening',
+  `comments` text DEFAULT NULL COMMENT 'Additional observations or notes about the test'
+) 
+-- keys
+ADD PRIMARY KEY (`test_id`) AUTO_INCREMENT,
+ADD KEY `idx_technician_id` (`technician_id`),
+ADD KEY `fk_donor_id` (`donor_id`) USING BTREE;
+-- constraints
+ADD CONSTRAINT `fk_donor_id` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`donor_id`) ON DELETE CASCADE,
+ADD CONSTRAINT `fk_technician_id_new` FOREIGN KEY (`technician_id`) REFERENCES `technicians` (`technician_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- Independent table
+CREATE TABLE `blood_type_compatibility` (
+  `donor_blood_type` varchar(3) DEFAULT NULL,
+  `recipient_blood_type` varchar(3) DEFAULT NULL
+) 
+
+-- donors,hospitals,recipients,technicians should be created first
+CREATE TABLE `donations` (
+  `donation_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each donation',
+  `donor_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the donor who made this donation',
+  `hospital_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the hospital where this donation took place',
+  `recipient_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the recipient for this donation, if applicable',
+  `collection_technician_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the technician who collected this donation',
+  `processed_by_technician_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the technician who processed this donation',
+  `test_result_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier of the test result associated with this donation',
+  `date` date NOT NULL COMMENT 'Date of the donation',
+  `quantity` int(10) UNSIGNED NOT NULL COMMENT 'Quantity of blood donated',
+  `blood_group` varchar(3) NOT NULL COMMENT 'Blood group of the donated blood',
+  `status` enum('pending','complete','tested','distributed') NOT NULL DEFAULT 'pending' COMMENT 'The current status of the donation',
+  `bag_serial_number` varchar(255) DEFAULT NULL COMMENT 'References the ID of the collection technician',
+  `storage_temperature` decimal(10,0) DEFAULT NULL COMMENT 'Temperature at which the blood was stored',
+  `expiration_date` date NOT NULL COMMENT 'The date when the blood is no longer usable',
+  `donation_type` enum('whole_blood','platelets','plasma') DEFAULT NULL COMMENT 'Type of donation'
+) ;
+-- keys
+ADD PRIMARY KEY (`donation_id`) AUTO_INCREMENT,
+ADD UNIQUE KEY `idx_blood_bag_serial` (`bag_serial_number`),
+ADD KEY `fk_donor_id` (`donor_id`),
+ADD KEY `fk_donations_hospital_id` (`hospital_id`),
+ADD KEY `idx_recipient_id` (`recipient_id`),
+ADD KEY `idx_collection_technician_id` (`collection_technician_id`),
+ADD KEY `fk_processed_by_technician_id` (`processed_by_technician_id`);  
+-- constraints
+ADD CONSTRAINT `fk_donations_donor_id` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`donor_id`) ON DELETE SET NULL,
+ADD CONSTRAINT `fk_donations_hospital_id` FOREIGN KEY (`hospital_id`) REFERENCES `hospitals` (`hospital_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_processed_by_technician_id` FOREIGN KEY (`processed_by_technician_id`) REFERENCES `technicians` (`technician_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- doubt
+test_result_id is it sth they assign or a foreign key.
+forgot to add constraints for recipient_id,collection_technician_id
+
+--clarification
+from the insertion data,test_result_id is set as null for most of the records.I could just remove that column from table or leave as it is.
+those are forgotten by mistake i guess,so we will add constraints for recipient_id,collection_technician_id also
+
+-- Independent table
+CREATE TABLE `donors` (
+  `donor_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each donor',
+  `registered_by_staff_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the staff member who registered this donor',
+  `primary_contact_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the primary contact of this donor',
+  `name` varchar(255) NOT NULL COMMENT 'Full name of the donor',
+  `age` int(10) UNSIGNED NOT NULL COMMENT 'Age of the donor',
+  `gender` enum('Male','Female','Other') NOT NULL COMMENT 'Gender of the donor',
+  `weight` decimal(5,2) DEFAULT NULL COMMENT 'Weight of the donor in kilograms',
+  `blood_group` varchar(3) NOT NULL COMMENT 'Blood group of the donor',
+  `last_donation_date` date DEFAULT NULL COMMENT 'The last date the donor donated blood',
+  `is_eligible` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Whether the donor is currently eligible to donate',
+  `donations_count` int(10) UNSIGNED DEFAULT 0 COMMENT 'Total number of donations made by the donor',
+  `contact_method_type` enum('phone','email') NOT NULL DEFAULT 'phone' COMMENT 'Preferred contact method of the donor',
+  `contact_detail` varchar(255) DEFAULT NULL COMMENT 'Contact detail corresponding to the selected contact method',
+  `donor_type` enum('individual','corporation','anonymous') DEFAULT 'individual' COMMENT 'Type of donor',
+  `notes` text DEFAULT NULL COMMENT 'Additional notes about the donor',
+  `last_health_check_date` date DEFAULT NULL COMMENT 'Date of the last health check for the donor',
+  `donation_frequency_allowed` int(10) UNSIGNED DEFAULT NULL COMMENT 'Frequency of donations allowed per year',
+  `location` varchar(255) DEFAULT NULL COMMENT 'Geographical location of the donor',
+  `days_since_last_donation` int(11) DEFAULT NULL COMMENT 'Calculated days since the last donation',
+  `blood_group_A_plus` tinyint(1) DEFAULT 0,
+  `blood_group_O_minus` tinyint(1) DEFAULT 0,
+  `blood_group_B_plus` tinyint(1) DEFAULT 0,
+  `blood_group_AB_minus` tinyint(1) DEFAULT 0,
+  `blood_group_A_minus` tinyint(1) DEFAULT 0,
+  `blood_group_B_minus` tinyint(1) DEFAULT 0,
+  `blood_group_O_plus` tinyint(1) DEFAULT 0,
+  `blood_group_AB_plus` tinyint(1) DEFAULT 0
+)
+-- keys
+ADD PRIMARY KEY (`donor_id`) AUTO_INCREMENT;
+-- doubts,these columns are not specified as foreign keys.so where are we getting them from
+`registered_by_staff_id`
+`primary_contact_id`
+--clarification
+both the columns specified in doubts are inserted as null,so may be they wanted to add them in future
+
+
+-- donor,donations should be created first
+CREATE TABLE `donor_history` (
+  `history_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each donor history record',
+  `donor_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the donor',
+  `donation_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the donation associated with this donor history',
+  `reaction` enum('none','mild','severe') DEFAULT NULL COMMENT 'Type of reaction experienced by the donor post-donation (none, mild, or severe)',
+  `notes` text DEFAULT NULL COMMENT 'Additional notes or details about the donor’s history'
+)
+-- keys
+ADD PRIMARY KEY (`history_id`) AUTO_INCREMENT,
+ADD KEY `donor_id` (`donor_id`),
+ADD KEY `donation_id` (`donation_id`);
+-- constraints
+ADD CONSTRAINT `donor_history_ibfk_1` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`donor_id`),
+ADD CONSTRAINT `donor_history_ibfk_2` FOREIGN KEY (`donation_id`) REFERENCES `donations` (`donation_id`);
+
+-- Independent table
+CREATE TABLE `hospitals` (
+  `hospital_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each hospital',
+  `name` varchar(255) NOT NULL COMMENT 'Name of the hospital',
+  `street_address` varchar(255) NOT NULL COMMENT 'Street address including building number and street name.',
+  `city` varchar(100) NOT NULL COMMENT 'City or municipality where the hospital is located.',
+  `province` varchar(100) NOT NULL DEFAULT 'Quebec' COMMENT 'Province or state where the hospital is situated.',
+  `postal_code` varchar(7) NOT NULL COMMENT 'Postal or ZIP code of the hospital''s location.',
+  `country` varchar(100) NOT NULL DEFAULT 'Canada' COMMENT 'Country in which the hospital operates.',
+  `phone_number` varchar(255) NOT NULL COMMENT 'Primary contact phone number for the hospital',
+  `email_address` varchar(255) NOT NULL COMMENT 'Primary contact email address for the hospital',
+  `hospital_type` varchar(255) DEFAULT NULL COMMENT 'Type of hospital',
+  `operating_hours` varchar(255) DEFAULT NULL COMMENT 'Operating hours of the hospital',
+  `accreditation_status` varchar(255) DEFAULT NULL COMMENT 'Accreditation status of the hospital',
+  `emergency_contact` varchar(255) DEFAULT NULL COMMENT 'Emergency contact number for the hospital'
+) ;
+-- keys
+ADD PRIMARY KEY (`hospital_id`) AUTO_INCREMENT
+
+-- hospital should be created first
+CREATE TABLE `recipients` (
+  `recipient_id` int(11) UNSIGNED NOT NULL COMMENT 'Unique identifier for each recipient',
+  `hospital_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Unique identifier for each hospital',
+  `name` varchar(255) NOT NULL COMMENT 'Full name of the blood recipient',
+  `age` int(11) UNSIGNED NOT NULL COMMENT 'Age of the recipient',
+  `blood_group` varchar(3) NOT NULL COMMENT 'Blood group of the recipient',
+  `required_date` date NOT NULL COMMENT 'Date when the blood is required for the recipient',
+  `urgency` enum('low','medium','high') NOT NULL DEFAULT 'medium' COMMENT 'Describes the urgency level of the request',
+  `location` varchar(255) DEFAULT NULL COMMENT 'Location of the recipient'
+) ;
+-- keys
+ADD PRIMARY KEY (`recipient_id`) AUTO_INCREMENT,
+ADD KEY `fk_recipients_hospital_id_new` (`hospital_id`);
+-- constraints
+ADD CONSTRAINT `fk_recipients_hospital_id_new` FOREIGN KEY (`hospital_id`) REFERENCES `hospitals` (`hospital_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- Independent table
+CREATE TABLE `tasks` (
+  `task_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each task',
+  `description` varchar(255) DEFAULT NULL COMMENT 'Detailed description of the task'
+) 
+-- keys
+ADD PRIMARY KEY (`task_id`) AUTO_INCREMENT
+
+
+-- hospital should be created first
+CREATE TABLE `technicians` (
+  `technician_id` int(10) UNSIGNED NOT NULL COMMENT 'Unique identifier for each technician',
+  `hospital_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the primary hospital where the technician works.',
+  `assigned_hospital_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'Identifier for the secondary hospital where the technician may be assigned.',
+  `name` varchar(255) NOT NULL COMMENT 'Full name of the technician.',
+  `qualification` varchar(255) DEFAULT NULL COMMENT 'Professional qualifications and certifications of the technician.',
+  `phone_number` varchar(255) NOT NULL COMMENT 'Primary contact phone number for the technician',
+  `email_address` varchar(255) NOT NULL COMMENT 'Primary contact email address for the technician'
+) ;
+-- keys
+ADD PRIMARY KEY (`technician_id`) AUTO_INCREMENT,
+ADD KEY `fk_technicians_hospital_id` (`hospital_id`),
+ADD KEY `fk_assigned_hospital_id` (`assigned_hospital_id`);
+-- constraints
+ADD CONSTRAINT `fk_assigned_hospital_id` FOREIGN KEY (`assigned_hospital_id`) REFERENCES `hospitals` (`hospital_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_technicians_hospital_id` FOREIGN KEY (`hospital_id`) REFERENCES `hospitals` (`hospital_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+
+--technician,task should be created first
+CREATE TABLE `technician_tasks` (
+  `technician_id` int(10) UNSIGNED NOT NULL COMMENT 'Identifier for the technician',
+  `task_id` int(10) UNSIGNED NOT NULL COMMENT 'Identifier for the task assigned to the technician'
+)
+-- keys
+ADD PRIMARY KEY (`technician_id`,`task_id`),
+ADD KEY `task_id` (`task_id`);
+-- constraints
+ADD CONSTRAINT `technician_tasks_ibfk_1` FOREIGN KEY (`technician_id`) REFERENCES `technicians` (`technician_id`),
+ADD CONSTRAINT `technician_tasks_ibfk_2` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`task_id`);
+-- doubt
+forgot to add technician_id in keys
+--clarification
+we can add technician_id in keys,since it also mentioned in constraints
+
+
+
+
+--issues
+1.should these columns be removed or should be inserted as null always
+--donation table
+test_result_id 
+Always inserted as null and doesn't refer to any other's table column
+
+--donors table
+`registered_by_staff_id`
+`primary_contact_id`
+Always inserted as null and doesn't refer to any other's table column
+
+
+2.blood_type compatibility table
+only for A+ and o+,the compatible blood groups have been defined.
+other blood groups with their compatible blood groups should be listed
+
+3.blood_code table
+since blood groups are widely used in this table,writing blood groups all the time is a bit waste of storage.
+so I think ,it is better to create a table for blood groups and use their id's in other tables.
+
+
+4.donors table
+blood_group is specified twice,once through blood_group column and then after using flag(0 and 1)
+primary_contact_id and contact_type kind of same columns.primary_contact_id is no longer needed i guess.
+
+5.audit_log table
+is it needed,because we need to write triggers when doing insert,update or delete actions,so that data gets inserted into audit_log for various actions to be tracked
+
+
+--donation_address
+build dimension if needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

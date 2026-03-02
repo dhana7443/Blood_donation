@@ -1,0 +1,536 @@
+version: 2
+
+models:
+  - name: stg_blood_inventory
+    description: "Staging model for blood inventory data sourced from raw.blood_inventory.
+      This model standardizes data types, trims whitespace, normalizes case formatting,
+      and handles invalid date values such as '0000-00-00'."
+      
+    columns:
+
+      - name: inventory_id
+        description: "Unique identifier for each inventory record."
+        tests:
+          - not_null
+          - unique
+
+      - name: donation_id
+        description: "Identifier of the donation associated with this inventory unit."
+        
+
+      - name: blood_group
+        description: "Blood group of the stored unit (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: units_available
+        description: "Number of available blood units."
+        tests:
+          - not_null
+
+      - name: quality
+        description: "Quality status of the blood unit (capitalized format)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Good','Contaminated']
+
+      - name: status
+        description: "Current status of the blood unit (stored in lowercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['stored','tested','distributed','discarded']
+
+      - name: date_received
+        description: "Date when the blood unit was received. Invalid placeholder dates are converted to NULL."
+
+      - name: expiration_date
+        description: "Expiration date of the blood unit. Invalid placeholder dates are converted to NULL."
+
+      - name: temperature
+        description: "Storage temperature of the blood unit in degrees Celsius."
+
+      - name: volume
+        description: "Volume of the blood unit in milliliters."
+
+      - name: recipient_id
+        description: "Identifier of the recipient if the blood unit has been allocated."
+
+  - name: stg_blood_tests
+    description: "Staging model for blood test records sourced from raw.blood_tests.
+      This model standardizes data types, formats categorical columns using INITCAP,
+      and converts invalid placeholder dates ('0000-00-00') into NULL values."
+
+    columns:
+
+      - name: test_id
+        description: "Unique identifier for each blood test record."
+        tests:
+          - not_null
+          - unique
+
+      - name: donor_id
+        description: "Identifier of the donor associated with the blood test."
+        tests:
+          - not_null
+
+      - name: technician_id
+        description: "Identifier of the technician who performed the test."
+
+      - name: test_date
+        description: "Date on which the blood test was conducted. Invalid placeholder dates are converted to NULL."
+        
+
+      - name: disease_tested
+        description: "Name of the disease for which the blood was tested (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: result
+        description: "Outcome of the blood test (e.g., Positive or Negative)."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Positive', 'Negative']
+
+      - name: test_type
+        description: "Type of blood test performed (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Additional remarks or notes recorded during the blood test process."
+
+  - name: stg_blood_type_compatibility
+    description: "Staging model for blood type compatibility mapping sourced from
+      raw.blood_type_compatibility. Blood types are standardized to uppercase
+      and empty strings are converted to NULL values."
+      
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - donor_blood_type
+            - recipient_blood_type
+
+    columns:
+
+      - name: donor_blood_type
+        description: "Blood type of the donor (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: recipient_blood_type
+        description: "Blood type of the recipient that is compatible with the donor type."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+    
+  - name: stg_donations
+    description: "Staging model for donation records sourced from raw.donations.
+      This model standardizes data types, normalizes categorical values,
+      trims whitespace, and converts invalid placeholder dates ('0000-00-00')
+      into NULL values."
+
+    columns:
+
+      - name: donation_id
+        description: "Unique identifier for each donation."
+        tests:
+          - not_null
+          - unique
+
+      - name: donor_id
+        description: "Identifier of the donor who made the donation."
+        tests:
+          - not_null
+
+      - name: hospital_id
+        description: "Identifier of the hospital where the donation was collected."
+
+      - name: recipient_id
+        description: "Identifier of the recipient linked to the donation (if allocated)."
+
+      - name: collection_technician_id
+        description: "Technician responsible for collecting the blood."
+
+      - name: processed_by_technician_id
+        description: "Technician responsible for processing the blood."
+
+      - name: test_result_id
+        description: "Identifier referencing the associated blood test result."
+
+      - name: donation_date
+        description: "Date when the donation occurred. Invalid placeholder dates are converted to NULL."
+
+      - name: quantity
+        description: "Quantity of blood donated (in units)."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+      - name: blood_group
+        description: "Blood group of the donation (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: status
+        description: "Current processing status of the donation (stored in lowercase)."
+        tests:
+          - not_null
+          # - accepted_values:
+          #     arguments:
+          #       values: ['pending','complete','tested','distributed']
+
+      - name: bag_serial_number
+        description: "Unique serial number assigned to the blood bag."
+        
+
+      - name: storage_temperature
+        description: "Temperature at which the donated blood is stored."
+
+      - name: expiration_date
+        description: "Expiration date of the donated blood."
+
+      - name: donation_type
+        description: "Type of donation (stored in lowercase)."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['whole_blood','platelets','plasma']
+
+  - name: stg_donor_history
+    description: "Staging model for donor post-donation history records sourced from
+      raw.donor_history. This model standardizes data types and normalizes
+      reaction values to lowercase."
+    columns:
+      - name: history_id
+        description: "Unique identifier for each donor history record."
+        tests:
+          - not_null
+          - unique
+
+      - name: donor_id
+        description: "Identifier of the donor associated with the reaction record."
+        tests:
+          - not_null
+
+      - name: donation_id
+        description: "Identifier of the related donation."
+
+      - name: reaction
+        description: "Type of post-donation reaction experienced by the donor (stored in lowercase)."
+        tests:
+          - accepted_values:
+              values: ['none', 'mild','severe']
+
+      - name: notes
+        description: "Additional comments or observations regarding the donor reaction."
+
+  - name: stg_donors
+    description: "Staging model for donor records sourced from raw.donors.
+      This model standardizes data types, normalizes categorical values,
+      converts invalid placeholder dates to NULL, and prepares donor data
+      for dimensional modeling."
+
+    columns:
+
+      - name: donor_id
+        description: "Unique identifier for each donor."
+        tests:
+          - not_null
+          - unique
+
+      - name: registered_by_staff_id
+        description: "Identifier of staff member who registered the donor."
+
+      - name: primary_contact_id
+        description: "Identifier of the donor's primary contact record."
+
+      - name: name
+        description: "Full name of the donor (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: age
+        description: "Age of the donor in years."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 18"
+
+      - name: gender
+        description: "Gender of the donor (standardized using INITCAP)."
+        tests:
+          - accepted_values:
+              values: ['Male', 'Female', 'Other']
+
+      - name: weight
+        description: "Weight of the donor in kilograms."
+        
+
+      - name: blood_group
+        description: "Blood group of the donor (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: last_donation_date
+        description: "Date of the donor's most recent donation."
+
+      - name: is_eligible
+        description: "Boolean flag indicating if the donor is currently eligible to donate."
+
+      - name: donations_count
+        description: "Total number of donations made by the donor."
+        
+
+      - name: contact_method_type
+        description: "Preferred contact method for the donor (stored in lowercase)."
+        tests:
+          - accepted_values:
+              values: ['phone', 'email']
+
+      - name: contact_detail
+        description: "Contact information detail (phone number, email, etc.)."
+
+      - name: donor_type
+        description: "Type of donor (stored in lowercase)."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['individual','corporation','anonymous']
+
+      - name: last_health_check_date
+        description: "Date of the donor's last health check."
+
+      - name: donation_frequency_allowed
+        description: "Frequency of donations allowed per year"
+        
+
+      - name: location
+        description: "Location of the donor."
+
+      - name: days_since_last_donation
+        description: "Number of days since the donor's last donation."
+
+      - name: blood_group_A_plus
+        description: "Boolean indicator if donor belongs to A+ group."
+
+      - name: blood_group_O_minus
+        description: "Boolean indicator if donor belongs to O- group."
+
+      - name: blood_group_B_plus
+        description: "Boolean indicator if donor belongs to B+ group."
+
+      - name: blood_group_AB_minus
+        description: "Boolean indicator if donor belongs to AB- group."
+
+      - name: blood_group_A_minus
+        description: "Boolean indicator if donor belongs to A- group."
+
+      - name: blood_group_B_minus
+        description: "Boolean indicator if donor belongs to B- group."
+
+      - name: blood_group_O_plus
+        description: "Boolean indicator if donor belongs to O+ group."
+
+      - name: blood_group_AB_plus
+        description: "Boolean indicator if donor belongs to AB+ group."
+  
+  - name: stg_hospitals
+    description: "Staging model for hospital records sourced from raw.hospitals.
+      This model standardizes text formatting using INITCAP and TRIM
+      functions and prepares hospital data for dimensional modeling."
+
+    columns:
+
+      - name: hospital_id
+        description: "Unique identifier for each hospital."
+        tests:
+          - not_null
+          - unique
+
+      - name: name
+        description: "Name of the hospital (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: street_address
+        description: "Street address of the hospital."
+
+      - name: city
+        description: "City where the hospital is located."
+
+      - name: province
+        description: "State or province where the hospital is located."
+
+      - name: country
+        description: "Country where the hospital is located."
+
+      - name: postal_code
+        description: "Postal code of the hospital."
+
+      - name: phone_number
+        description: "Primary contact phone number of the hospital."
+
+      - name: email_address
+        description: "Primary contact email address of the hospital."
+
+      - name: hospital_type
+        description: "Type/category of hospital (standardized using INITCAP)."
+        
+
+      - name: operating_hours
+        description: "Operating hours of the hospital."
+
+      - name: accreditation_status
+        description: "Accreditation status of the hospital."
+        
+      - name: emergency_contact
+        description: "Emergency contact number of the hospital."
+
+  - name: stg_recipients
+    description: "Staging model for recipient records sourced from raw.recipients.
+      This model standardizes data types, normalizes categorical values,
+      and converts invalid placeholder dates ('0000-00-00') into NULL values."
+      
+    columns:
+
+      - name: recipient_id
+        description: "Unique identifier for each recipient."
+        tests:
+          - not_null
+          - unique
+
+      - name: hospital_id
+        description: "Identifier of the hospital where the recipient is registered."
+        
+
+      - name: name
+        description: "Full name of the recipient (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: age
+        description: "Age of the recipient in years."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: blood_group
+        description: "Blood group required by the recipient (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: required_date
+        description: "Date when the blood is required."
+
+      - name: urgency
+        description: "Urgency level of the blood request (stored in lowercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['low', 'medium', 'high']
+
+      - name: location
+        description: "Location of the recipient."
+
+  - name: stg_tasks
+    description: " Staging model for task records sourced from raw.tasks.
+      This model standardizes data types and trims whitespace
+      from task descriptions."
+     
+    columns:
+
+      - name: task_id
+        description: "Unique identifier for each task."
+        tests:
+          - not_null
+          - unique
+
+      - name: description
+        description: "Description of the task."
+
+  - name: stg_technician_tasks
+    description: "Staging model for technician-task mapping sourced from raw.technician_tasks.
+      This model represents a many-to-many relationship between technicians and tasks."
+      
+
+    columns:
+
+      - name: technician_id
+        description: "Identifier of the technician."
+        tests:
+          - not_null
+
+      - name: task_id
+        description: "Identifier of the task assigned to the technician."
+        tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - technician_id
+            - task_id     
+  
+  - name: stg_technicians
+    description: "Staging model for technician records sourced from raw.technicians.
+      This model standardizes data types and normalizes text formatting
+      using INITCAP and TRIM functions."
+      
+
+    columns:
+
+      - name: technician_id
+        description: "Unique identifier for each technician."
+        tests:
+          - not_null
+          - unique
+
+      - name: hospital_id
+        description: "Identifier of the hospital where the technician is currently working."
+        
+
+      - name: assigned_hospital_id
+        description: "Identifier of the hospital the technician is assigned to (if different)."
+
+      - name: name
+        description: "Full name of the technician (standardized using INITCAP)."
+        tests:
+          - not_null
+
+      - name: qualification
+        description: "Educational or professional qualification of the technician."
+        
+
+      - name: phone_number
+        description: "Primary contact phone number of the technician."
+        tests:
+          - not_null
+
+      - name: email_address
+        description: "Primary contact email address of the technician."
+        tests:
+          - not_null

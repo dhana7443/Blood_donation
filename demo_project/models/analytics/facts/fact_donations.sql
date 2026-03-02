@@ -39,7 +39,7 @@ with_dims as (
     join {{ ref("dim_dates") }} ddate
       on s.donation_date = ddate.full_date
 
-    left join {{ ref("dim_donors") }} ddonor
+    join {{ ref("dim_donors") }} ddonor
       on s.donor_id = ddonor.donor_id
      and s.donation_date >= ddonor.dbt_valid_from
      and s.donation_date < coalesce(ddonor.dbt_valid_to,'9999-12-31')
