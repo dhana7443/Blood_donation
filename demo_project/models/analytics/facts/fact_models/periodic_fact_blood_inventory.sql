@@ -42,6 +42,7 @@ expanded as (
         on c.date_id >= i.date_received_id
        and c.date_id <= i.expiration_date_id
        and i.status in('stored','tested')
+       and i.quality='Good'
 
 ),
 
