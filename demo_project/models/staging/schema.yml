@@ -114,9 +114,10 @@ models:
       
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - donor_blood_type
-            - recipient_blood_type
+          arguments:
+            combination_of_columns:
+              - donor_blood_type
+              - recipient_blood_type
 
     columns:
 
@@ -179,7 +180,8 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: "> 0"
+              arguments:
+                expression: "> 0"
 
       - name: blood_group
         description: "Blood group of the donation (standardized to uppercase)."
@@ -237,7 +239,8 @@ models:
         description: "Type of post-donation reaction experienced by the donor (stored in lowercase)."
         tests:
           - accepted_values:
-              values: ['none', 'mild','severe']
+              arguments:
+                values: ['none', 'mild','severe']
 
       - name: notes
         description: "Additional comments or observations regarding the donor reaction."
@@ -271,14 +274,16 @@ models:
         description: "Age of the donor in years."
         tests:
           - dbt_utils.expression_is_true:
-              expression: ">= 18"
+              arguments:
+                expression: ">= 18"
 
       - name: gender
         description: "Gender of the donor (standardized using INITCAP)."
         tests:
           - accepted_values:
-              values: ['Male', 'Female', 'Other']
-
+              arguments:
+                values: ['Male','Female','Other']
+        
       - name: weight
         description: "Weight of the donor in kilograms."
         
@@ -305,7 +310,8 @@ models:
         description: "Preferred contact method for the donor (stored in lowercase)."
         tests:
           - accepted_values:
-              values: ['phone', 'email']
+              arguments:
+                values: ['phone', 'email']
 
       - name: contact_detail
         description: "Contact information detail (phone number, email, etc.)."
@@ -432,7 +438,8 @@ models:
         description: "Age of the recipient in years."
         tests:
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: blood_group
         description: "Blood group required by the recipient (standardized to uppercase)."
@@ -476,6 +483,12 @@ models:
     description: "Staging model for technician-task mapping sourced from raw.technician_tasks.
       This model represents a many-to-many relationship between technicians and tasks."
       
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - technician_id
+              - task_id   
 
     columns:
 
@@ -489,11 +502,6 @@ models:
         tests:
           - not_null
 
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - technician_id
-            - task_id     
   
   - name: stg_technicians
     description: "Staging model for technician records sourced from raw.technicians.

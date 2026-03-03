@@ -16,4 +16,10 @@ SELECT
   LOWER(TRIM(donation_type))                   AS donation_type
 
 FROM {{ source('raw', 'donations') }}
+WHERE LOWER(TRIM(status)) IN (
+    'pending',
+    'complete',
+    'tested',
+    'distributed'
+)
 order by donation_id

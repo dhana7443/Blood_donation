@@ -2,7 +2,7 @@
     config(
         materialized='incremental',
         unique_key='test_id',
-        incremental_strategy='merge'
+        incremental_strategy='delete+insert'
     )
 }}
 

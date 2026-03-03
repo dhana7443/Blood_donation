@@ -5,7 +5,8 @@ models:
     description: "Fact table at the grain of one row per donation event. Contains foreign keys to donor, hospital, recipient, and date dimensions along with measures and status attributes."
     tests:
       - dbt_utils.equal_rowcount:
-          compare_model: ref('stg_donations')
+          arguments:
+            compare_model: ref('stg_donations')
 
     columns:
       - name: donation_id
