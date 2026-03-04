@@ -8,3 +8,4 @@ SELECT
   INITCAP(TRIM(test_type))              AS test_type,
   comments                       AS comments
 FROM {{ source('raw', 'blood_tests') }}
+WHERE INITCAP(TRIM(disease_tested))<>''

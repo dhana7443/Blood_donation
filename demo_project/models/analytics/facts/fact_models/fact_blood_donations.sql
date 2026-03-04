@@ -19,7 +19,7 @@ with src as (
         quantity,
         md5(coalesce(status, '')) as row_hash
 
-    from {{ ref('stg_donations') }}
+    from {{ ref('stg_blood_donations') }}
 
 ),
 
