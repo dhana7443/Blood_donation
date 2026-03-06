@@ -138,7 +138,7 @@ models:
                 values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
 
     
-  - name: stg_donations
+  - name: stg_blood_donations
     description: "Staging model for donation records sourced from raw.donations.
       This model standardizes data types, normalizes categorical values,
       trims whitespace, and converts invalid placeholder dates ('0000-00-00')
