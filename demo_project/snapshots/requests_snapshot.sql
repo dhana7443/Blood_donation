@@ -12,6 +12,7 @@
 select
     recipient_id,
     hospital_id,
+    blood_group,
     required_date,
     urgency
 from {{ ref("stg_recipients") }}

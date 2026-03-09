@@ -14,6 +14,7 @@ with src as (
         hospital_id,
         recipient_id,
         donation_date,
+        blood_group,
         status,
         donation_type,
         quantity,
@@ -32,6 +33,7 @@ with_dims as (
         dr.recipient_sk,
         ddate.date_id as donation_date_id,
         s.status,
+        s.blood_group,
         s.donation_type,
         s.quantity,
         s.row_hash
@@ -79,6 +81,7 @@ select
     recipient_sk,
     donation_date_id,
     status,
+    blood_group,
     donation_type,
     quantity,
     row_hash

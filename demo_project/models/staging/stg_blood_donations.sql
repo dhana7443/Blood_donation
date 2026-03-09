@@ -13,7 +13,8 @@ SELECT
   TRIM(bag_serial_number)                      AS bag_serial_number,
   CAST(storage_temperature AS NUMERIC(10,0))   AS storage_temperature,
   CAST(NULLIF(expiration_date, '0000-00-00') AS DATE) AS expiration_date,
-  LOWER(TRIM(donation_type))                   AS donation_type
+  LOWER(TRIM(donation_type))                   AS donation_type,
+  load_timestamp as raw_load_timestamp
 
 FROM {{ source('raw', 'donations') }}
 WHERE LOWER(TRIM(status)) IN (

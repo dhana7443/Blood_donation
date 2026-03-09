@@ -6,6 +6,8 @@ SELECT
   UPPER(TRIM(blood_group))     AS blood_group,
   CAST(NULLIF(required_date, '0000-00-00') AS DATE) AS required_date,
   LOWER(TRIM(urgency))         AS urgency,
-  INITCAP(TRIM(location))      AS location
+  INITCAP(TRIM(location))      AS location,
+  load_timestamp as raw_load_timestamp
 
 FROM {{ source('raw', 'recipients') }}
+where hospital_id is not null
