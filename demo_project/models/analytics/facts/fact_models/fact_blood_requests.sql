@@ -97,6 +97,7 @@ with snap as (
         urgency,
         dbt_valid_from,
         dbt_valid_to
+        
     from {{ ref("recipient_requests_snapshot") }}
 
     {% if is_incremental() %}
@@ -133,9 +134,15 @@ dims as (
         dh.hospital_sk,
         s.blood_group,
         dd.date_id as required_date_id,
+        s.required_date,
         s.urgency,
         s.dbt_valid_from,
-        s.dbt_valid_to
+        s.dbt_valid_to,
+        case
+            when s.dbt_valid_to is not null then 'closed'
+            when s.required_date < current_date then 'expired'
+            else 'active'
+        end as request_status
 
     from snap s
 

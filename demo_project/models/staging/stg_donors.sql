@@ -25,7 +25,6 @@ SELECT
   CAST(blood_group_A_minus AS BOOLEAN)  AS blood_group_A_minus,
   CAST(blood_group_B_minus AS BOOLEAN)  AS blood_group_B_minus,
   CAST(blood_group_O_plus AS BOOLEAN)   AS blood_group_O_plus,
-  CAST(blood_group_AB_plus AS BOOLEAN)  AS blood_group_AB_plus,
-  load_timestamp as raw_load_timestamp
-
+  CAST(blood_group_AB_plus AS BOOLEAN)  AS blood_group_AB_plus
+  
 FROM {{ source('raw', 'donors') }}

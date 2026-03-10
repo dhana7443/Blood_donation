@@ -9,6 +9,6 @@ SELECT
   CAST(NULLIF(expiration_date,'0000-00-00') AS DATE)     AS expiration_date,
   CAST(temperature AS NUMERIC(3,1)) AS temperature,
   CAST(volume AS INT)               AS volume,
-  CAST(recipient_id AS BIGINT)      AS recipient_id,
-  load_timestamp as raw_load_timestamp
+  CAST(recipient_id AS BIGINT)      AS recipient_id
+  
 FROM {{ source('raw', 'blood_inventory') }}

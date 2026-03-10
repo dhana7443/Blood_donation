@@ -11,6 +11,6 @@ SELECT
   INITCAP(TRIM(hospital_type))        AS hospital_type,
   TRIM(operating_hours)               AS operating_hours,
   INITCAP(TRIM(accreditation_status)) AS accreditation_status,
-  TRIM(emergency_contact)             AS emergency_contact,
-  load_timestamp as raw_load_timestamp
+  TRIM(emergency_contact)             AS emergency_contact
+  
 FROM {{ source('raw', 'hospitals') }}

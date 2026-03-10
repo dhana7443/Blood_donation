@@ -5,7 +5,6 @@ SELECT
   INITCAP(TRIM(name))                  AS name,
   INITCAP(TRIM(qualification))                AS qualification,
   TRIM(phone_number)                   AS phone_number,
-  TRIM(email_address)                  AS email_address,
-  load_timestamp as raw_load_timestamp
+  TRIM(email_address)                  AS email_address
 
 FROM {{ source('raw', 'technicians') }}

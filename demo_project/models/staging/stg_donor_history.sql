@@ -3,7 +3,7 @@ SELECT
   CAST(donor_id AS BIGINT)     AS donor_id,
   CAST(donation_id AS BIGINT)  AS donation_id,
   LOWER(TRIM(reaction))        AS reaction,
-  notes                        AS notes,
-  load_timestamp as raw_load_timestamp
+  notes                        AS notes
+ 
 
 FROM {{ source('raw', 'donor_history') }}

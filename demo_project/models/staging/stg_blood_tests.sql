@@ -6,7 +6,7 @@ SELECT
   INITCAP(TRIM(disease_tested))          AS disease_tested,
   INITCAP(TRIM(result))                   AS result,
   INITCAP(TRIM(test_type))              AS test_type,
-  comments                       AS comments,
-  load_timestamp as raw_load_timestamp
+  comments                       AS comments
+  
 FROM {{ source('raw', 'blood_tests') }}
 WHERE INITCAP(TRIM(disease_tested))<>''
