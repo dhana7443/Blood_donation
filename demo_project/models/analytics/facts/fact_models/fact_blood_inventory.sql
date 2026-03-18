@@ -21,9 +21,14 @@ with src as(
             concat_ws(
                 '|',
                 coalesce(status,''),
-                coalesce(quality,'')
-                )
-            ) as row_hash
+                coalesce(quality,''),
+                coalesce(blood_group,''),
+                coalesce(cast(units_available as varchar),''),
+                coalesce(cast(volume as varchar),''),
+                coalesce(cast(date_received as varchar),''),
+                coalesce(cast(expiration_date as varchar),'')
+            )
+        ) as row_hash
     from {{ ref("stg_blood_inventory")}}
 ),
 dated as(
@@ -39,10 +44,10 @@ dated as(
         s.volume,
         s.row_hash
     from src s
-    join {{ ref("dim_dates")}} d
+    left join {{ ref("dim_dates")}} d
     on d.full_date=s.date_received
 
-    join {{ ref("dim_dates")}} de
+    left join {{ ref("dim_dates")}} de
     on de.full_date=s.expiration_date
 ),
 final as(
@@ -60,4 +65,3 @@ final as(
 )
 
 select * from final
-order by inventory_id

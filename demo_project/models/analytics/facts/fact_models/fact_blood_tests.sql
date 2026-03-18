@@ -15,7 +15,12 @@ with src as(
         result,
         test_type,
         md5(
-            coalesce(result,'')
+            concat_ws(
+                '|',
+                coalesce(result, ''),
+                coalesce(disease_tested, ''),
+                coalesce(test_type, '')
+            )
         ) as row_hash
     from {{ref("stg_blood_tests")}}
 ),
@@ -29,13 +34,22 @@ dims as(
         s.test_type,
         s.row_hash
     from src s
-    join {{ref("dim_dates")}} ddate
+    left join {{ref("dim_dates")}} ddate
     on s.test_date=ddate.full_date
 
-    join {{ ref("dim_donors")}} ddonor
-    on s.donor_id=ddonor.donor_id
-    and s.test_date>=ddonor.dbt_valid_from
-    and s.test_date<coalesce(dbt_valid_to,'9999-12-31')
+    left join {{ ref("dim_donors") }} ddonor
+    on s.donor_id = ddonor.donor_id
+    and (
+        (
+            s.test_date >= ddonor.dbt_valid_from
+            and s.test_date < coalesce(ddonor.dbt_valid_to,'9999-12-31')
+        )
+        or
+        (
+            s.test_date is null
+            and ddonor.dbt_valid_to is null  
+        )
+    )
 
 ),
 final as(
@@ -53,4 +67,3 @@ final as(
 )
 
 select * from final
-order by test_id

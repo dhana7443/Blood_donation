@@ -9,4 +9,4 @@ SELECT
   comments                       AS comments
   
 FROM {{ source('raw', 'blood_tests') }}
-WHERE INITCAP(TRIM(disease_tested))<>''
+where trim(disease_tested)<>''

@@ -18,7 +18,15 @@ with src as (
         status,
         donation_type,
         quantity,
-        md5(coalesce(status, '')) as row_hash
+         md5(
+          concat_ws(
+            '|',
+            coalesce(status, ''),
+            coalesce(blood_group, '') ,
+            coalesce(donation_type, '') ,
+            coalesce(cast(quantity as varchar), '')
+          )
+        ) as row_hash
 
     from {{ ref('stg_blood_donations') }}
 
@@ -38,10 +46,10 @@ with_dims as (
         s.quantity,
         s.row_hash
     from src s
-    join {{ ref("dim_dates") }} ddate
+    left join {{ ref("dim_dates") }} ddate
       on s.donation_date = ddate.full_date
 
-    join {{ ref("dim_donors") }} ddonor
+    left join {{ ref("dim_donors") }} ddonor
       on s.donor_id = ddonor.donor_id
      and s.donation_date >= ddonor.dbt_valid_from
      and s.donation_date < coalesce(ddonor.dbt_valid_to,'9999-12-31')
@@ -86,4 +94,3 @@ select
     quantity,
     row_hash
 from final
-order by donation_id

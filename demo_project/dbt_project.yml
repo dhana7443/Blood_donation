@@ -33,7 +33,7 @@ models:
   demo_project:
     staging:
       +schema: landing
-      +materialized: view
+      +materialized: table
     analytics:
       +schema: analytics
       +materialized: table

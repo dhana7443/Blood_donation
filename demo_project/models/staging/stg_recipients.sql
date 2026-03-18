@@ -10,4 +10,3 @@ SELECT
   
 
 FROM {{ source('raw', 'recipients') }}
-where hospital_id is not null
