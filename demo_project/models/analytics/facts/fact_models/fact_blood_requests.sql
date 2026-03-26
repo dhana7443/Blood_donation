@@ -47,7 +47,6 @@ dims as (
         dh.hospital_sk,
         s.blood_group,
         dd.date_id as required_date_id,
-        s.required_date,
         s.urgency,
         s.dbt_valid_from,
         s.dbt_valid_to,

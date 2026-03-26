@@ -18,7 +18,7 @@ with src as (
         status,
         donation_type,
         quantity,
-         md5(
+        md5(
           concat_ws(
             '|',
             coalesce(status, ''),

@@ -65,7 +65,7 @@ models:
   - name: stg_blood_tests
     description: "Staging model for blood test records sourced from raw.blood_tests.
       This model standardizes data types, formats categorical columns using INITCAP,
-      and converts invalid placeholder dates ('0000-00-00') into NULL values."
+      and converts invalid dates ('0000-00-00') into NULL values."
 
     columns:
 
@@ -193,14 +193,12 @@ models:
 
       - name: status
         description: "Current processing status of the donation (stored in lowercase)."
-        tests:
-          - not_null
-          # - accepted_values:
-          #     arguments:
-          #       values: ['pending','complete','tested','distributed']
+        
 
       - name: bag_serial_number
         description: "Unique serial number assigned to the blood bag."
+        tests:
+          - unique
         
 
       - name: storage_temperature

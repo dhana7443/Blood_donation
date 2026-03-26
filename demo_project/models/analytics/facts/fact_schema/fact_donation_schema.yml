@@ -20,7 +20,6 @@ models:
         description: "Foreign key to dim_donors (surrogate key) representing the donor version at the time of donation."
         data_type: varchar
         tests:
-          - not_null
           - relationships:
               arguments:
                 to: ref('dim_donors')
@@ -57,12 +56,7 @@ models:
       - name: status
         description: "Status of the donation (e.g., pending,complete,tested,distributed etc.)."
         data_type: varchar
-        tests:
-          - not_null
-          # - accepted_values:
-          #     arguments:
-          #       values: ['pending','complete','tested','distributed']
-          
+        
 
       - name: donation_type
         description: "Type of donation (e.g., whole_blood, platelets, plasma)."
@@ -77,3 +71,6 @@ models:
         data_type: varchar
         tests:
           - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"

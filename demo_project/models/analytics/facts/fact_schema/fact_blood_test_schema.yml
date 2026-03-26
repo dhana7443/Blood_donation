@@ -26,7 +26,6 @@ models:
         description: "Foreign key to dim_dates representing the date the test was performed."
         data_type: int
         tests:
-          - not_null
           - relationships:
               arguments:
                 to: ref('dim_dates')

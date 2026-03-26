@@ -1,8 +1,10 @@
+
+
 {{
     config(
         materialized='incremental',
         unique_key='snapshot_key',
-        incremental_strategy='merge'
+        incremental_strategy='delete+insert'
     )
 }}
 
@@ -14,17 +16,22 @@ with calendar as (
     from {{ ref('dim_dates') }}
 
     {% if is_incremental() %}
-        where full_date > (
-            select max(snapshot_date)
-            from {{ this }}
-        )
+        where full_date >= dateadd(day, -7, current_date)
     {% endif %}
 
 ),
 
 inventory as (
 
-    select *
+    select
+        inventory_id,
+        blood_group,
+        units_available,
+        volume,
+        date_received_id,
+        expiration_date_id,
+        status,
+        quality
     from {{ ref('fact_blood_inventory') }}
 
 ),
@@ -41,8 +48,8 @@ expanded as (
     join inventory i
         on c.date_id >= i.date_received_id
        and c.date_id <= i.expiration_date_id
-       and i.status in('stored','tested')
-       and i.quality='Good'
+       and i.status in ('stored','tested')
+       and i.quality = 'Good'
 
 ),
 
@@ -61,6 +68,9 @@ aggregated as (
 
 select
     md5(concat(snapshot_date_id,'|',blood_group)) as snapshot_key,
-    *
+    snapshot_date_id,
+    snapshot_date,
+    blood_group,
+    total_units_available,
+    total_volume_available
 from aggregated
-order by snapshot_date
