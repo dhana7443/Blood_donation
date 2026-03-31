@@ -1,5 +1,3 @@
-
-
 {{
     config(
         materialized='incremental',
@@ -16,7 +14,7 @@ with calendar as (
     from {{ ref('dim_dates') }}
 
     {% if is_incremental() %}
-        where full_date >= dateadd(day, -7, current_date)
+         where full_date >= current_date - interval '7 days'
     {% endif %}
 
 ),

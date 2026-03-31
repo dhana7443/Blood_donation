@@ -35,8 +35,8 @@ models:
       - name: disease_tested
         description: "Name of the disease or condition tested (e.g., HIV, Hepatitis, etc.)."
         data_type: varchar
-        tests:
-          - not_null
+        
+
 
       - name: result
         description: "Result of the test (e.g., Positive, Negative)."

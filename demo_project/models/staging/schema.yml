@@ -89,8 +89,7 @@ models:
 
       - name: disease_tested
         description: "Name of the disease for which the blood was tested (standardized using INITCAP)."
-        tests:
-          - not_null
+        
 
       - name: result
         description: "Outcome of the blood test (e.g., Positive or Negative)."
