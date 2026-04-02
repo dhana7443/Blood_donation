@@ -1,3 +1,11 @@
+{{
+  config(
+    materialized='incremental',
+    unique_key='recipient_id',
+    incremental_strategy='delete+insert'
+  )
+}}
+
 SELECT
   CAST(recipient_id AS BIGINT) AS recipient_id,
   CAST(hospital_id AS BIGINT)  AS hospital_id,
@@ -6,7 +14,8 @@ SELECT
   UPPER(TRIM(blood_group))     AS blood_group,
   CAST(NULLIF(required_date, '0000-00-00') AS DATE) AS required_date,
   LOWER(TRIM(urgency))         AS urgency,
-  INITCAP(TRIM(location))      AS location
+  INITCAP(TRIM(location))      AS location,
+  {{ current_timestamp() }}    AS stg_load_timestamp
   
 
 FROM {{ source('raw', 'recipients') }}

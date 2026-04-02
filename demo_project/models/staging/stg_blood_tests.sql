@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='incremental',
+    unique_key='test_id',
+    incremental_strategy='delete+insert'
+  )
+}}
 SELECT
   CAST(test_id AS BIGINT)        AS test_id,
   CAST(donor_id AS BIGINT)       AS donor_id,
@@ -6,7 +13,8 @@ SELECT
   NULLIF(INITCAP(TRIM(disease_tested)),'')          AS disease_tested,
   INITCAP(TRIM(result))                   AS result,
   INITCAP(TRIM(test_type))              AS test_type,
-  comments                       AS comments
+  comments                       AS comments,
+  {{ current_timestamp() }}     AS stg_load_timestamp
   
 FROM {{ source('raw', 'blood_tests') }}
 

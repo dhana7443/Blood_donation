@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='incremental',
+    unique_key='hospital_id',
+    incremental_strategy='delete+insert'
+  )
+}}
 SELECT
   CAST(hospital_id AS BIGINT) AS hospital_id,
   INITCAP(TRIM(name))           AS name,
@@ -11,6 +18,7 @@ SELECT
   INITCAP(TRIM(hospital_type))        AS hospital_type,
   TRIM(operating_hours)               AS operating_hours,
   INITCAP(TRIM(accreditation_status)) AS accreditation_status,
-  TRIM(emergency_contact)             AS emergency_contact
+  TRIM(emergency_contact)             AS emergency_contact,
+  {{ current_timestamp() }}          AS stg_load_timestamp
   
 FROM {{ source('raw', 'hospitals') }}

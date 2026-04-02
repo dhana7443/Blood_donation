@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='incremental',
+    unique_key='donor_id',
+    incremental_strategy='delete+insert',
+  )
+}}
 SELECT
   CAST(donor_id AS BIGINT)               AS donor_id,
   CAST(registered_by_staff_id AS BIGINT) AS registered_by_staff_id,
@@ -25,6 +32,7 @@ SELECT
   CAST(blood_group_A_minus AS BOOLEAN)  AS blood_group_A_minus,
   CAST(blood_group_B_minus AS BOOLEAN)  AS blood_group_B_minus,
   CAST(blood_group_O_plus AS BOOLEAN)   AS blood_group_O_plus,
-  CAST(blood_group_AB_plus AS BOOLEAN)  AS blood_group_AB_plus
+  CAST(blood_group_AB_plus AS BOOLEAN)  AS blood_group_AB_plus,
+  {{ current_timestamp() }}             AS stg_load_timestamp
   
 FROM {{ source('raw', 'donors') }}

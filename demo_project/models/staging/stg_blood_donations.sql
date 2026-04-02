@@ -1,3 +1,11 @@
+{{
+  config(
+    materialized='incremental',
+    unique_key='donation_id',
+    incremental_strategy='delete+insert'
+  )
+}}
+
 SELECT
   CAST(donation_id AS BIGINT)                AS donation_id,
   CAST(donor_id AS BIGINT)                   AS donor_id,
@@ -13,6 +21,7 @@ SELECT
   NULLIF(TRIM(bag_serial_number),'')                      AS bag_serial_number,
   CAST(storage_temperature AS NUMERIC(10,0))   AS storage_temperature,
   CAST(NULLIF(expiration_date, '0000-00-00') AS DATE) AS expiration_date,
-  LOWER(TRIM(donation_type))                   AS donation_type
+  LOWER(TRIM(donation_type))                   AS donation_type,
+  {{ current_timestamp() }}                   AS stg_load_timestamp
 
 FROM {{ source('raw', 'donations') }}

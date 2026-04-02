@@ -16,7 +16,9 @@ CREATE TABLE raw.donations (
   donation_type               TEXT   -- Type of donation (whole_blood, platelets, plasma, etc.)
 )
 
-INSERT INTO raw.donations (donation_id, donor_id, hospital_id, recipient_id, collection_technician_id, processed_by_technician_id, test_result_id, date, quantity, blood_group, status, bag_serial_number, storage_temperature, expiration_date, donation_type) VALUES
+INSERT INTO raw.donations
+(donation_id, donor_id, hospital_id, recipient_id, collection_technician_id, processed_by_technician_id, test_result_id, date, quantity, blood_group,status, bag_serial_number, storage_temperature, expiration_date, donation_type) VALUES
+
 (1, 1, NULL, NULL, NULL, 3, NULL, '2020-10-15', 500, 'A+', 'complete', 'BAG1001', 4, '2021-04-15', 'whole_blood'),
 (2, 2, NULL, NULL, NULL, 3, NULL, '2021-01-20', 450, 'O-', 'complete', 'BAG1002', 4, '2021-07-20', 'whole_blood'),
 (3, 3, NULL, NULL, NULL, 3, NULL, '2021-02-18', 480, 'B+', 'complete', 'BAG1003', 4, '2021-08-18', 'plasma'),
@@ -59,4 +61,22 @@ INSERT INTO raw.donations (donation_id, donor_id, hospital_id, recipient_id, col
 (40, 17, NULL, NULL, NULL, 4, NULL, '2024-02-08', 450, 'A+', '', NULL, NULL, '2024-03-13', NULL),
 (41, 18, 3, NULL, NULL, 5, NULL, '2024-02-16', 480, 'O-', '', NULL, NULL, '2024-03-13', NULL),
 (42, 19, 4, NULL, NULL, 5, NULL, '2024-02-19', 500, 'B+', '', NULL, NULL, '2024-03-13', NULL),
-(43, 20, 5, NULL, NULL, 5, NULL, '2024-02-23', 470, 'AB-', '', NULL, NULL, '2024-03-13', NULL);
+(43, 20, 5, NULL, NULL, 5, NULL, '2024-02-23', 470, 'AB-', '', NULL, NULL, '2024-03-13', NULL),
+
+-- Early 2023
+(44, 1, NULL, NULL, NULL, 3, NULL, '2023-01-01', 500, 'A+', 'complete', 'BAG2021', 4, '2023-07-01', 'whole_blood'),
+(45, 2, NULL, NULL, NULL, 3, NULL, '2023-01-10', 500, 'O-', 'complete', 'BAG2022', 4, '2023-07-10', 'whole_blood'),
+(46, 3, NULL, NULL, NULL, 3, NULL, '2023-02-01', 500, 'B+',  'complete', 'BAG2023', 4, '2023-08-01', 'whole_blood'),
+(47, 4, NULL, NULL, NULL, 3, NULL, '2023-02-15', 450, 'AB-',  'complete', 'BAG2024', 4, '2023-08-15', 'whole_blood'),
+
+-- Mid 2023
+(48, 5, NULL, NULL, NULL, 3, NULL, '2023-04-01', 520, 'A-',  'complete', 'BAG2025', 4, '2023-10-01', 'whole_blood'),
+(49, 6, NULL, NULL, NULL, 3, NULL, '2023-05-01', 400, 'B-',  'complete', 'BAG2026', 4, '2023-11-01', 'whole_blood'),
+(50, 7, NULL, NULL, NULL, 3, NULL, '2023-06-01', 530, 'O+',  'complete', 'BAG2027', 4, '2023-12-01', 'whole_blood'),
+
+-- Late 2023
+(51, 8, NULL, NULL, NULL, 3, NULL, '2023-07-01', 450, 'AB+',  'complete', 'BAG2028', 4, '2024-01-01', 'whole_blood'),
+(52, 9, NULL, NULL, NULL, 3, NULL, '2023-08-01', 430, 'A+', 'complete', 'BAG2029', 4, '2024-02-01', 'whole_blood'),
+(53, 10,NULL, NULL, NULL, 3, NULL, '2023-09-01', 510, 'B+',  'complete', 'BAG2030', 4, '2024-03-01', 'whole_blood'),
+(54, 11,NULL, NULL, NULL, 3, NULL, '2023-10-01', 500, 'O-',  'complete', 'BAG2031', 4, '2024-04-01', 'whole_blood'),
+(55, 12,NULL, NULL, NULL, 3, NULL, '2023-11-01', 520, 'A-',  'complete', 'BAG2032', 4, '2024-05-01', 'whole_blood');
