@@ -6,20 +6,7 @@
     )
 }}
 
-with calendar as (
-
-    select
-        date_id,
-        full_date
-    from {{ ref('dim_dates') }}
-
-    {% if is_incremental() %}
-         where full_date >= current_date - interval '7 days'
-    {% endif %}
-
-),
-
-inventory as (
+with inventory as (
 
     select
         inventory_id,
@@ -29,8 +16,13 @@ inventory as (
         date_received_id,
         expiration_date_id,
         status,
-        quality
+        quality,
+        stg_load_timestamp
     from {{ ref('fact_blood_inventory') }}
+
+    {% if is_incremental() %}
+    where stg_load_timestamp > (select max(stg_load_timestamp) from {{ this }})
+    {% endif %}
 
 ),
 
@@ -41,12 +33,13 @@ expanded as (
         c.full_date as snapshot_date,
         i.blood_group,
         i.units_available,
-        i.volume
-    from calendar c
-    join inventory i
+        i.volume,
+        i.stg_load_timestamp
+    from inventory i
+    join {{ ref('dim_dates') }} c
         on c.date_id >= i.date_received_id
        and c.date_id <= i.expiration_date_id
-       and i.status in ('stored','tested')
+       and i.status in ('stored', 'tested')
        and i.quality = 'Good'
 
 ),
@@ -58,17 +51,19 @@ aggregated as (
         snapshot_date,
         blood_group,
         sum(units_available) as total_units_available,
-        sum(volume) as total_volume_available
+        sum(volume) as total_volume_available,
+        max(stg_load_timestamp) as stg_load_timestamp
     from expanded
-    group by 1,2,3
+    group by 1, 2, 3
 
 )
 
 select
-    md5(concat(snapshot_date_id,'|',blood_group)) as snapshot_key,
+    md5(concat(snapshot_date_id, '|', blood_group)) as snapshot_key,
     snapshot_date_id,
     snapshot_date,
     blood_group,
     total_units_available,
-    total_volume_available
+    total_volume_available,
+    stg_load_timestamp
 from aggregated
