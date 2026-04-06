@@ -5,24 +5,6 @@ CREATE TABLE raw.donor_history (
   reaction     TEXT,  -- Type of reaction (none, mild, severe, etc.)
   notes        TEXT   -- Additional notes or details about the donor’s history
 );
-INSERT INTO raw.donor_history (history_id, donor_id, donation_id, reaction, notes) VALUES
-(1, 1, 1, 'none', 'No reaction, donor felt fine'),
-(2, 2, 2, 'mild', 'Mild dizziness after donation'),
-(3, 3, 3, 'none', 'Everything normal'),
-(4, 4, 4, 'none', 'No issues reported'),
-(5, 5, 5, 'severe', 'Severe nausea post-donation'),
-(6, 6, 6, 'mild', 'Mild fatigue after donating'),
-(7, 7, 7, 'none', 'Donor in good condition post-donation'),
-(8, 8, 8, 'none', 'No adverse reactions'),
-(9, 9, 9, 'mild', 'Slight dizziness, but recovered quickly'),
-(10, 10, 10, 'none', 'Donor felt normal throughout'),
-(11, 11, 11, 'none', 'No reactions post-donation'),
-(12, 12, 12, 'mild', 'Mild arm pain at donation site'),
-(13, 13, 13, 'none', 'Donor did well, no complaints'),
-(14, 14, 14, 'none', 'All went smoothly'),
-(15, 15, 15, 'severe', 'Fainted post-donation, medical attention required'),
-(16, 16, 16, 'mild', 'Feeling of light-headedness'),
-(17, 17, 17, 'none', 'No issues after donation'),
-(18, 18, 18, 'none', 'Donor felt fine after procedure'),
-(19, 19, 19, 'mild', 'Mild nausea, resolved after resting'),
-(20, 20, 20, 'none', 'No complications or reactions');
+
+-- copy command to load data into the donor_history table
+\copy raw.donor_history FROM 'C:\Users\Dhanalakshmi Karri\Downloads\donor_history.csv' WITH(FORMAT csv,HEADER,NULL '');
