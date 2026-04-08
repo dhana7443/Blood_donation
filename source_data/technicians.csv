@@ -1,0 +1,23 @@
+technician_id,hospital_id,assigned_hospital_id,name,qualification,phone_number,email_address
+3,,,Alex Tremblay,Certified Phlebotomist,514-111-2222,alext@example.com
+4,,,Jordan Beaupre,Medical Lab Technician,418-333-4444,jordanb@example.com
+5,,,Samira Patel,Certified Phlebotomist,514-000-0001,tech1@example.com
+6,,,Ethan Wong,Medical Lab Technician,514-000-0002,tech2@example.com
+7,,,Nadia Morales,Clinical Laboratory Technologist,514-000-0003,tech3@example.com
+8,,,Liam Nguyen,Biomedical Scientist,514-000-0004,tech4@example.com
+9,,,Ava Chen,Blood Bank Specialist,514-000-0005,tech5@example.com
+10,,,Mason Kim,Clinical Biochemist,514-000-0006,tech6@example.com
+11,,,Olivia Sanchez,Hematology Technician,514-000-0007,tech7@example.com
+12,,,Noah Schwartz,Immunology Technician,514-000-0008,tech8@example.com
+13,,,Isabella Rossi,Laboratory Supervisor,514-000-0009,tech9@example.com
+14,,,Jacob Cohen,Pathology Assistant,514-000-0010,tech10@example.com
+15,,,Sophia Kaur,Phlebotomy Technician,514-000-0011,tech11@example.com
+16,,,Lucas Garcia,Toxicology Technician,514-000-0012,tech12@example.com
+17,,,Emma Johnson,Clinical Research Technician,514-000-0013,tech13@example.com
+18,,,Logan Lee,Diagnostic Technician,514-000-0014,tech14@example.com
+19,,,Amelia Brown,Blood Transfusion Officer,514-000-0015,tech15@example.com
+20,,,Aiden Smith,Medical Laboratory Assistant,514-000-0016,tech16@example.com
+21,,,Mia Martinez,Quality Control Analyst,514-000-0017,tech17@example.com
+22,,,Benjamin Anderson,Serology Technician,514-000-0018,tech18@example.com
+23,,,Charlotte Davis,Tissue Typing Specialist,514-000-0019,tech19@example.com
+24,,,Jack Rodriguez,Clinical Trials Coordinator,514-000-0020,tech20@example.com

@@ -1,0 +1,12 @@
+donation_id,donor_id,hospital_id,recipient_id,collection_technician_id,processed_by_technician_id,test_result_id,date,quantity,blood_group,status,bag_serial_number,storage_temperature,expiration_date,donation_type
+1,1,, , ,3,,2020-10-15,500,A+,tested,BAG1001,4,2021-04-15,whole_blood
+2,2,, , ,3,,2021-01-20,450,O-,complete,BAG1002,4,2021-07-20,whole_blood
+3,3,, , ,3,,2021-02-18,600,B+,complete,BAG1003,4,2021-08-18,plasma
+4,4,, , ,3,,2020-12-05,470,AB-,discarded,BAG1004,4,2021-06-05,platelets
+5,5,, , ,5,,2021-03-10,510,A-,complete,BAG1005,4,2021-09-10,whole_blood
+
+56,6,, , ,4,,2024-03-01,480,B-,complete,BAG3001,4,2024-09-01,whole_blood
+57,7,3,, ,4,,2024-03-02,500,O+,tested,BAG3002,4,2024-09-02,plasma
+58,8,4,, ,4,,2024-03-03,470,AB+,stored,BAG3003,4,2024-09-03,platelets
+59,9,, , ,4,,2024-03-04,520,A+,complete,BAG3004,4,2024-09-04,whole_blood
+60,10,5,, ,5,,2024-03-05,450,O-,tested,BAG3005,4,2024-09-05,plasma
