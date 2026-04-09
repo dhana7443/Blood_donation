@@ -20,16 +20,19 @@ with src as (
     from {{ ref("stg_blood_tests") }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (select max(stg_load_timestamp) from {{ this }})
+    where stg_load_timestamp > (
+        select coalesce(max(stg_load_timestamp), '1900-01-01')
+        from {{ this }}
+    )
     {% endif %}
 
 ),
 
-dims as (
+final as (
 
     select
         s.test_id,
-        ddonor.donor_sk,
+        s.donor_id,
         ddate.date_id as test_date_id,
         s.disease_tested,
         s.result,
@@ -41,20 +44,6 @@ dims as (
     left join {{ ref("dim_dates") }} ddate
         on s.test_date = ddate.full_date
 
-    left join {{ ref("dim_donors") }} ddonor
-        on s.donor_id = ddonor.donor_id
-        and (
-            (
-                s.test_date >= ddonor.dbt_valid_from
-                and s.test_date < coalesce(ddonor.dbt_valid_to, '9999-12-31')
-            )
-            or
-            (
-                s.test_date is null
-                and ddonor.dbt_valid_to is null
-            )
-        )
-
 )
 
-select * from dims
+select * from final

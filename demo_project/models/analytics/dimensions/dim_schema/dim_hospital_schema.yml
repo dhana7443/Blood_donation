@@ -4,12 +4,6 @@ models:
   - name: dim_hospitals
     description: "Hospital dimension table containing descriptive attributes about hospitals."
     columns:
-      - name: hospital_sk
-        description: "Surrogate primary key for the hospital dimension. Uniquely identifies each version of a hospital record."
-        data_type: varchar
-        tests:
-          - not_null
-          - unique
 
       - name: hospital_id
         description: "Primary key for the hospital dimension. Uniquely identifies each hospital."
@@ -40,15 +34,6 @@ models:
         description: "Accreditation or certification status of the hospital."
         data_type: varchar
         
-      - name: dbt_valid_from
-        description: "Timestamp indicating when this version of the hospital record became valid."
-        data_type: timestamp
-        tests:
-          - not_null
-
-      - name: dbt_valid_to
-        description: "Timestamp indicating when this version of the hospital record stopped being valid. NULL means current."
-        data_type: timestamp
 
       - name: is_current
         description: "Flag indicating whether this is the current active version of the hospital record."

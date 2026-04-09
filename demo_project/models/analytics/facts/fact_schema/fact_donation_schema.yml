@@ -16,32 +16,32 @@ models:
           - not_null
           - unique
 
-      - name: donor_sk
+      - name: donor_id
         description: "Foreign key to dim_donors (surrogate key) representing the donor version at the time of donation."
         data_type: varchar
         tests:
           - relationships:
               arguments:
                 to: ref('dim_donors')
-                field: donor_sk
+                field: donor_id
 
-      - name: hospital_sk
+      - name: hospital_id
         description: "Foreign key to dim_hospitals (surrogate key) representing the hospital version at the time of donation."
         data_type: varchar
         tests:
           - relationships:
               arguments:
                 to: ref('dim_hospitals')
-                field: hospital_sk
+                field: hospital_id
 
-      - name: recipient_sk
+      - name: recipient_id
         description: "Foreign key to dim_recipients (surrogate key) representing the recipient version at the time of donation."
         data_type: varchar
         tests:
           - relationships:
               arguments:
                 to: ref('dim_recipients')
-                field: recipient_sk
+                field: recipient_id
 
       - name: donation_date_id
         description: "Foreign key to dim_date representing the date of donation."

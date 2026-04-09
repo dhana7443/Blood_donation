@@ -4,12 +4,6 @@ models:
   - name: dim_donors
     description: "Donor dimension table containing descriptive attributes about blood donors."
     columns:
-      - name: donor_sk
-        description: "Surrogate primary key for the donor dimension. Uniquely identifies each version of a donor record."
-        data_type: varchar
-        tests:
-          - not_null
-          - unique
 
       - name: donor_id
         description: "Primary key for the donor dimension.Uniquely identifies each donor."
@@ -48,16 +42,6 @@ models:
       - name: location
         description: "Current location or city of the donor."
         data_type: varchar
-        
-      - name: dbt_valid_from
-        description: "Timestamp indicating when this version of the donor record became valid."
-        data_type: timestamp
-        tests:
-          - not_null
-
-      - name: dbt_valid_to
-        description: "Timestamp indicating when this version of the donor record stopped being valid. NULL means current."
-        data_type: timestamp
 
       - name: is_current
         description: "Flag indicating whether this is the current active version of the donor record."

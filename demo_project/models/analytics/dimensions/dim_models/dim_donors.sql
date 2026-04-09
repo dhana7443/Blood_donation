@@ -10,7 +10,7 @@ with src as (
         donor_id,
         name,
         gender,
-        blood_group,
+        blood_group as donor_blood_group,
         is_eligible,
         location
 

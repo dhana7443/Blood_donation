@@ -14,7 +14,6 @@ with src as (
         hospital_id,
         recipient_id,
         donation_date,
-        blood_group,
         status,
         donation_type,
         quantity,
@@ -23,7 +22,7 @@ with src as (
     from {{ ref('stg_blood_donations') }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (select max(stg_load_timestamp) from {{ this }})
+    where stg_load_timestamp > (select coalesce(max(stg_load_timestamp), '1900-01-01') from {{ this }})
     {% endif %}
 
 ),
@@ -32,12 +31,12 @@ with_dims as (
 
     select
         s.donation_id,
-        ddonor.donor_sk,
-        dh.hospital_sk,
-        dr.recipient_sk,
+        s.donor_id,
+        s.hospital_id,
+        s.recipient_id,
         ddate.date_id as donation_date_id,
         s.status,
-        s.blood_group,
+        ddonor.donor_blood_group,
         s.donation_type,
         s.quantity,
         s.stg_load_timestamp
@@ -49,29 +48,18 @@ with_dims as (
 
     left join {{ ref("dim_donors") }} ddonor
       on s.donor_id = ddonor.donor_id
-     and s.donation_date >= ddonor.dbt_valid_from
-     and s.donation_date < coalesce(ddonor.dbt_valid_to, '9999-12-31')
 
-    left join {{ ref("dim_hospitals") }} dh
-      on s.hospital_id = dh.hospital_id
-     and s.donation_date >= dh.dbt_valid_from
-     and s.donation_date < coalesce(dh.dbt_valid_to, '9999-12-31')
-
-    left join {{ ref("dim_recipients") }} dr
-      on s.recipient_id = dr.recipient_id
-     and s.donation_date >= dr.dbt_valid_from
-     and s.donation_date < coalesce(dr.dbt_valid_to, '9999-12-31')
 
 )
 
 select
     donation_id,
-    donor_sk,
-    hospital_sk,
-    recipient_sk,
+    donor_id,
+    hospital_id,
+    recipient_id,
     donation_date_id,
     status,
-    blood_group,
+    donor_blood_group,
     donation_type,
     quantity,
     stg_load_timestamp

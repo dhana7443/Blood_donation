@@ -12,7 +12,7 @@ models:
           - not_null
           - unique
 
-      - name: donor_sk
+      - name: donor_id
         description: "Foreign key to dim_donors (surrogate key) identifying the donor version at the time of the test."
         data_type: varchar
         tests:
@@ -20,7 +20,7 @@ models:
           - relationships:
               arguments:
                 to: ref('dim_donors')
-                field: donor_sk
+                field: donor_id
 
       - name: test_date_id
         description: "Foreign key to dim_dates representing the date the test was performed."
