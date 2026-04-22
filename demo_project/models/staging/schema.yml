@@ -420,11 +420,7 @@ models:
         description: "Unique identifier for each recipient."
         tests:
           - not_null
-          - unique
-
-      - name: hospital_id
-        description: "Identifier of the hospital where the recipient is registered."
-        
+          - unique        
 
       - name: name
         description: "Full name of the recipient (standardized using INITCAP)."
@@ -446,17 +442,6 @@ models:
               arguments:
                 values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
 
-      - name: required_date
-        description: "Date when the blood is required."
-
-      - name: urgency
-        description: "Urgency level of the blood request (stored in lowercase)."
-        tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ['low', 'medium', 'high']
-
       - name: location
         description: "Location of the recipient."
 
@@ -475,6 +460,52 @@ models:
 
       - name: description
         description: "Description of the task."
+
+  - name: stg_requests
+    description: "Staging model for blood request records sourced from raw.requests."
+
+    columns:
+
+      - name: request_id
+        description: "Unique identifier for each blood request."
+        tests:
+          - not_null
+          - unique
+
+      - name: recipient_id
+        description: "Identifier of the recipient associated with the request."
+        
+
+      - name: hospital_id
+        description: "Identifier of the hospital where the request was made."
+
+      - name: recipient_blood_group
+        description: "Blood group required by the recipient (standardized to uppercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+
+      - name: required_date
+        description: "Date when the blood is required."
+
+      - name: urgency
+        description: "Urgency level of the blood request (stored in lowercase)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['low', 'medium', 'high']
+
+      - name: units_required
+        description: "Number of units required for the blood request."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+
 
   - name: stg_technician_tasks
     description: "Staging model for technician-task mapping sourced from raw.technician_tasks.

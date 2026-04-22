@@ -10,7 +10,7 @@ $env:PGPASSWORD = $plainPass
 # =========================
 # Config
 # =========================
-$folder = "C:\Users\Dhanalakshmi Karri\Documents\DE_project\Blood_donation\source_data"
+$folder = "C:\Users\Dhanalakshmi Karri\Documents\DE_project\Blood_donation\updated_scripts_for_source_data"
 $db = "de_db"
 $user = "postgres"
 

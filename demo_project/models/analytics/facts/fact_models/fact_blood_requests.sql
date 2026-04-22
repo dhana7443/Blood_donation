@@ -9,28 +9,22 @@
 with snap as (
 
     select
+        request_id,
         recipient_id,
         hospital_id,
         required_date,
         urgency,
-        dbt_valid_from,
-        dbt_valid_to
+        request_status,
+        stg_load_timestamp
         
-    from {{ ref("recipient_requests_snapshot") }}
+        
+    from {{ ref("stg_requests") }}
 
     {% if is_incremental() %}
-    where
-        dbt_valid_from >
-        (
-            select coalesce(max(dbt_valid_from),'1900-01-01')
-            from {{ this }}
-        )
-        or
-        coalesce(dbt_valid_to,'1900-01-01') > 
-        (
-            select coalesce(max(dbt_valid_to),'1900-01-01')
-            from {{ this }}
-        )
+    where stg_load_timestamp > (
+        select coalesce(max(stg_load_timestamp), '1900-01-01')
+        from {{ this }}
+    )
     {% endif %}
 ),
 
@@ -38,24 +32,17 @@ final as (
 
     select
 
-        {{ dbt_utils.generate_surrogate_key([
-            's.recipient_id',
-            'dbt_valid_from'
-        ]) }} as request_id,
-
-        s.recipient_id,
+        s.request_id,
+        dr.recipient_id,
         s.hospital_id,
-        dr.recipient_blood_group,
         dd.date_id as required_date_id,
         s.urgency,
-        s.dbt_valid_from,
-        s.dbt_valid_to,
-
-        case
-            when s.dbt_valid_to is not null then 'closed'
-            when s.required_date < current_date then 'expired'
-            else 'active'
-        end as request_status
+        CASE
+            WHEN request_id is not null THEN 1
+            ELSE 0
+        END AS units_required,
+        s.request_status,
+        s.stg_load_timestamp
 
     from snap s
 
