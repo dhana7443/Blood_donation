@@ -1,0 +1,501 @@
+hospital_id,name,street_address,city,province,postal_code,country,phone_number,email_address,hospital_type,operating_hours,accreditation_status,emergency_contact
+1,Rodriguez and Sons Hospital,944 Villegas Prairie Suite 783,Kirkland,Quebec,B4M 4U4,Canada,438-544-6196,rodriguezandsons@clinic.ca,General,10 AM - 8 PM,Accredited,418-698-6144
+2,Soto-Conley Hospital,826 Michele Streets,Montreal,Quebec,O3S 5B3,Canada,418-194-0184,sotoconley@healthcare.com,Specialized,8 AM - 6 PM,Accredited,514-729-4253
+3,Alvarado Group Hospital,86610 Wilson Lakes,Montreal,Quebec,P9K 6K1,Canada,450-285-9862,alvaradogroup@healthcare.com,Specialized,24/7,Accredited,514-239-1745
+4,Sullivan-Price Hospital,4638 Alexander Junction,Repentigny,Quebec,N7O 3P8,Canada,514-069-7815,sullivanprice@hospital.ca,Specialized,9 AM - 5 PM,Accredited,418-699-5274
+5,"Hall, Wilson and Villarreal Hospital",6614 Walker Heights Apt. 252,Pointe-Claire,Quebec,O3J 3A4,Canada,514-505-4766,hallwilsonandvillarreal@healthcare.com,General,8 AM - 6 PM,Pending,514-199-5572
+6,Wyatt Group Hospital,566 Stone Meadow Suite 527,Quebec City,Quebec,J0C 8H1,Canada,514-644-6100,wyattgroup@hospital.ca,Specialized,9 AM - 5 PM,Certified,418-901-4809
+7,Mcdowell PLC Hospital,678 Jones Divide,Kirkland,Quebec,Q4C 0O7,Canada,450-145-8111,mcdowellplc@healthcare.com,Specialized,24/7,Accredited,514-700-3813
+8,"Griffin, Davis and Flores Hospital",75577 Claudia Circle,Quebec City,Quebec,C2T 9R0,Canada,418-087-8732,griffindavisandflores@hospital.ca,General,9 AM - 5 PM,Accredited,
+9,"Chang, Obrien and Watson Hospital",63121 Martinez Shoals,Beaconsfield,Quebec,S1O 8U8,Canada,418-249-4311,changobrienandwatson@medcenter.ca,Specialized,10 AM - 8 PM,Certified,
+10,Bird and Sons Hospital,777 Traci Inlet,Brossard,Quebec,K2F 4N8,Canada,438-916-8154,birdandsons@hospital.ca,General,24/7,Pending,450-153-8676
+11,Ortiz Group Hospital,777 Salazar Burgs,Mascouche,Quebec,L6J 9M6,Canada,418-038-9620,ortizgroup@healthcare.com,Clinic,8 AM - 6 PM,Pending,450-154-6178
+12,"Hill, Solis and Schroeder Hospital",7341 Williams Fort,Laval,Quebec,E0F 5I4,Canada,450-208-0527,hillsolisandschroeder@medcenter.ca,Clinic,10 AM - 8 PM,Certified,
+13,Parrish Group Hospital,6719 Christopher Lodge Apt. 454,Quebec City,Quebec,X0Z 9T4,Canada,514-587-5826,parrishgroup@hospital.ca,General,7 AM - 7 PM,Certified,514-686-2400
+14,Leonard-Harrison Hospital,296 Bullock Ferry Suite 198,Montreal,Quebec,C0N 6B5,Canada,450-495-7171,leonardharrison@hospital.ca,Clinic,9 AM - 5 PM,Pending,450-210-2746
+15,Davis-Wells Hospital,7911 Mindy Green,Laval,Quebec,V4U 0B3,Canada,450-854-2665,daviswells@healthcare.com,Specialized,8 AM - 6 PM,Certified,514-871-8517
+16,Escobar-Thomas Hospital,8211 Keith Fork Suite 079,Kirkland,Quebec,O5O 4K0,Canada,438-709-5379,escobarthomas@clinic.ca,Specialized,10 AM - 8 PM,Certified,418-741-9410
+17,Decker LLC Hospital,04438 Shepherd Expressway,Quebec City,Quebec,A0L 3T6,Canada,450-744-6433,deckerllc@medcenter.ca,Specialized,8 AM - 6 PM,Certified,438-880-3821
+18,Martinez Inc Hospital,62330 Jack Corners Apt. 140,Gatineau,Quebec,F7Q 3C3,Canada,418-669-5110,martinezinc@clinic.ca,General,10 AM - 8 PM,Accredited,514-060-6836
+19,Jones-Johnson Hospital,6462 Turner Shoal Apt. 541,Granby,Quebec,E5M 8J7,Canada,438-597-7869,jonesjohnson@clinic.ca,Specialized,7 AM - 7 PM,Accredited,418-284-4033
+20,Logan-Brennan Hospital,08620 Kevin Ranch,Gatineau,Quebec,W4T 2Q8,Canada,514-119-2165,loganbrennan@hospital.ca,Clinic,10 AM - 8 PM,Certified,450-483-7361
+21,Knapp-Bowen Hospital,305 Adam Ferry,Montreal,Quebec,W0Z 5Q6,Canada,514-602-8478,knappbowen@clinic.ca,Clinic,9 AM - 5 PM,Pending,
+22,Perez-Casey Hospital,22942 Love Trail,Montreal,Quebec,L1F 4J0,Canada,418-824-5550,perezcasey@hospital.ca,Specialized,9 AM - 5 PM,Accredited,438-812-9854
+23,Mcdonald-Horton Hospital,738 Alexander Mews,Blainville,Quebec,O4P 0K7,Canada,450-992-8610,mcdonaldhorton@healthcare.com,General,8 AM - 6 PM,Certified,514-444-3081
+24,Jackson Inc Hospital,06766 Bryan Estate Suite 932,Pointe-Claire,Quebec,C8E 9G3,Canada,418-006-6102,jacksoninc@hospital.ca,General,24/7,Accredited,
+25,Hamilton Ltd Hospital,9462 Johnson Ford Apt. 876,Gatineau,Quebec,L9L 3F4,Canada,514-297-1874,hamiltonltd@clinic.ca,Clinic,8 AM - 6 PM,Accredited,450-939-3315
+26,"Washington, Lamb and Yates Hospital",643 Walker Rapids,Drummondville,Quebec,P4W 6I6,Canada,514-970-8398,washingtonlambandyates@hospital.ca,General,9 AM - 5 PM,Certified,
+27,"Watts, Duffy and Davis Hospital",412 Alexander Court Apt. 092,Pointe-Claire,Quebec,E2O 9C3,Canada,450-038-2540,wattsduffyanddavis@healthcare.com,General,24/7,Accredited,418-386-8506
+28,"Thornton, Barker and Gonzalez Hospital",82885 Hickman Row Suite 411,Brossard,Quebec,D6S 0N6,Canada,514-727-3753,thorntonbarkerandgonzalez@medcenter.ca,Specialized,9 AM - 5 PM,Accredited,418-988-6219
+29,Sweeney-Hardin Hospital,2369 Luna Pass Apt. 322,Granby,Quebec,I0E 1G4,Canada,418-655-3468,sweeneyhardin@medcenter.ca,Specialized,7 AM - 7 PM,Accredited,514-736-7356
+30,Thomas Group Hospital,36308 Thomas Canyon Suite 852,Repentigny,Quebec,I3B 0M0,Canada,438-702-7326,thomasgroup@clinic.ca,Clinic,7 AM - 7 PM,Pending,514-141-2067
+31,Perez PLC Hospital,450 West Estates,Dollard-Des Ormeaux,Quebec,L1O 9F8,Canada,514-922-1255,perezplc@medcenter.ca,General,10 AM - 8 PM,Accredited,450-875-8779
+32,"Roth, Cox and Williams Hospital",044 Kathryn Lodge Suite 098,Drummondville,Quebec,U0N 3C4,Canada,450-916-8196,rothcoxandwilliams@healthcare.com,Specialized,9 AM - 5 PM,Certified,450-619-9102
+33,"Becker, Reilly and Cox Hospital",0195 Aguilar Flats,Mascouche,Quebec,S0H 7E3,Canada,418-652-9725,beckerreillyandcox@hospital.ca,Specialized,24/7,Pending,
+34,Miller-Patel Hospital,4073 Carr Parks Suite 169,Repentigny,Quebec,D7S 8L0,Canada,450-754-9669,millerpatel@healthcare.com,Clinic,24/7,Certified,
+35,Weaver Inc Hospital,656 Garrison Causeway Apt. 369,Kirkland,Quebec,U0Y 1M4,Canada,514-168-0473,weaverinc@clinic.ca,General,10 AM - 8 PM,Accredited,450-431-5510
+36,Sanchez LLC Hospital,6822 Banks Lights Suite 620,Trois-Rivières,Quebec,P5L 1Q3,Canada,438-496-1974,sanchezllc@healthcare.com,Clinic,24/7,Certified,438-688-1171
+37,Wu-Garcia Hospital,9230 Travis Village Apt. 065,Laval,Quebec,Z0B 7J9,Canada,418-947-3446,wugarcia@clinic.ca,Specialized,7 AM - 7 PM,Accredited,418-905-6202
+38,Munoz-Guerra Hospital,980 Susan Course,Dorval,Quebec,X6V 7O4,Canada,418-055-7038,munozguerra@healthcare.com,General,8 AM - 6 PM,Pending,418-170-5402
+39,Sullivan-Vaughn Hospital,322 Williams Trail,Kirkland,Quebec,A4F 2C4,Canada,514-572-1971,sullivanvaughn@medcenter.ca,General,9 AM - 5 PM,Certified,
+40,Lane-Rodriguez Hospital,287 Mark Mill,Dorval,Quebec,N2R 0N0,Canada,418-431-0845,lanerodriguez@hospital.ca,Clinic,10 AM - 8 PM,Certified,
+41,Jones Inc Hospital,17438 Brian Overpass,Longueuil,Quebec,V2J 8J0,Canada,514-516-7119,jonesinc@hospital.ca,Specialized,8 AM - 6 PM,Certified,450-149-6500
+42,Brown Ltd Hospital,480 Jennifer Ridges Apt. 070,Gatineau,Quebec,W8N 3E9,Canada,514-742-0741,brownltd@healthcare.com,General,10 AM - 8 PM,Pending,514-136-5507
+43,"Henry, Ferguson and Maddox Hospital",085 Hansen Landing Apt. 602,Beaconsfield,Quebec,K3C 6J9,Canada,438-314-1560,henryfergusonandmaddox@medcenter.ca,Clinic,10 AM - 8 PM,Pending,450-017-8633
+44,Garcia-Wood Hospital,48605 Priscilla Roads,Pointe-Claire,Quebec,J5W 4D2,Canada,514-492-4788,garciawood@clinic.ca,Clinic,8 AM - 6 PM,Accredited,418-010-3015
+45,Jensen Group Hospital,8784 Elizabeth Hill,Montreal,Quebec,L4W 9I3,Canada,418-863-2330,jensengroup@clinic.ca,Clinic,7 AM - 7 PM,Certified,450-862-0871
+46,"Coleman, Gaines and Kidd Hospital",03036 Scott Canyon,Mascouche,Quebec,S9T 7S5,Canada,438-962-4723,colemangainesandkidd@medcenter.ca,General,10 AM - 8 PM,Pending,438-800-1372
+47,Pham Group Hospital,68222 Luke Streets Apt. 829,Repentigny,Quebec,T1B 0Q3,Canada,438-514-3427,phamgroup@clinic.ca,Clinic,8 AM - 6 PM,Pending,
+48,Hutchinson-Williams Hospital,6237 Ford Crossing Apt. 758,Trois-Rivières,Quebec,D7H 5G2,Canada,438-887-3803,hutchinsonwilliams@hospital.ca,Specialized,9 AM - 5 PM,Pending,514-722-8120
+49,"Hodge, Prince and Turner Hospital",69220 Omar Courts Suite 312,Montreal,Quebec,R3N 8S0,Canada,514-224-1094,hodgeprinceandturner@medcenter.ca,General,10 AM - 8 PM,Certified,
+50,Gonzalez PLC Hospital,84149 Collins Islands,Quebec City,Quebec,V3C 2Q8,Canada,450-734-4568,gonzalezplc@clinic.ca,Clinic,9 AM - 5 PM,Pending,514-512-3672
+51,Smith-Morales Hospital,9210 Williams Ports,Montreal,Quebec,R0K 7Y2,Canada,450-479-1334,smithmorales@medcenter.ca,Clinic,7 AM - 7 PM,Pending,418-686-3501
+52,"Mclaughlin, Phillips and Bender Hospital",90284 Jones Gateway Apt. 566,Kirkland,Quebec,B7T 2C8,Canada,450-742-9042,mclaughlinphillipsandbender@medcenter.ca,General,7 AM - 7 PM,Accredited,418-119-4916
+53,Chen Group Hospital,6854 Mary Glen,Longueuil,Quebec,D5Z 1L2,Canada,450-636-0279,chengroup@healthcare.com,Specialized,24/7,Accredited,
+54,"Morris, Stewart and Ellis Hospital",151 Clark Extension Suite 856,Dollard-Des Ormeaux,Quebec,R8L 9F3,Canada,438-312-3723,morrisstewartandellis@hospital.ca,Clinic,7 AM - 7 PM,Certified,450-357-2617
+55,"Young, Meyer and Kaufman Hospital",0084 Davidson Terrace Apt. 709,Drummondville,Quebec,K4P 9E9,Canada,514-957-3208,youngmeyerandkaufman@healthcare.com,Clinic,9 AM - 5 PM,Accredited,514-036-8436
+56,"Mckay, Miller and Austin Hospital",315 Pamela Branch Suite 269,Montreal,Quebec,B8K 9F8,Canada,450-455-7423,mckaymillerandaustin@healthcare.com,Specialized,9 AM - 5 PM,Accredited,438-081-7661
+57,"Reyes, Davis and Williams Hospital",175 Payne Vista Apt. 073,Granby,Quebec,M4F 5N0,Canada,514-400-8329,reyesdavisandwilliams@medcenter.ca,Clinic,9 AM - 5 PM,Pending,514-893-6840
+58,Rodriguez-Moses Hospital,207 Atkins Summit Apt. 168,Granby,Quebec,V2R 0B0,Canada,450-620-7833,rodriguezmoses@clinic.ca,Specialized,7 AM - 7 PM,Certified,450-100-9578
+59,Green Ltd Hospital,5185 Anne Junction,Drummondville,Quebec,Z1Q 4K3,Canada,418-717-8078,greenltd@healthcare.com,Clinic,9 AM - 5 PM,Certified,514-807-9461
+60,Fernandez Ltd Hospital,22893 Gonzalez Light,Quebec City,Quebec,C8W 5N1,Canada,450-769-4234,fernandezltd@healthcare.com,Specialized,7 AM - 7 PM,Accredited,438-325-4690
+61,"Shelton, Mcclain and Moran Hospital",5406 Samantha Pine,Pointe-Claire,Quebec,X4D 1O2,Canada,418-974-8691,sheltonmcclainandmoran@healthcare.com,Specialized,8 AM - 6 PM,Certified,450-459-0333
+62,Aguilar-Arnold Hospital,7442 Stephen Dale Suite 686,Longueuil,Quebec,Y0D 3Z4,Canada,438-925-9807,aguilararnold@clinic.ca,Specialized,7 AM - 7 PM,Accredited,438-799-3620
+63,Flores-Davis Hospital,357 Steven Divide Suite 246,Kirkland,Quebec,P6Q 0K9,Canada,438-786-5566,floresdavis@hospital.ca,Specialized,10 AM - 8 PM,Accredited,
+64,"Neal, Martin and Williams Hospital",306 Lloyd Manors,Drummondville,Quebec,Z1G 1P3,Canada,450-832-5938,nealmartinandwilliams@hospital.ca,General,7 AM - 7 PM,Certified,514-398-3234
+65,Roy-Woods Hospital,19326 Nathan Mission,Quebec City,Quebec,B8Y 9R4,Canada,514-689-9395,roywoods@clinic.ca,Specialized,7 AM - 7 PM,Certified,438-621-4281
+66,Ortiz-Smith Hospital,6568 John Plains,Blainville,Quebec,H2Z 9A1,Canada,514-970-1279,ortizsmith@healthcare.com,Specialized,10 AM - 8 PM,Pending,418-058-2567
+67,Brown PLC Hospital,7701 Ingram Harbor Apt. 471,Laval,Quebec,T4D 4Z7,Canada,514-180-2380,brownplc@healthcare.com,General,24/7,Pending,514-113-6205
+68,Johnson-Douglas Hospital,647 Carla Lock,Gatineau,Quebec,F5M 1O2,Canada,418-878-2213,johnsondouglas@hospital.ca,General,24/7,Accredited,514-194-5739
+69,Valencia Inc Hospital,07756 Kelly Valley,Kirkland,Quebec,J5W 0C7,Canada,438-456-8043,valenciainc@clinic.ca,Clinic,24/7,Accredited,514-956-6590
+70,Gibson and Sons Hospital,9899 Cox Run,Beaconsfield,Quebec,H8P 5T1,Canada,438-178-8107,gibsonandsons@clinic.ca,Clinic,10 AM - 8 PM,Pending,450-196-1530
+71,Sellers PLC Hospital,0284 Walker Center Suite 437,Dollard-Des Ormeaux,Quebec,B8J 7D8,Canada,450-404-3665,sellersplc@clinic.ca,Specialized,24/7,Pending,450-127-8236
+72,Quinn and Sons Hospital,33072 Don Heights,Beaconsfield,Quebec,J1Y 3T5,Canada,450-209-9107,quinnandsons@hospital.ca,Clinic,10 AM - 8 PM,Pending,
+73,Gallagher LLC Hospital,2882 Obrien Union Suite 200,Drummondville,Quebec,X3Y 3Y6,Canada,438-730-3672,gallagherllc@hospital.ca,General,10 AM - 8 PM,Pending,
+74,"Rojas, Hicks and Johnson Hospital",5286 Villarreal Loaf,Repentigny,Quebec,G0A 9T0,Canada,450-741-1518,rojashicksandjohnson@clinic.ca,General,8 AM - 6 PM,Certified,418-415-9680
+75,"Mclean, Parsons and Andersen Hospital",02336 Jeffrey Lodge Suite 347,Trois-Rivières,Quebec,H1E 0K2,Canada,450-957-1488,mcleanparsonsandandersen@healthcare.com,General,9 AM - 5 PM,Accredited,
+76,Armstrong Inc Hospital,632 Paul Extensions Apt. 863,Pointe-Claire,Quebec,G3F 5F9,Canada,514-522-7127,armstronginc@clinic.ca,Clinic,10 AM - 8 PM,Pending,
+77,Martin-Newman Hospital,2079 Gordon Summit Apt. 747,Dorval,Quebec,K6Y 9I2,Canada,450-257-8312,martinnewman@medcenter.ca,Clinic,24/7,Pending,450-479-2486
+78,"Tucker, Jimenez and Chavez Hospital",47018 Stephen Crossing,Granby,Quebec,B7T 9Z5,Canada,438-259-1901,tuckerjimenezandchavez@healthcare.com,Specialized,24/7,Accredited,514-720-9766
+79,Gallegos Ltd Hospital,945 Cory Park,Brossard,Quebec,D9J 1I9,Canada,450-558-9085,gallegosltd@medcenter.ca,Specialized,7 AM - 7 PM,Accredited,418-669-3527
+80,Myers-Jones Hospital,33960 Scott Track,Pointe-Claire,Quebec,Y7X 1Z7,Canada,438-872-8136,myersjones@clinic.ca,Clinic,24/7,Accredited,438-697-6878
+81,"Love, Hancock and Simpson Hospital",985 Nicole Ranch Apt. 064,Quebec City,Quebec,N3C 7K0,Canada,514-533-6533,lovehancockandsimpson@healthcare.com,Clinic,7 AM - 7 PM,Pending,418-036-3515
+82,"Mann, Fuller and Tapia Hospital",502 Griffith Crescent Apt. 068,Trois-Rivières,Quebec,S9N 4C4,Canada,514-931-9076,mannfullerandtapia@healthcare.com,General,24/7,Accredited,514-862-7381
+83,"Petersen, Khan and Cooley Hospital",25791 Lee Causeway,Blainville,Quebec,W8K 2O6,Canada,514-142-2293,petersenkhanandcooley@healthcare.com,General,10 AM - 8 PM,Certified,418-670-1841
+84,Miller-Lewis Hospital,76647 David Points,Pointe-Claire,Quebec,Y3Z 6F5,Canada,450-170-7149,millerlewis@healthcare.com,General,9 AM - 5 PM,Certified,438-865-9408
+85,"Foster, Fowler and Cantu Hospital",31299 Curtis Glen,Dollard-Des Ormeaux,Quebec,L6A 5N1,Canada,450-589-7820,fosterfowlerandcantu@hospital.ca,Specialized,24/7,Certified,
+86,"Brooks, Williams and Huerta Hospital",038 Mcdowell Mews Apt. 147,Longueuil,Quebec,C5D 0B3,Canada,450-009-7966,brookswilliamsandhuerta@healthcare.com,Specialized,9 AM - 5 PM,Certified,450-678-0595
+87,"Jones, Warren and Campbell Hospital",5764 Chambers Route Suite 296,Gatineau,Quebec,G5X 7I4,Canada,418-118-1501,joneswarrenandcampbell@medcenter.ca,Specialized,8 AM - 6 PM,Accredited,438-830-1879
+88,Smith-Huffman Hospital,24008 Myers Fords,Laval,Quebec,O7H 4F1,Canada,438-921-1690,smithhuffman@healthcare.com,Clinic,24/7,Accredited,438-751-4655
+89,Davis Inc Hospital,14155 Mora Manors,Laval,Quebec,B4U 9Q9,Canada,418-935-7288,davisinc@hospital.ca,Specialized,10 AM - 8 PM,Pending,450-801-2942
+90,Galvan-Yates Hospital,7530 Michael Mountains,Drummondville,Quebec,J9Y 2D0,Canada,450-524-1648,galvanyates@medcenter.ca,General,24/7,Certified,418-430-1537
+91,"Olson, Freeman and Meyer Hospital",3425 Reynolds Freeway Apt. 835,Laval,Quebec,K3W 4I5,Canada,418-068-4304,olsonfreemanandmeyer@hospital.ca,Clinic,8 AM - 6 PM,Certified,450-990-7819
+92,"Garza, Gutierrez and Lewis Hospital",86655 Anthony Crossroad Apt. 820,Repentigny,Quebec,B9K 5P8,Canada,514-146-6464,garzagutierrezandlewis@healthcare.com,Clinic,9 AM - 5 PM,Accredited,450-936-9897
+93,Martinez LLC Hospital,21015 Johnson Loop,Quebec City,Quebec,Y5D 2O5,Canada,418-589-8299,martinezllc@healthcare.com,Specialized,7 AM - 7 PM,Pending,
+94,Rodriguez-Stone Hospital,6264 Cody Roads Suite 017,Drummondville,Quebec,K2Z 8H7,Canada,438-238-3109,rodriguezstone@healthcare.com,General,9 AM - 5 PM,Pending,438-789-9236
+95,Hood LLC Hospital,612 Melanie Ramp Apt. 753,Dollard-Des Ormeaux,Quebec,M1P 4S7,Canada,514-983-7324,hoodllc@clinic.ca,Clinic,24/7,Pending,418-739-7692
+96,"Coleman, Parks and Mitchell Hospital",1771 Luke Tunnel Suite 982,Laval,Quebec,K3G 9I8,Canada,438-845-0048,colemanparksandmitchell@hospital.ca,Clinic,10 AM - 8 PM,Accredited,514-823-7109
+97,"Murray, Martinez and Henry Hospital",6573 Molly Villages Apt. 886,Beaconsfield,Quebec,U5I 0A6,Canada,418-449-4426,murraymartinezandhenry@hospital.ca,Specialized,7 AM - 7 PM,Certified,450-864-2391
+98,Jackson-Lyons Hospital,292 John Keys,Montreal,Quebec,K1Q 3G8,Canada,450-419-3343,jacksonlyons@healthcare.com,Specialized,7 AM - 7 PM,Accredited,418-454-1820
+99,Gross-Kim Hospital,326 Doris Pines,Dorval,Quebec,I1C 9L5,Canada,438-706-7687,grosskim@medcenter.ca,Specialized,8 AM - 6 PM,Pending,450-168-9517
+100,Parsons-Kelley Hospital,6022 Natalie Brook,Kirkland,Quebec,N1Y 5J6,Canada,438-731-9688,parsonskelley@healthcare.com,General,8 AM - 6 PM,Pending,514-602-5735
+101,"Cruz, Rogers and Miller Hospital",5740 Miranda Curve Suite 320,Laval,Quebec,U5A 3V9,Canada,418-679-8060,cruzrogersandmiller@hospital.ca,Specialized,8 AM - 6 PM,Certified,438-541-6278
+102,"Farrell, Walker and Cervantes Hospital",282 Timothy Garden Apt. 566,Blainville,Quebec,L1W 1C4,Canada,450-353-1500,farrellwalkerandcervantes@healthcare.com,Specialized,24/7,Pending,438-022-6199
+103,Anderson-Hoffman Hospital,500 Jorge Orchard Suite 165,Trois-Rivières,Quebec,X0Q 4O8,Canada,450-459-0474,andersonhoffman@healthcare.com,Clinic,8 AM - 6 PM,Certified,418-590-7258
+104,Sanford-Landry Hospital,293 Sharon Point Apt. 054,Pointe-Claire,Quebec,I9E 8G0,Canada,514-288-3194,sanfordlandry@hospital.ca,Clinic,8 AM - 6 PM,Pending,514-823-5905
+105,Jones Group Hospital,80907 Ronald Corners,Blainville,Quebec,K1O 8L0,Canada,418-596-5850,jonesgroup@hospital.ca,Specialized,8 AM - 6 PM,Accredited,514-689-6184
+106,Morgan Group Hospital,3355 Donna Radial,Montreal,Quebec,X1D 2C2,Canada,418-438-9448,morgangroup@medcenter.ca,Specialized,8 AM - 6 PM,Certified,418-195-3280
+107,Daniel-Becker Hospital,4782 Jones Mews,Quebec City,Quebec,D0Q 0H4,Canada,418-867-1619,danielbecker@healthcare.com,General,10 AM - 8 PM,Certified,
+108,Garrett Ltd Hospital,2278 Tran Ports,Sherbrooke,Quebec,I4X 1Y7,Canada,514-209-9415,garrettltd@healthcare.com,General,10 AM - 8 PM,Certified,514-546-4215
+109,Reilly-Williams Hospital,5786 James Cliffs,Sherbrooke,Quebec,L6B 0Y3,Canada,438-757-9694,reillywilliams@clinic.ca,Specialized,7 AM - 7 PM,Pending,438-165-3036
+110,"Potter, Lewis and Rogers Hospital",302 Kenneth Crescent Suite 735,Blainville,Quebec,Q6N 3B7,Canada,450-413-1363,potterlewisandrogers@medcenter.ca,Clinic,8 AM - 6 PM,Certified,514-230-4841
+111,Robles PLC Hospital,418 James Spring,Gatineau,Quebec,N6Q 4E7,Canada,514-417-3102,roblesplc@hospital.ca,Clinic,7 AM - 7 PM,Certified,418-190-3484
+112,Miller Group Hospital,580 Castro Estate,Dollard-Des Ormeaux,Quebec,C8D 3R0,Canada,438-383-9320,millergroup@healthcare.com,Specialized,24/7,Accredited,
+113,"Taylor, Ellis and Giles Hospital",2110 Brown Course Suite 533,Laval,Quebec,U7H 5C6,Canada,514-509-6337,taylorellisandgiles@healthcare.com,General,24/7,Accredited,418-074-3230
+114,Garcia Inc Hospital,64377 Green River Suite 562,Beaconsfield,Quebec,W3O 0Q3,Canada,438-317-6341,garciainc@medcenter.ca,General,7 AM - 7 PM,Pending,438-096-6890
+115,Simmons-Garcia Hospital,168 Alexander Roads Apt. 579,Mascouche,Quebec,C4T 1N3,Canada,450-804-7565,simmonsgarcia@clinic.ca,Clinic,24/7,Certified,514-415-4230
+116,"Anderson, Johnson and Smith Hospital",64663 Lisa Motorway,Gatineau,Quebec,W7Q 8I9,Canada,450-434-9151,andersonjohnsonandsmith@hospital.ca,Specialized,7 AM - 7 PM,Accredited,
+117,"Walter, Scott and Rose Hospital",192 Kimberly Cliffs Suite 873,Laval,Quebec,J7H 9R8,Canada,514-192-3720,walterscottandrose@healthcare.com,Specialized,9 AM - 5 PM,Accredited,418-345-3047
+118,Rivera-Padilla Hospital,3465 Katherine Trafficway,Blainville,Quebec,M4Q 0L5,Canada,450-884-2623,riverapadilla@healthcare.com,Clinic,7 AM - 7 PM,Certified,
+119,Logan PLC Hospital,304 Jeffrey Courts Apt. 914,Blainville,Quebec,T9L 9G6,Canada,418-433-8485,loganplc@healthcare.com,General,9 AM - 5 PM,Certified,438-888-4749
+120,"Baker, Mccoy and Castaneda Hospital",19719 Mcbride Hills Suite 465,Mascouche,Quebec,Z9U 9D0,Canada,438-421-0664,bakermccoyandcastaneda@hospital.ca,Specialized,10 AM - 8 PM,Pending,438-880-4270
+121,Cain-Huerta Hospital,6048 Derrick Burg Apt. 634,Quebec City,Quebec,L4H 2O7,Canada,450-832-7585,cainhuerta@clinic.ca,Clinic,9 AM - 5 PM,Pending,514-631-7108
+122,Kelley and Sons Hospital,5708 Townsend Brooks,Repentigny,Quebec,N8C 5V1,Canada,450-634-6808,kelleyandsons@healthcare.com,Specialized,9 AM - 5 PM,Certified,438-414-0340
+123,Johnson-Long Hospital,45843 Zamora Falls,Granby,Quebec,X3T 7U6,Canada,450-171-9137,johnsonlong@medcenter.ca,Specialized,8 AM - 6 PM,Accredited,
+124,Hayes Inc Hospital,94636 Kaitlyn Stream,Repentigny,Quebec,J7P 6B0,Canada,418-415-0415,hayesinc@medcenter.ca,General,24/7,Accredited,418-012-7532
+125,Bailey-Sandoval Hospital,9397 Brown Motorway Apt. 578,Sherbrooke,Quebec,E6E 4T5,Canada,450-325-2705,baileysandoval@hospital.ca,General,8 AM - 6 PM,Certified,438-001-4986
+126,Ortiz Inc Hospital,7645 Andrew Islands Suite 036,Gatineau,Quebec,E3T 0R9,Canada,450-348-6657,ortizinc@medcenter.ca,Specialized,10 AM - 8 PM,Accredited,514-782-3985
+127,Bishop PLC Hospital,913 Conley Station,Dollard-Des Ormeaux,Quebec,D9D 4M3,Canada,438-887-2444,bishopplc@clinic.ca,General,9 AM - 5 PM,Accredited,450-923-8402
+128,"Jefferson, Alvarez and Ritter Hospital",8222 Sharp Forest Suite 769,Blainville,Quebec,R2W 1O2,Canada,438-084-4243,jeffersonalvarezandritter@clinic.ca,General,10 AM - 8 PM,Pending,
+129,Hicks-Carter Hospital,58145 Reid Stream,Dollard-Des Ormeaux,Quebec,B9V 8D2,Canada,438-719-9316,hickscarter@medcenter.ca,Clinic,9 AM - 5 PM,Accredited,514-323-5711
+130,Greer-Morgan Hospital,54091 Kim Causeway Suite 602,Gatineau,Quebec,Y6C 4H2,Canada,450-057-6991,greermorgan@clinic.ca,General,9 AM - 5 PM,Pending,438-112-0440
+131,Robinson and Sons Hospital,90500 Jones Way,Dorval,Quebec,V4O 7X1,Canada,450-589-8139,robinsonandsons@medcenter.ca,General,24/7,Accredited,514-026-4627
+132,Wood-Molina Hospital,1497 Danielle Tunnel Suite 483,Dorval,Quebec,E7B 1C6,Canada,438-551-9387,woodmolina@healthcare.com,Specialized,10 AM - 8 PM,Pending,450-879-5534
+133,"Huff, Sparks and Craig Hospital",46146 Hernandez Turnpike Apt. 999,Sherbrooke,Quebec,A7N 3L1,Canada,450-303-5370,huffsparksandcraig@clinic.ca,General,9 AM - 5 PM,Pending,418-852-4548
+134,"Brown, Buchanan and Hayes Hospital",9523 Margaret Place,Montreal,Quebec,W9H 1D4,Canada,438-231-9637,brownbuchananandhayes@hospital.ca,Clinic,24/7,Accredited,438-014-9915
+135,"Davila, Williams and Green Hospital",4452 Matthew Glens Apt. 571,Laval,Quebec,S5Q 3Q1,Canada,450-926-7990,davilawilliamsandgreen@medcenter.ca,General,9 AM - 5 PM,Certified,
+136,"Chavez, Walters and Gonzales Hospital",488 Ritter Court Suite 404,Dollard-Des Ormeaux,Quebec,O5D 8D9,Canada,514-037-5174,chavezwaltersandgonzales@medcenter.ca,Specialized,7 AM - 7 PM,Pending,438-748-3242
+137,James-Bell Hospital,30461 Nguyen Keys,Repentigny,Quebec,O0O 6J0,Canada,514-363-3165,jamesbell@healthcare.com,Specialized,10 AM - 8 PM,Certified,514-718-2342
+138,"Wallace, Harrington and Cooper Hospital",747 Caleb Mountains,Drummondville,Quebec,E0Z 2Q0,Canada,438-481-2795,wallaceharringtonandcooper@healthcare.com,General,24/7,Pending,418-530-7059
+139,"Nguyen, Perez and Wu Hospital",48178 Derek Pine Apt. 726,Montreal,Quebec,H1U 4L2,Canada,418-836-6321,nguyenperezandwu@healthcare.com,General,10 AM - 8 PM,Certified,
+140,James LLC Hospital,0460 Christopher Ferry Suite 386,Dorval,Quebec,F5M 5B9,Canada,514-922-5455,jamesllc@hospital.ca,Specialized,10 AM - 8 PM,Pending,514-154-3606
+141,"White, Reyes and Harvey Hospital",998 Stacy Lane Apt. 863,Beaconsfield,Quebec,Y6S 4A8,Canada,450-319-4755,whitereyesandharvey@healthcare.com,Clinic,7 AM - 7 PM,Certified,438-976-1538
+142,"Crosby, Lopez and Gordon Hospital",6913 Lewis Walk Apt. 961,Gatineau,Quebec,J8M 2U4,Canada,438-346-8298,crosbylopezandgordon@hospital.ca,Clinic,24/7,Certified,514-137-4211
+143,Olson-Kelly Hospital,328 Scott Shoals Apt. 305,Sherbrooke,Quebec,O5K 6R1,Canada,418-281-0354,olsonkelly@medcenter.ca,Clinic,9 AM - 5 PM,Pending,514-301-0468
+144,Boone-Shaffer Hospital,148 Timothy Springs,Drummondville,Quebec,L8V 0P7,Canada,438-913-1956,booneshaffer@medcenter.ca,Clinic,10 AM - 8 PM,Certified,450-101-9898
+145,Powell Group Hospital,9376 Tina Stravenue,Laval,Quebec,D8W 3C8,Canada,450-513-7816,powellgroup@hospital.ca,Clinic,7 AM - 7 PM,Pending,450-532-3507
+146,Ruiz Group Hospital,56173 Good Park Apt. 510,Sherbrooke,Quebec,H8Y 7O8,Canada,418-399-0389,ruizgroup@medcenter.ca,General,8 AM - 6 PM,Certified,450-092-1509
+147,Wilkins-Morgan Hospital,856 King Drive,Quebec City,Quebec,T6M 4E8,Canada,438-060-1502,wilkinsmorgan@hospital.ca,General,10 AM - 8 PM,Accredited,
+148,Baker-Medina Hospital,6320 Roberts Pines,Laval,Quebec,Z9F 1Z9,Canada,514-887-7963,bakermedina@hospital.ca,Clinic,10 AM - 8 PM,Accredited,438-054-5324
+149,Jackson-Hall Hospital,777 Cooper Spurs,Sherbrooke,Quebec,A0J 0C5,Canada,418-641-9539,jacksonhall@medcenter.ca,General,7 AM - 7 PM,Pending,514-854-5532
+150,Huerta-Smith Hospital,08210 Jessica Harbors Apt. 048,Gatineau,Quebec,Y9D 9C0,Canada,438-527-5078,huertasmith@clinic.ca,Clinic,10 AM - 8 PM,Certified,418-011-0206
+151,Lee-Lopez Hospital,3574 Peters Harbors,Gatineau,Quebec,J1G 9F7,Canada,514-945-1240,leelopez@clinic.ca,Clinic,10 AM - 8 PM,Accredited,514-039-8725
+152,"Hunter, Mitchell and Barrett Hospital",12670 Hernandez Courts,Quebec City,Quebec,W9L 8O0,Canada,438-093-8239,huntermitchellandbarrett@clinic.ca,General,9 AM - 5 PM,Accredited,418-535-7149
+153,"Erickson, Davis and Harper Hospital",296 Gutierrez Hill Suite 124,Quebec City,Quebec,W5F 5O3,Canada,438-636-0730,ericksondavisandharper@clinic.ca,Clinic,8 AM - 6 PM,Pending,
+154,"White, Stokes and Herman Hospital",390 Tracy Crescent Suite 599,Sherbrooke,Quebec,U5A 9J8,Canada,450-209-3448,whitestokesandherman@hospital.ca,General,8 AM - 6 PM,Accredited,450-170-0029
+155,"Alvarado, Fuller and Diaz Hospital",3997 Cardenas Roads,Montreal,Quebec,K0U 7W0,Canada,418-796-0841,alvaradofulleranddiaz@healthcare.com,General,9 AM - 5 PM,Accredited,450-067-6279
+156,Simmons LLC Hospital,3347 Justin Center,Longueuil,Quebec,Z4B 9X3,Canada,514-789-5628,simmonsllc@healthcare.com,Clinic,24/7,Accredited,
+157,"Webb, Stevens and Ramos Hospital",06172 Courtney Rue Apt. 827,Granby,Quebec,W7R 5H4,Canada,418-222-5123,webbstevensandramos@medcenter.ca,Specialized,10 AM - 8 PM,Certified,418-157-8582
+158,Roberts-Torres Hospital,908 Christopher Inlet,Repentigny,Quebec,F6K 0X2,Canada,418-837-0833,robertstorres@medcenter.ca,General,9 AM - 5 PM,Certified,418-689-8578
+159,Key Ltd Hospital,04042 Becky Way Suite 784,Drummondville,Quebec,Q2D 4Y7,Canada,438-526-3716,keyltd@clinic.ca,General,10 AM - 8 PM,Certified,
+160,Hurst LLC Hospital,57123 Cole Dale,Montreal,Quebec,H7P 0U7,Canada,438-087-0857,hurstllc@healthcare.com,Specialized,9 AM - 5 PM,Certified,438-840-1571
+161,Ellis PLC Hospital,59768 Bryan Fork Suite 769,Montreal,Quebec,K3F 2B4,Canada,450-289-1878,ellisplc@healthcare.com,General,7 AM - 7 PM,Accredited,514-362-7975
+162,"Hood, Young and Shah Hospital",950 Brewer Stravenue Suite 236,Beaconsfield,Quebec,P2B 7P9,Canada,418-054-2222,hoodyoungandshah@clinic.ca,Specialized,10 AM - 8 PM,Pending,450-262-0457
+163,Gardner PLC Hospital,4402 Teresa Pine Suite 116,Blainville,Quebec,X2N 2C4,Canada,450-963-3441,gardnerplc@medcenter.ca,General,7 AM - 7 PM,Pending,
+164,Sanchez-Hall Hospital,8267 Green Mission Suite 293,Longueuil,Quebec,M3K 7P0,Canada,514-417-3728,sanchezhall@healthcare.com,General,10 AM - 8 PM,Pending,438-180-0881
+165,Dawson-Gibson Hospital,57319 Dawn Row,Drummondville,Quebec,C0W 0R2,Canada,418-796-5829,dawsongibson@hospital.ca,Specialized,10 AM - 8 PM,Certified,450-482-0223
+166,"Ferguson, Bishop and Ortiz Hospital",757 Keith Knolls Suite 477,Sherbrooke,Quebec,J1S 9Z1,Canada,438-375-6672,fergusonbishopandortiz@clinic.ca,General,7 AM - 7 PM,Pending,450-012-7084
+167,"Curry, Estrada and Mosley Hospital",39568 Teresa Station Apt. 477,Sherbrooke,Quebec,J6V 9A1,Canada,418-628-1972,curryestradaandmosley@medcenter.ca,Clinic,8 AM - 6 PM,Accredited,418-362-6311
+168,Schmidt Ltd Hospital,672 Kelly Divide,Repentigny,Quebec,Y9U 5Q4,Canada,438-636-7563,schmidtltd@healthcare.com,Specialized,8 AM - 6 PM,Accredited,514-607-9521
+169,Wilson Group Hospital,802 Palmer Corner Apt. 809,Montreal,Quebec,V5V 4X4,Canada,514-860-2804,wilsongroup@hospital.ca,Clinic,10 AM - 8 PM,Certified,
+170,Holland-Graves Hospital,923 Higgins Groves Suite 409,Montreal,Quebec,L2O 3Z5,Canada,438-007-3749,hollandgraves@healthcare.com,Clinic,24/7,Accredited,450-848-9520
+171,"Peck, Martinez and Jones Hospital",8822 Hanna Mill Suite 784,Blainville,Quebec,I1R 5W0,Canada,514-127-3597,peckmartinezandjones@medcenter.ca,General,7 AM - 7 PM,Pending,450-210-1353
+172,Wolfe Ltd Hospital,279 David Creek,Brossard,Quebec,S1S 3J1,Canada,450-803-2206,wolfeltd@healthcare.com,Clinic,9 AM - 5 PM,Accredited,418-834-3306
+173,Blackburn PLC Hospital,91613 Hailey Summit,Longueuil,Quebec,K8M 0Q7,Canada,418-492-2769,blackburnplc@medcenter.ca,General,10 AM - 8 PM,Certified,438-122-9891
+174,Estrada-Maxwell Hospital,705 Morales Rue Suite 920,Brossard,Quebec,Y9S 7M7,Canada,450-383-2857,estradamaxwell@medcenter.ca,Clinic,24/7,Pending,418-010-5485
+175,"Larson, Trujillo and Peterson Hospital",5297 Cisneros Place Apt. 934,Drummondville,Quebec,H5I 7C7,Canada,514-474-3783,larsontrujilloandpeterson@hospital.ca,General,24/7,Pending,514-395-7784
+176,Robertson-Jones Hospital,72982 Randall Village Suite 950,Laval,Quebec,B3T 6R6,Canada,514-034-1805,robertsonjones@healthcare.com,Clinic,9 AM - 5 PM,Pending,418-415-6657
+177,Myers-Morgan Hospital,05771 Andre Spring,Drummondville,Quebec,M9D 1U2,Canada,438-428-3836,myersmorgan@hospital.ca,Specialized,24/7,Pending,438-531-9422
+178,Mercado-Gordon Hospital,6794 Mark Center,Quebec City,Quebec,M9E 9C7,Canada,514-357-0894,mercadogordon@clinic.ca,Clinic,24/7,Pending,438-547-0700
+179,"Mora, Carter and Buchanan Hospital",65738 Snyder Canyon,Montreal,Quebec,P0B 0L5,Canada,450-114-6255,moracarterandbuchanan@medcenter.ca,General,7 AM - 7 PM,Certified,514-938-3615
+180,"Curry, Bentley and Herrera Hospital",9676 Nicole Turnpike,Blainville,Quebec,E2A 7G6,Canada,514-397-4675,currybentleyandherrera@clinic.ca,Clinic,9 AM - 5 PM,Certified,
+181,"Petersen, Robinson and Deleon Hospital",6474 Anderson Landing Apt. 316,Quebec City,Quebec,J1S 4Z0,Canada,514-444-3618,petersenrobinsonanddeleon@healthcare.com,Clinic,24/7,Certified,450-265-8574
+182,Russell-Collins Hospital,4646 Johnson Alley Apt. 019,Beaconsfield,Quebec,W8X 2B2,Canada,450-311-1787,russellcollins@hospital.ca,Clinic,9 AM - 5 PM,Certified,438-203-4010
+183,Ramirez-Gibbs Hospital,7151 Denise Mountains Apt. 851,Blainville,Quebec,I1F 4G0,Canada,450-284-2512,ramirezgibbs@clinic.ca,General,7 AM - 7 PM,Pending,450-911-2334
+184,Weaver-Williams Hospital,3949 Robinson Streets Suite 069,Drummondville,Quebec,N6V 7U2,Canada,418-740-5905,weaverwilliams@hospital.ca,Specialized,24/7,Accredited,514-023-5323
+185,Burke Inc Hospital,7986 Anthony Plaza Suite 486,Drummondville,Quebec,C3Y 4X4,Canada,514-705-1300,burkeinc@healthcare.com,General,9 AM - 5 PM,Pending,
+186,Jackson Ltd Hospital,606 Victoria Plaza Apt. 836,Brossard,Quebec,Z3D 1X3,Canada,450-130-7793,jacksonltd@clinic.ca,General,24/7,Certified,438-899-9202
+187,Davis Group Hospital,89119 Hall Tunnel,Blainville,Quebec,B3J 5D0,Canada,450-736-6339,davisgroup@healthcare.com,Clinic,9 AM - 5 PM,Accredited,
+188,"Adams, Wilcox and Perry Hospital",30793 Eileen Bypass Apt. 541,Trois-Rivières,Quebec,L8F 5E3,Canada,514-605-6013,adamswilcoxandperry@healthcare.com,Clinic,9 AM - 5 PM,Certified,
+189,"Martinez, Walker and Daniels Hospital",3373 Wiley Well Apt. 274,Kirkland,Quebec,D6D 1S4,Canada,418-364-2421,martinezwalkeranddaniels@hospital.ca,Clinic,7 AM - 7 PM,Certified,450-149-1525
+190,Brown LLC Hospital,5900 Amanda Corners,Quebec City,Quebec,I9R 5I8,Canada,514-233-8903,brownllc@hospital.ca,Specialized,24/7,Pending,
+191,"Hughes, Singh and Guerrero Hospital",6871 Mitchell Roads Suite 186,Dorval,Quebec,P8U 0K1,Canada,450-985-3747,hughessinghandguerrero@healthcare.com,General,8 AM - 6 PM,Pending,450-833-9388
+192,Davis Inc Hospital,3669 Brandy Via Suite 258,Montreal,Quebec,J9Y 1H4,Canada,418-304-7655,davisinc@healthcare.com,Specialized,7 AM - 7 PM,Accredited,418-479-6506
+193,Sanders-Jensen Hospital,58805 Michael Islands,Drummondville,Quebec,L1E 0P0,Canada,514-868-4030,sandersjensen@healthcare.com,General,8 AM - 6 PM,Accredited,438-374-7977
+194,Lewis and Sons Hospital,220 Solis Mission Suite 464,Montreal,Quebec,A9T 0Y9,Canada,438-100-6367,lewisandsons@hospital.ca,Specialized,9 AM - 5 PM,Pending,514-436-3439
+195,Park PLC Hospital,4353 Miller Meadow,Blainville,Quebec,L6Y 2C7,Canada,438-508-1760,parkplc@hospital.ca,Clinic,10 AM - 8 PM,Accredited,418-866-6949
+196,Riddle and Sons Hospital,6684 Jessica Ramp,Longueuil,Quebec,P2N 2Y1,Canada,438-327-1331,riddleandsons@healthcare.com,Clinic,8 AM - 6 PM,Certified,418-807-0021
+197,"Gonzales, Thomas and Hancock Hospital",5643 Waters Village,Drummondville,Quebec,V3W 1X8,Canada,450-142-2020,gonzalesthomasandhancock@healthcare.com,Clinic,7 AM - 7 PM,Certified,418-711-5528
+198,"Baker, Golden and Smith Hospital",58142 Young Drive Apt. 958,Dollard-Des Ormeaux,Quebec,Z3F 9D4,Canada,438-269-5629,bakergoldenandsmith@medcenter.ca,General,24/7,Certified,450-233-6092
+199,Jones Group Hospital,68953 Alexander Burgs,Drummondville,Quebec,B3V 6O3,Canada,450-061-2748,jonesgroup@healthcare.com,Clinic,24/7,Certified,514-821-3795
+200,Thomas-Gregory Hospital,041 Ramos Walk Suite 476,Gatineau,Quebec,D8K 2A3,Canada,418-764-6261,thomasgregory@clinic.ca,General,10 AM - 8 PM,Accredited,438-543-5509
+201,Smith Inc Hospital,2165 Gary Crossing Apt. 549,Laval,Quebec,H1N 8H7,Canada,514-847-0333,smithinc@clinic.ca,Specialized,10 AM - 8 PM,Pending,514-729-5120
+202,"Frazier, Marshall and Hoffman Hospital",5685 Pamela Plains,Brossard,Quebec,I5U 7W0,Canada,450-494-5346,fraziermarshallandhoffman@healthcare.com,Clinic,7 AM - 7 PM,Certified,418-233-3439
+203,Watson LLC Hospital,03535 Butler Valley,Gatineau,Quebec,R4L 5A6,Canada,418-486-6567,watsonllc@clinic.ca,Clinic,8 AM - 6 PM,Accredited,418-543-1287
+204,"Andersen, Garcia and Hoffman Hospital",6159 Barnett Mills,Montreal,Quebec,P2F 2A4,Canada,514-169-9246,andersengarciaandhoffman@hospital.ca,General,8 AM - 6 PM,Accredited,450-152-9616
+205,"Smith, Zimmerman and Evans Hospital",6626 Dickerson Haven Apt. 542,Repentigny,Quebec,J5J 8A5,Canada,514-791-5508,smithzimmermanandevans@healthcare.com,General,10 AM - 8 PM,Pending,418-298-6244
+206,"Sparks, King and Howard Hospital",85059 Sharon Place,Gatineau,Quebec,X8Y 9O5,Canada,418-508-7896,sparkskingandhoward@clinic.ca,Clinic,7 AM - 7 PM,Certified,450-320-3099
+207,Hall LLC Hospital,6986 Jill Circle,Trois-Rivières,Quebec,O4N 3U5,Canada,514-987-0750,hallllc@clinic.ca,General,8 AM - 6 PM,Certified,
+208,Chavez-Brock Hospital,811 Gabriella Avenue,Brossard,Quebec,D9Q 4H1,Canada,514-555-5224,chavezbrock@clinic.ca,Specialized,10 AM - 8 PM,Pending,
+209,"Smith, Robinson and Wilson Hospital",34261 Gonzalez Rapid,Gatineau,Quebec,N5B 1L4,Canada,450-847-4309,smithrobinsonandwilson@healthcare.com,Specialized,10 AM - 8 PM,Certified,450-420-2676
+210,Cooley-Brown Hospital,747 Jones Cliffs Apt. 467,Granby,Quebec,J0L 1Q8,Canada,450-220-1138,cooleybrown@hospital.ca,General,7 AM - 7 PM,Certified,450-129-1467
+211,Wright-Miller Hospital,933 Kelly Fords,Laval,Quebec,I3X 4G2,Canada,418-635-0092,wrightmiller@clinic.ca,Specialized,9 AM - 5 PM,Pending,418-799-9422
+212,Goodman Group Hospital,997 Martinez Hills,Brossard,Quebec,M6R 9I8,Canada,514-725-4771,goodmangroup@clinic.ca,Clinic,8 AM - 6 PM,Certified,438-217-7002
+213,Brown-Rasmussen Hospital,65470 Ernest Ford Suite 554,Dollard-Des Ormeaux,Quebec,B5P 9I9,Canada,438-454-5799,brownrasmussen@clinic.ca,Specialized,9 AM - 5 PM,Certified,514-735-1391
+214,Garrison-Stevens Hospital,24273 Michael Locks Apt. 582,Blainville,Quebec,K7S 9O9,Canada,438-947-1157,garrisonstevens@medcenter.ca,General,24/7,Pending,
+215,"Barr, Thomas and Smith Hospital",1900 Daniel Islands Apt. 296,Beaconsfield,Quebec,V5I 5S0,Canada,438-716-8553,barrthomasandsmith@clinic.ca,Clinic,10 AM - 8 PM,Certified,418-240-4863
+216,Buck-Arnold Hospital,7987 Jeffrey Causeway,Longueuil,Quebec,Z5G 5Z3,Canada,450-157-4646,buckarnold@hospital.ca,Clinic,10 AM - 8 PM,Certified,438-401-8681
+217,"Esparza, Stephenson and Reyes Hospital",50311 Allen Village Suite 646,Gatineau,Quebec,I0Y 7V2,Canada,418-267-0756,esparzastephensonandreyes@healthcare.com,Clinic,8 AM - 6 PM,Accredited,418-910-4924
+218,Hopkins PLC Hospital,6876 Gomez Crescent Apt. 905,Granby,Quebec,T7H 6V3,Canada,438-201-0791,hopkinsplc@healthcare.com,General,7 AM - 7 PM,Accredited,514-774-5010
+219,"Davis, Gutierrez and Blackwell Hospital",46859 Jacqueline Rest Suite 268,Quebec City,Quebec,L9Z 3A0,Canada,514-979-4340,davisgutierrezandblackwell@healthcare.com,Specialized,9 AM - 5 PM,Accredited,450-710-2920
+220,White-Anderson Hospital,57037 Autumn Highway,Brossard,Quebec,Q5U 0S6,Canada,438-476-0104,whiteanderson@medcenter.ca,General,8 AM - 6 PM,Accredited,450-604-6610
+221,Moore-Perez Hospital,9493 Jessica Radial Suite 102,Pointe-Claire,Quebec,H4Q 4X2,Canada,418-895-4841,mooreperez@hospital.ca,Specialized,7 AM - 7 PM,Certified,
+222,"Williams, Middleton and Mullen Hospital",62342 Miller Highway Apt. 055,Pointe-Claire,Quebec,C2K 3I6,Canada,514-509-7305,williamsmiddletonandmullen@healthcare.com,Clinic,7 AM - 7 PM,Accredited,
+223,"Johnson, Hebert and Bennett Hospital",410 Christopher Fall Apt. 863,Drummondville,Quebec,Y2Z 7Z1,Canada,450-780-0825,johnsonhebertandbennett@healthcare.com,Specialized,10 AM - 8 PM,Accredited,514-053-7281
+224,Snyder Ltd Hospital,7282 Turner Mountains,Dorval,Quebec,P9L 7H6,Canada,418-534-6662,snyderltd@clinic.ca,General,24/7,Accredited,438-187-2467
+225,"Baker, Lee and Stewart Hospital",181 Michael Pines,Granby,Quebec,T5M 8C8,Canada,438-628-7283,bakerleeandstewart@medcenter.ca,General,10 AM - 8 PM,Pending,438-156-6452
+226,Andrews LLC Hospital,919 Hernandez Shoal,Laval,Quebec,Z3Y 7U6,Canada,514-890-9826,andrewsllc@hospital.ca,Clinic,10 AM - 8 PM,Pending,438-731-1573
+227,"Holder, Carter and Fisher Hospital",327 Rachel Fort Apt. 502,Trois-Rivières,Quebec,O9E 7K5,Canada,450-239-2055,holdercarterandfisher@medcenter.ca,General,9 AM - 5 PM,Accredited,438-632-4848
+228,Petty-Moody Hospital,1590 Vaughn Pines Apt. 578,Mascouche,Quebec,H3O 4W7,Canada,450-743-6801,pettymoody@hospital.ca,General,9 AM - 5 PM,Certified,438-581-2034
+229,Roberts-Martinez Hospital,63318 Garner Camp,Drummondville,Quebec,W4T 0U7,Canada,438-800-8761,robertsmartinez@hospital.ca,General,10 AM - 8 PM,Pending,418-850-5508
+230,"Kelly, Smith and Deleon Hospital",928 Holder Mount Suite 912,Sherbrooke,Quebec,G8Q 2M2,Canada,514-485-3455,kellysmithanddeleon@medcenter.ca,General,9 AM - 5 PM,Certified,438-329-3211
+231,Cook Ltd Hospital,88562 Lindsey Grove,Drummondville,Quebec,Z8A 7V3,Canada,418-881-1172,cookltd@medcenter.ca,Clinic,7 AM - 7 PM,Certified,514-958-6449
+232,Case-Pierce Hospital,62316 Andrew Port,Kirkland,Quebec,J6W 8S6,Canada,438-000-9820,casepierce@medcenter.ca,Clinic,8 AM - 6 PM,Certified,418-908-6602
+233,"Pennington, Cardenas and Fernandez Hospital",54988 Kathryn Coves Apt. 947,Gatineau,Quebec,P4B 4D3,Canada,418-982-7412,penningtoncardenasandfernandez@healthcare.com,Specialized,9 AM - 5 PM,Accredited,
+234,Wilson and Sons Hospital,1282 Michael Prairie,Trois-Rivières,Quebec,A3V 0R1,Canada,450-368-0635,wilsonandsons@medcenter.ca,General,24/7,Certified,438-902-5457
+235,Campbell Group Hospital,91187 Lucero Parks Suite 161,Montreal,Quebec,J1D 4M4,Canada,450-554-6963,campbellgroup@hospital.ca,General,7 AM - 7 PM,Accredited,514-989-3073
+236,"Clarke, Marshall and Lindsey Hospital",1386 Matthew Row Apt. 476,Longueuil,Quebec,I4W 1G2,Canada,514-383-8545,clarkemarshallandlindsey@hospital.ca,Clinic,24/7,Certified,418-329-0429
+237,Jones-Smith Hospital,39376 Burke Meadow Suite 856,Pointe-Claire,Quebec,J3L 0L9,Canada,514-982-9012,jonessmith@healthcare.com,Clinic,24/7,Certified,
+238,Whitaker-Myers Hospital,0088 Amy Roads,Dollard-Des Ormeaux,Quebec,Y3K 6R5,Canada,418-895-6228,whitakermyers@clinic.ca,Clinic,7 AM - 7 PM,Accredited,418-993-5034
+239,Singh-Cowan Hospital,5116 Shawna Meadows Apt. 905,Gatineau,Quebec,I9B 5E2,Canada,450-344-3670,singhcowan@clinic.ca,Clinic,24/7,Pending,
+240,"Hansen, Smith and Guzman Hospital",5371 Wright Wells Suite 587,Montreal,Quebec,D1X 8A0,Canada,438-367-2204,hansensmithandguzman@medcenter.ca,Clinic,8 AM - 6 PM,Certified,450-086-2976
+241,Peters Inc Hospital,9388 Mendez Circle,Sherbrooke,Quebec,G5J 9X0,Canada,438-371-6336,petersinc@healthcare.com,Specialized,24/7,Pending,514-840-1065
+242,Haas-Tanner Hospital,7413 Lauren Parkway Suite 909,Mascouche,Quebec,A8U 4Y3,Canada,514-272-4075,haastanner@healthcare.com,Clinic,10 AM - 8 PM,Pending,
+243,Vasquez-Love Hospital,65661 Zuniga Lodge Apt. 634,Mascouche,Quebec,Q1O 7R2,Canada,418-166-4720,vasquezlove@clinic.ca,General,8 AM - 6 PM,Accredited,438-940-8582
+244,Jenkins Group Hospital,294 Donald Corner,Pointe-Claire,Quebec,P1F 2V2,Canada,418-868-9628,jenkinsgroup@medcenter.ca,General,7 AM - 7 PM,Certified,450-689-3714
+245,Lester-Nelson Hospital,4297 Fuller Overpass Suite 779,Pointe-Claire,Quebec,G3T 9X5,Canada,514-536-6489,lesternelson@healthcare.com,Specialized,8 AM - 6 PM,Pending,438-903-9038
+246,Choi PLC Hospital,67717 Vega Crescent,Granby,Quebec,Y6N 6D2,Canada,438-770-5623,choiplc@healthcare.com,General,7 AM - 7 PM,Certified,418-637-7809
+247,Rios and Sons Hospital,720 Courtney Road,Kirkland,Quebec,W5O 2N4,Canada,418-700-1329,riosandsons@medcenter.ca,Clinic,7 AM - 7 PM,Certified,
+248,Park-Marquez Hospital,4343 Elizabeth Stravenue,Laval,Quebec,K3M 0U4,Canada,418-062-9687,parkmarquez@hospital.ca,Specialized,7 AM - 7 PM,Accredited,
+249,"Castro, Mendoza and Harrison Hospital",55617 Perez Motorway,Longueuil,Quebec,Z4E 4S8,Canada,418-816-7780,castromendozaandharrison@healthcare.com,Specialized,24/7,Accredited,438-871-2840
+250,Turner-Johnson Hospital,52278 Marshall Lights,Dollard-Des Ormeaux,Quebec,A7M 6X8,Canada,514-287-0685,turnerjohnson@medcenter.ca,Clinic,8 AM - 6 PM,Pending,514-040-3543
+251,Griffin-Thompson Hospital,82066 Michael Forges Suite 384,Kirkland,Quebec,N5J 8L6,Canada,514-386-6592,griffinthompson@healthcare.com,Specialized,9 AM - 5 PM,Accredited,450-485-6662
+252,Hood Group Hospital,62817 Davis Turnpike,Beaconsfield,Quebec,L1J 3F4,Canada,438-213-2066,hoodgroup@hospital.ca,Clinic,8 AM - 6 PM,Certified,418-643-6106
+253,Stephens and Sons Hospital,0534 Santiago Parks,Blainville,Quebec,B5C 6F3,Canada,450-161-8342,stephensandsons@hospital.ca,General,10 AM - 8 PM,Certified,418-296-0285
+254,Hall LLC Hospital,48604 Lozano Pass,Quebec City,Quebec,F2Z 7O7,Canada,418-328-5502,hallllc@healthcare.com,Clinic,8 AM - 6 PM,Accredited,
+255,Jones-Santos Hospital,269 Oneal Plain Suite 131,Quebec City,Quebec,K4S 5R5,Canada,514-230-6937,jonessantos@hospital.ca,General,24/7,Accredited,450-814-5011
+256,Wood Group Hospital,839 Stephanie Path Suite 384,Dollard-Des Ormeaux,Quebec,J6W 3L8,Canada,450-211-3078,woodgroup@clinic.ca,General,7 AM - 7 PM,Certified,418-937-4496
+257,Jarvis LLC Hospital,9385 Nelson Crossroad Suite 294,Mascouche,Quebec,P8V 2E7,Canada,514-831-9672,jarvisllc@healthcare.com,Clinic,24/7,Accredited,438-433-0029
+258,Sherman LLC Hospital,17400 Nixon Cape,Brossard,Quebec,D0W 6P2,Canada,450-535-9568,shermanllc@healthcare.com,Clinic,9 AM - 5 PM,Certified,514-830-2700
+259,"Dickerson, Lee and Hughes Hospital",31390 Kevin Creek Apt. 985,Quebec City,Quebec,M0D 7P8,Canada,450-517-3865,dickersonleeandhughes@clinic.ca,General,10 AM - 8 PM,Accredited,
+260,Buck Inc Hospital,2657 Kelly Mews Suite 553,Brossard,Quebec,X1W 4O5,Canada,418-863-6362,buckinc@clinic.ca,General,24/7,Pending,438-435-8600
+261,Wong-Butler Hospital,941 Hood Crest Suite 666,Granby,Quebec,Y7Z 1K8,Canada,418-216-1076,wongbutler@clinic.ca,Clinic,9 AM - 5 PM,Certified,514-409-1747
+262,"Johnson, Johnson and Boyer Hospital",7054 Michael Crescent,Repentigny,Quebec,D1V 2B8,Canada,418-471-6411,johnsonjohnsonandboyer@hospital.ca,General,7 AM - 7 PM,Pending,514-461-5023
+263,"Anderson, Lopez and Rodriguez Hospital",3815 Morrow Club,Gatineau,Quebec,J3E 8T1,Canada,418-915-7833,andersonlopezandrodriguez@clinic.ca,Clinic,7 AM - 7 PM,Certified,
+264,Munoz Inc Hospital,02032 Joshua Plaza,Drummondville,Quebec,X9T 4U6,Canada,514-675-9496,munozinc@medcenter.ca,Clinic,24/7,Certified,438-954-0596
+265,"Rivera, Lucero and Dorsey Hospital",84398 Barnes Square Apt. 516,Montreal,Quebec,D9V 2O9,Canada,438-875-7725,riveraluceroanddorsey@clinic.ca,Specialized,8 AM - 6 PM,Accredited,438-662-1285
+266,Miles Inc Hospital,374 Greer Bypass Apt. 327,Montreal,Quebec,W9M 3P6,Canada,438-449-0502,milesinc@hospital.ca,Specialized,24/7,Pending,438-426-6062
+267,Brown-Adams Hospital,7704 Smith Mountains Suite 707,Blainville,Quebec,H5Q 2V7,Canada,450-158-8035,brownadams@medcenter.ca,General,24/7,Pending,514-046-5194
+268,Li-Shea Hospital,339 Long Rest,Mascouche,Quebec,G0B 0F8,Canada,514-774-2988,lishea@clinic.ca,Clinic,24/7,Certified,418-925-6722
+269,Kelly Group Hospital,5946 Mark Hills Apt. 220,Brossard,Quebec,I8O 1Q6,Canada,418-398-6292,kellygroup@medcenter.ca,Specialized,9 AM - 5 PM,Pending,438-418-3697
+270,Baker Inc Hospital,4174 Lyons Crossing Suite 389,Gatineau,Quebec,O2M 1S7,Canada,450-870-8702,bakerinc@clinic.ca,General,10 AM - 8 PM,Accredited,514-756-7878
+271,"Sandoval, Hernandez and Serrano Hospital",21962 Valerie Causeway,Laval,Quebec,Y4G 4Q8,Canada,438-206-7516,sandovalhernandezandserrano@healthcare.com,Specialized,24/7,Certified,450-051-5143
+272,Shaw-Larsen Hospital,6487 Robin Courts,Gatineau,Quebec,U4W 1Z0,Canada,450-431-9429,shawlarsen@clinic.ca,Clinic,9 AM - 5 PM,Pending,514-551-7341
+273,Medina LLC Hospital,9897 Schneider Ways Suite 263,Brossard,Quebec,P2U 8L4,Canada,450-857-9130,medinallc@clinic.ca,Clinic,24/7,Pending,438-650-4997
+274,Roy-Rush Hospital,644 Robin Haven,Repentigny,Quebec,J5X 5L8,Canada,418-063-5659,royrush@hospital.ca,Clinic,24/7,Accredited,
+275,"Patel, Zavala and Kim Hospital",322 Adams Summit,Blainville,Quebec,F4C 9I4,Canada,450-526-3699,patelzavalaandkim@healthcare.com,Clinic,7 AM - 7 PM,Accredited,
+276,"Montgomery, Smith and Mercer Hospital",1055 Martin Forest,Trois-Rivières,Quebec,Z8N 8Y1,Canada,438-452-0269,montgomerysmithandmercer@healthcare.com,Clinic,10 AM - 8 PM,Pending,
+277,Day Group Hospital,22620 Stevens Tunnel,Pointe-Claire,Quebec,Q1Y 5S0,Canada,418-277-2085,daygroup@healthcare.com,General,9 AM - 5 PM,Accredited,514-614-9909
+278,Medina-Lucas Hospital,7895 Kristine Fords,Brossard,Quebec,G0X 1N5,Canada,514-041-4011,medinalucas@clinic.ca,Clinic,9 AM - 5 PM,Certified,
+279,Jones-King Hospital,1196 Sherry Fields,Laval,Quebec,Z8B 9I5,Canada,438-110-9762,jonesking@clinic.ca,General,8 AM - 6 PM,Pending,514-594-9325
+280,"Blake, Rodriguez and Howard Hospital",180 Robert Loaf Apt. 197,Gatineau,Quebec,X6A 1G7,Canada,418-759-3538,blakerodriguezandhoward@medcenter.ca,Clinic,8 AM - 6 PM,Certified,
+281,"Lynch, Collins and Sherman Hospital",64309 Owens Station,Quebec City,Quebec,D4T 2C5,Canada,514-031-4066,lynchcollinsandsherman@medcenter.ca,Clinic,7 AM - 7 PM,Certified,438-115-1543
+282,"Villa, Smith and Walker Hospital",084 Jocelyn Road,Repentigny,Quebec,V0H 7S2,Canada,514-945-2889,villasmithandwalker@medcenter.ca,General,7 AM - 7 PM,Certified,514-603-9850
+283,Salas-Adams Hospital,336 Reed Forks,Brossard,Quebec,L8L 7V1,Canada,450-427-8206,salasadams@clinic.ca,Clinic,8 AM - 6 PM,Pending,418-412-4262
+284,"Lopez, Jones and Johnston Hospital",631 Hensley Valley Suite 702,Longueuil,Quebec,G8W 9H0,Canada,418-340-1632,lopezjonesandjohnston@medcenter.ca,General,9 AM - 5 PM,Accredited,438-427-1642
+285,Fisher Ltd Hospital,83772 Carpenter Overpass Apt. 499,Dorval,Quebec,X3O 6M5,Canada,450-607-9289,fisherltd@hospital.ca,Clinic,7 AM - 7 PM,Accredited,450-212-8462
+286,Hughes Ltd Hospital,8014 Dalton Walks,Gatineau,Quebec,W3O 0Y6,Canada,418-880-1517,hughesltd@medcenter.ca,Specialized,24/7,Certified,514-164-3751
+287,"Smith, Montgomery and Gomez Hospital",35902 Benjamin Path Apt. 703,Brossard,Quebec,Y1L 2H1,Canada,418-744-2343,smithmontgomeryandgomez@hospital.ca,Specialized,9 AM - 5 PM,Pending,
+288,Ramsey Group Hospital,50921 Leslie Plaza,Beaconsfield,Quebec,E8E 8G5,Canada,418-654-5973,ramseygroup@clinic.ca,Specialized,10 AM - 8 PM,Certified,438-044-3594
+289,Campbell PLC Hospital,766 Joshua Shoal Apt. 396,Gatineau,Quebec,G7P 3V5,Canada,438-340-6030,campbellplc@clinic.ca,General,9 AM - 5 PM,Accredited,450-027-3681
+290,Davis-Harris Hospital,3405 Ryan Brook Suite 467,Gatineau,Quebec,B6D 6Q7,Canada,418-587-7038,davisharris@medcenter.ca,Clinic,9 AM - 5 PM,Accredited,438-580-5150
+291,Kaiser-Brown Hospital,764 Bell Ramp,Sherbrooke,Quebec,V6G 4T5,Canada,514-323-9470,kaiserbrown@hospital.ca,General,10 AM - 8 PM,Certified,514-443-2634
+292,Lozano-Ortiz Hospital,745 Nicole Club Suite 453,Dorval,Quebec,G3Y 7P4,Canada,514-109-1700,lozanoortiz@clinic.ca,General,7 AM - 7 PM,Certified,450-379-8016
+293,"Hanna, York and Robinson Hospital",600 Jeanette Rapids,Montreal,Quebec,T5E 8J4,Canada,418-058-9633,hannayorkandrobinson@hospital.ca,Specialized,8 AM - 6 PM,Accredited,514-320-0037
+294,Moore-Berry Hospital,1104 Jones Place Suite 357,Trois-Rivières,Quebec,T7F 8V7,Canada,418-458-6203,mooreberry@hospital.ca,Specialized,24/7,Certified,514-814-3991
+295,"Morse, Howard and Ortiz Hospital",01145 Knox Rue Suite 327,Quebec City,Quebec,P0Q 5J6,Canada,418-131-8086,morsehowardandortiz@clinic.ca,Specialized,7 AM - 7 PM,Accredited,438-091-4020
+296,Mccall Group Hospital,583 Huff Loaf,Montreal,Quebec,X2Q 3B5,Canada,450-163-3184,mccallgroup@healthcare.com,General,10 AM - 8 PM,Certified,418-027-8887
+297,Herman-Williams Hospital,12635 Victoria Fields Suite 736,Gatineau,Quebec,C0L 6V6,Canada,418-369-1725,hermanwilliams@healthcare.com,Clinic,7 AM - 7 PM,Accredited,438-167-7145
+298,Gillespie PLC Hospital,5369 Zimmerman Lodge Apt. 957,Sherbrooke,Quebec,E6B 5F3,Canada,418-783-9842,gillespieplc@medcenter.ca,General,7 AM - 7 PM,Certified,
+299,Robinson Ltd Hospital,75707 John Plains,Mascouche,Quebec,A5F 3T1,Canada,514-571-6026,robinsonltd@hospital.ca,General,10 AM - 8 PM,Certified,
+300,"Morgan, Arnold and Abbott Hospital",9865 Melanie Course Apt. 911,Pointe-Claire,Quebec,P4R 2C8,Canada,438-099-4295,morganarnoldandabbott@clinic.ca,Specialized,7 AM - 7 PM,Accredited,514-414-5455
+301,Johnson LLC Hospital,64092 Vance Harbors Suite 159,Repentigny,Quebec,B4W 3T1,Canada,438-543-6570,johnsonllc@clinic.ca,Specialized,24/7,Pending,418-263-9788
+302,Lopez-Lopez Hospital,5495 Shannon Orchard,Kirkland,Quebec,N2R 5B1,Canada,514-023-1266,lopezlopez@medcenter.ca,General,8 AM - 6 PM,Pending,418-623-9444
+303,Bowers Ltd Hospital,2902 Mosley Island,Mascouche,Quebec,K3I 0R1,Canada,438-375-3820,bowersltd@healthcare.com,General,24/7,Pending,438-200-4133
+304,"Welch, Kelley and Hawkins Hospital",02715 Ward Shore,Blainville,Quebec,G5A 5F3,Canada,514-108-0001,welchkelleyandhawkins@clinic.ca,General,24/7,Accredited,514-444-8936
+305,Hart Ltd Hospital,07862 Reeves Alley,Granby,Quebec,Q0P 1L4,Canada,450-365-2534,hartltd@medcenter.ca,Clinic,7 AM - 7 PM,Pending,438-610-7343
+306,Peterson LLC Hospital,6942 Carolyn Keys Suite 175,Dorval,Quebec,K0P 4B2,Canada,514-695-0052,petersonllc@clinic.ca,General,8 AM - 6 PM,Pending,418-757-2103
+307,"French, Gonzalez and Wong Hospital",255 Rogers Heights Apt. 273,Kirkland,Quebec,H3E 5I1,Canada,450-221-9882,frenchgonzalezandwong@hospital.ca,General,8 AM - 6 PM,Pending,
+308,Hall Group Hospital,6698 Nathaniel Canyon,Longueuil,Quebec,G0U 8U4,Canada,450-563-4475,hallgroup@healthcare.com,Clinic,9 AM - 5 PM,Pending,
+309,"Clark, Watson and Miles Hospital",056 Connor Freeway Suite 887,Montreal,Quebec,N1V 7Y2,Canada,438-978-4926,clarkwatsonandmiles@clinic.ca,Specialized,10 AM - 8 PM,Accredited,438-671-6061
+310,"Henry, Mitchell and Martin Hospital",0655 Katherine Walk,Dollard-Des Ormeaux,Quebec,U3A 7W0,Canada,450-450-3330,henrymitchellandmartin@healthcare.com,Specialized,9 AM - 5 PM,Certified,450-092-4583
+311,"Shaw, Wright and Haynes Hospital",783 Michael Wall Suite 725,Montreal,Quebec,X1Q 9J4,Canada,514-156-5715,shawwrightandhaynes@medcenter.ca,Specialized,24/7,Pending,450-126-8667
+312,Owens Group Hospital,3332 Mcmillan Trail Apt. 992,Mascouche,Quebec,G9Q 4J4,Canada,514-666-2216,owensgroup@healthcare.com,Clinic,8 AM - 6 PM,Pending,
+313,"Parsons, Barnes and Sandoval Hospital",0770 Gibson Drive Suite 095,Laval,Quebec,V8H 9D4,Canada,438-367-5852,parsonsbarnesandsandoval@hospital.ca,Specialized,24/7,Accredited,514-904-6702
+314,Mills-Flores Hospital,06829 Walker Island,Gatineau,Quebec,T5N 8V9,Canada,418-835-0449,millsflores@hospital.ca,Clinic,10 AM - 8 PM,Pending,
+315,Simmons-Frederick Hospital,04339 Ward Prairie Suite 377,Blainville,Quebec,A2W 8V8,Canada,514-855-7454,simmonsfrederick@healthcare.com,Specialized,9 AM - 5 PM,Accredited,514-495-2050
+316,"Rodriguez, White and Tapia Hospital",42667 Davis Fall Suite 477,Kirkland,Quebec,K1A 0I4,Canada,514-639-4583,rodriguezwhiteandtapia@medcenter.ca,General,7 AM - 7 PM,Certified,514-860-8560
+317,Martinez-Williams Hospital,43277 Clark Lock,Drummondville,Quebec,S2G 2B1,Canada,418-853-2152,martinezwilliams@clinic.ca,General,10 AM - 8 PM,Certified,
+318,Cooper-Torres Hospital,069 Brown Burgs Suite 059,Repentigny,Quebec,H7C 5O3,Canada,450-764-0328,coopertorres@hospital.ca,Clinic,9 AM - 5 PM,Pending,450-015-9352
+319,"Graves, Smith and Wu Hospital",166 Maria Gardens Apt. 190,Brossard,Quebec,K1Z 6B2,Canada,514-483-5278,gravessmithandwu@medcenter.ca,Clinic,7 AM - 7 PM,Certified,418-437-2528
+320,Vincent LLC Hospital,58828 Maria Course,Quebec City,Quebec,R9I 9J9,Canada,450-144-6522,vincentllc@hospital.ca,Specialized,7 AM - 7 PM,Certified,418-402-1174
+321,Cook and Sons Hospital,5671 Johnson Union Apt. 712,Dorval,Quebec,I7H 3K0,Canada,514-304-6940,cookandsons@healthcare.com,Specialized,24/7,Pending,514-340-5127
+322,Duncan-Osborn Hospital,6068 Angelica Islands Suite 182,Pointe-Claire,Quebec,V2W 6K5,Canada,514-888-2203,duncanosborn@hospital.ca,General,8 AM - 6 PM,Certified,418-973-7777
+323,Wood-Cohen Hospital,950 Michael Shore,Repentigny,Quebec,B4P 9L4,Canada,514-130-9943,woodcohen@clinic.ca,Specialized,9 AM - 5 PM,Certified,450-514-6194
+324,Lee Inc Hospital,2404 White Keys Suite 210,Dollard-Des Ormeaux,Quebec,R1B 5C6,Canada,438-854-4658,leeinc@healthcare.com,General,10 AM - 8 PM,Accredited,450-631-2604
+325,"Martinez, Perez and Carson Hospital",82794 Ebony Gardens Apt. 163,Granby,Quebec,W1W 7Y5,Canada,514-707-5151,martinezperezandcarson@medcenter.ca,Specialized,10 AM - 8 PM,Pending,418-904-0768
+326,Martin-Molina Hospital,4597 Payne Islands Suite 188,Granby,Quebec,C4X 0W2,Canada,514-677-4211,martinmolina@healthcare.com,Clinic,8 AM - 6 PM,Pending,418-612-1938
+327,Valdez-Palmer Hospital,247 Alicia Oval,Quebec City,Quebec,O7Q 5V6,Canada,514-284-1706,valdezpalmer@clinic.ca,Specialized,10 AM - 8 PM,Certified,450-549-6854
+328,Esparza-Peterson Hospital,45886 Cook Corner,Quebec City,Quebec,L9J 5T9,Canada,438-913-1010,esparzapeterson@clinic.ca,Clinic,8 AM - 6 PM,Accredited,418-342-1458
+329,Holmes-Martinez Hospital,61951 Graham Islands Apt. 509,Blainville,Quebec,H8E 7V0,Canada,514-530-7793,holmesmartinez@medcenter.ca,Specialized,24/7,Accredited,418-388-9072
+330,"Jackson, Allen and Davis Hospital",99385 Kayla Forges Suite 608,Quebec City,Quebec,U4K 3M7,Canada,514-902-2981,jacksonallenanddavis@clinic.ca,Specialized,10 AM - 8 PM,Pending,450-818-6278
+331,Welch PLC Hospital,652 Harris Isle,Quebec City,Quebec,L3J 3A0,Canada,514-267-9025,welchplc@hospital.ca,General,10 AM - 8 PM,Pending,418-409-9598
+332,Benton-Sosa Hospital,9763 Mary Row Suite 656,Beaconsfield,Quebec,C0G 7G9,Canada,418-128-0045,bentonsosa@clinic.ca,General,10 AM - 8 PM,Accredited,438-227-6128
+333,Richardson-Hogan Hospital,983 David Skyway,Kirkland,Quebec,J8P 0Y1,Canada,438-649-1986,richardsonhogan@hospital.ca,General,24/7,Certified,514-005-6232
+334,Thornton Inc Hospital,36324 Robert Square,Brossard,Quebec,J1J 9B2,Canada,438-603-3696,thorntoninc@clinic.ca,Specialized,7 AM - 7 PM,Accredited,450-957-3614
+335,"Fisher, Joseph and Figueroa Hospital",6743 Santiago Point,Laval,Quebec,Q0C 3E4,Canada,514-209-0445,fisherjosephandfigueroa@medcenter.ca,Specialized,7 AM - 7 PM,Pending,
+336,"Hendricks, Lucas and Carroll Hospital",4260 Tyler Spurs Apt. 478,Granby,Quebec,M2I 7J6,Canada,514-139-0270,hendrickslucasandcarroll@clinic.ca,Clinic,7 AM - 7 PM,Certified,450-558-4851
+337,"Robertson, Torres and Vaughn Hospital",5618 Timothy Hollow Apt. 804,Quebec City,Quebec,H2A 1S1,Canada,514-667-5537,robertsontorresandvaughn@clinic.ca,Specialized,8 AM - 6 PM,Certified,450-852-7144
+338,"Chung, Rodriguez and Dennis Hospital",04539 Donna Highway,Mascouche,Quebec,Q2Z 6N2,Canada,450-636-8550,chungrodriguezanddennis@hospital.ca,Specialized,10 AM - 8 PM,Accredited,
+339,Sullivan and Sons Hospital,2639 Fleming Street Apt. 816,Dorval,Quebec,H3S 0M1,Canada,418-636-3407,sullivanandsons@clinic.ca,Specialized,9 AM - 5 PM,Certified,450-785-6704
+340,"Johnson, Hines and Davis Hospital",67140 James Station,Gatineau,Quebec,W7D 5M7,Canada,418-110-2635,johnsonhinesanddavis@medcenter.ca,General,9 AM - 5 PM,Accredited,450-843-9680
+341,"Jenkins, Ross and Ramirez Hospital",063 Julie Hill,Dollard-Des Ormeaux,Quebec,A1N 7U2,Canada,438-105-5446,jenkinsrossandramirez@medcenter.ca,General,10 AM - 8 PM,Accredited,418-834-9064
+342,Watson Ltd Hospital,471 Emily Pine Suite 590,Repentigny,Quebec,F2I 9J2,Canada,418-584-0818,watsonltd@healthcare.com,Clinic,10 AM - 8 PM,Certified,438-175-4303
+343,Lewis Inc Hospital,91816 Stone Parks,Dollard-Des Ormeaux,Quebec,U4U 3S9,Canada,514-325-0936,lewisinc@medcenter.ca,Specialized,24/7,Pending,450-493-3253
+344,Hernandez-English Hospital,72502 Smith Mountain,Beaconsfield,Quebec,G2M 6U3,Canada,418-955-0869,hernandezenglish@medcenter.ca,Specialized,7 AM - 7 PM,Accredited,450-478-4765
+345,Johnson LLC Hospital,686 Lynn Spurs Apt. 810,Dorval,Quebec,K7R 1H8,Canada,438-527-3582,johnsonllc@medcenter.ca,Clinic,8 AM - 6 PM,Pending,
+346,Bailey-Hoover Hospital,5118 Michelle Lane Apt. 659,Granby,Quebec,B7H 7F8,Canada,514-579-0295,baileyhoover@clinic.ca,General,9 AM - 5 PM,Accredited,514-571-6100
+347,"Bullock, Abbott and Hoffman Hospital",9861 Williams Ridge Suite 128,Trois-Rivières,Quebec,V9V 3Y1,Canada,514-124-4169,bullockabbottandhoffman@medcenter.ca,Specialized,24/7,Certified,
+348,"Mcintosh, Beasley and Martin Hospital",840 Williams Camp Suite 824,Mascouche,Quebec,F1K 2X7,Canada,438-620-6578,mcintoshbeasleyandmartin@clinic.ca,Clinic,8 AM - 6 PM,Pending,
+349,"Carter, Phillips and Durham Hospital",8330 Eric Causeway Apt. 347,Dorval,Quebec,P7K 2J7,Canada,450-203-9466,carterphillipsanddurham@clinic.ca,Clinic,8 AM - 6 PM,Accredited,418-317-2596
+350,Mitchell-Mcknight Hospital,5627 Linda Fort,Montreal,Quebec,Q1P 9M7,Canada,418-224-0197,mitchellmcknight@hospital.ca,General,24/7,Accredited,450-607-4333
+351,Smith LLC Hospital,36135 Andersen Orchard,Brossard,Quebec,S4R 7J6,Canada,450-485-5071,smithllc@medcenter.ca,General,7 AM - 7 PM,Certified,514-908-5357
+352,"Mcgee, Garcia and Allen Hospital",871 Kelly Pike Apt. 889,Sherbrooke,Quebec,T0T 6A5,Canada,418-732-4910,mcgeegarciaandallen@clinic.ca,General,24/7,Certified,418-177-0831
+353,"Small, Brady and Werner Hospital",9697 Brian Inlet Suite 990,Pointe-Claire,Quebec,H9B 9Z0,Canada,438-983-5752,smallbradyandwerner@medcenter.ca,Clinic,8 AM - 6 PM,Certified,514-898-6009
+354,Stanton-Franklin Hospital,74306 David Court Apt. 851,Dorval,Quebec,H3R 8F2,Canada,514-244-3439,stantonfranklin@clinic.ca,Clinic,24/7,Certified,438-174-1649
+355,Poole-Hill Hospital,6621 Brandon Brook,Drummondville,Quebec,Q2R 0F6,Canada,450-094-9338,poolehill@hospital.ca,Clinic,9 AM - 5 PM,Accredited,450-055-4424
+356,"Thomas, Washington and Coleman Hospital",4406 Laura Squares Suite 175,Drummondville,Quebec,C6K 8S5,Canada,438-530-2385,thomaswashingtonandcoleman@healthcare.com,Clinic,10 AM - 8 PM,Accredited,438-628-1400
+357,"Kidd, Kirby and Jensen Hospital",784 Bryan Expressway,Quebec City,Quebec,G8T 3P0,Canada,450-656-9554,kiddkirbyandjensen@medcenter.ca,General,8 AM - 6 PM,Accredited,450-731-6468
+358,"Thomas, Davidson and Harmon Hospital",6426 Carter Street Apt. 000,Granby,Quebec,I6Y 0L2,Canada,450-192-0644,thomasdavidsonandharmon@medcenter.ca,General,8 AM - 6 PM,Pending,
+359,"Love, Williamson and Burch Hospital",214 Vega Place Suite 708,Dorval,Quebec,X3L 1J2,Canada,450-555-1733,lovewilliamsonandburch@hospital.ca,Clinic,9 AM - 5 PM,Accredited,450-651-3214
+360,Henry-Finley Hospital,575 Blake Neck Suite 541,Gatineau,Quebec,K2V 1S9,Canada,514-010-9176,henryfinley@healthcare.com,Clinic,24/7,Pending,450-571-9848
+361,"Harris, Berry and Lawson Hospital",7262 Brown Branch,Dorval,Quebec,Y3S 2Y7,Canada,438-382-2510,harrisberryandlawson@medcenter.ca,General,10 AM - 8 PM,Pending,514-689-9431
+362,"Parks, Powers and Lopez Hospital",224 John Ports,Pointe-Claire,Quebec,H0U 7L9,Canada,450-020-8995,parkspowersandlopez@healthcare.com,Specialized,9 AM - 5 PM,Certified,418-600-1963
+363,Martinez-Ellis Hospital,7824 Andrew Forest Apt. 215,Mascouche,Quebec,T7C 9G1,Canada,450-403-0762,martinezellis@medcenter.ca,Clinic,7 AM - 7 PM,Pending,450-030-7689
+364,Schmidt-Wilkerson Hospital,7306 Stone Wall Apt. 090,Montreal,Quebec,P0I 9S9,Canada,450-095-0390,schmidtwilkerson@clinic.ca,General,9 AM - 5 PM,Certified,514-214-2733
+365,Zimmerman and Sons Hospital,289 Steven Way,Dollard-Des Ormeaux,Quebec,D5K 6N1,Canada,450-140-8174,zimmermanandsons@medcenter.ca,General,9 AM - 5 PM,Accredited,438-774-7916
+366,"Cervantes, Velasquez and Turner Hospital",65919 Roberts Camp Apt. 499,Laval,Quebec,D1W 3J1,Canada,418-058-6849,cervantesvelasquezandturner@clinic.ca,Specialized,24/7,Accredited,
+367,Gray Inc Hospital,020 Harold Fork Apt. 196,Sherbrooke,Quebec,W8Q 1U2,Canada,418-313-6941,grayinc@hospital.ca,Clinic,8 AM - 6 PM,Pending,450-028-8415
+368,"Kidd, Gillespie and Pacheco Hospital",154 Davis Causeway,Gatineau,Quebec,L8D 6M2,Canada,450-684-5396,kiddgillespieandpacheco@hospital.ca,Clinic,10 AM - 8 PM,Certified,450-563-6785
+369,"Cruz, Hubbard and Pittman Hospital",379 Madeline Summit,Dorval,Quebec,Y1K 2Y8,Canada,450-869-1731,cruzhubbardandpittman@healthcare.com,Specialized,8 AM - 6 PM,Pending,450-339-8178
+370,Bates-Huffman Hospital,77187 Allen Haven Apt. 469,Pointe-Claire,Quebec,Y4O 2R2,Canada,438-541-4431,bateshuffman@clinic.ca,Clinic,9 AM - 5 PM,Certified,418-299-2698
+371,Baker-Owen Hospital,864 Melinda Light,Drummondville,Quebec,C6S 3I8,Canada,438-034-9613,bakerowen@hospital.ca,Clinic,7 AM - 7 PM,Pending,418-336-2836
+372,Rivera Group Hospital,67660 Jennifer Stream,Blainville,Quebec,I5A 8Q3,Canada,450-210-3711,riveragroup@medcenter.ca,General,10 AM - 8 PM,Pending,
+373,"Jimenez, Wall and Hicks Hospital",64883 Kevin Ford,Dorval,Quebec,U6J 5S5,Canada,438-140-8848,jimenezwallandhicks@hospital.ca,Clinic,9 AM - 5 PM,Pending,438-822-7001
+374,Drake-Velazquez Hospital,1934 Woodward Fork Apt. 539,Laval,Quebec,B8E 0F8,Canada,514-561-2695,drakevelazquez@hospital.ca,Specialized,10 AM - 8 PM,Certified,
+375,"Allen, Martinez and Young Hospital",318 Alexandria Flats,Brossard,Quebec,W3E 0P5,Canada,514-486-1980,allenmartinezandyoung@clinic.ca,Specialized,9 AM - 5 PM,Certified,514-384-8633
+376,Contreras Inc Hospital,7742 Cody Burg Apt. 456,Gatineau,Quebec,B9H 1I0,Canada,438-760-9844,contrerasinc@medcenter.ca,Specialized,24/7,Accredited,418-462-9309
+377,Obrien-Irwin Hospital,915 John Light Suite 775,Gatineau,Quebec,K6G 3T6,Canada,514-466-0145,obrienirwin@medcenter.ca,Clinic,8 AM - 6 PM,Accredited,450-243-9464
+378,"Peters, Spears and Palmer Hospital",55571 Laurie Lane,Blainville,Quebec,X0B 4D0,Canada,418-801-9266,petersspearsandpalmer@clinic.ca,Clinic,10 AM - 8 PM,Pending,438-679-0608
+379,"Lamb, Martinez and Griffin Hospital",201 Chelsea Loaf,Quebec City,Quebec,G3N 5U8,Canada,438-938-7679,lambmartinezandgriffin@clinic.ca,Clinic,10 AM - 8 PM,Accredited,438-754-2268
+380,Garcia LLC Hospital,63025 Montes Forks,Dorval,Quebec,B2S 5Y6,Canada,418-333-9444,garciallc@healthcare.com,Clinic,7 AM - 7 PM,Accredited,
+381,"Herrera, Simmons and Church Hospital",35533 Lindsey Grove Suite 827,Sherbrooke,Quebec,R1O 0A7,Canada,438-650-0397,herrerasimmonsandchurch@clinic.ca,Specialized,9 AM - 5 PM,Certified,
+382,Whitaker Ltd Hospital,300 Robert Streets,Brossard,Quebec,U4Z 0P5,Canada,418-442-0298,whitakerltd@hospital.ca,General,8 AM - 6 PM,Certified,514-667-6044
+383,"Ruiz, Stephenson and Anderson Hospital",656 Katrina Key Apt. 686,Blainville,Quebec,Z2N 3F5,Canada,514-474-5265,ruizstephensonandanderson@medcenter.ca,General,24/7,Pending,514-491-7954
+384,Floyd LLC Hospital,5626 Preston Creek Suite 241,Trois-Rivières,Quebec,K5Q 2G5,Canada,438-378-5164,floydllc@hospital.ca,Specialized,7 AM - 7 PM,Pending,
+385,Jordan Group Hospital,08756 Jessica Spurs Apt. 330,Longueuil,Quebec,H2U 0H6,Canada,418-921-3362,jordangroup@healthcare.com,Specialized,10 AM - 8 PM,Certified,450-280-0353
+386,Norris PLC Hospital,2261 Willis Ramp,Laval,Quebec,G0L 4I1,Canada,514-927-8511,norrisplc@clinic.ca,Specialized,24/7,Certified,418-781-0211
+387,Kemp-Jones Hospital,910 Lisa Mission Apt. 889,Repentigny,Quebec,Z3K 0M6,Canada,438-747-7223,kempjones@healthcare.com,General,10 AM - 8 PM,Accredited,
+388,"Ross, Wall and Shepherd Hospital",653 James Trail,Drummondville,Quebec,S3U 0U6,Canada,418-993-0855,rosswallandshepherd@healthcare.com,Clinic,9 AM - 5 PM,Certified,514-653-7359
+389,"Hernandez, Hansen and Garcia Hospital",268 Benjamin Brook,Blainville,Quebec,M2F 5C5,Canada,450-166-2997,hernandezhansenandgarcia@hospital.ca,General,9 AM - 5 PM,Pending,514-765-5828
+390,Montes-Martinez Hospital,03360 Matthew Keys Suite 270,Trois-Rivières,Quebec,P2E 1M6,Canada,418-444-5985,montesmartinez@clinic.ca,General,8 AM - 6 PM,Pending,450-294-8636
+391,Hogan-Johnson Hospital,41683 Hanson Road,Montreal,Quebec,A1X 0M2,Canada,438-141-2049,hoganjohnson@healthcare.com,Specialized,24/7,Certified,514-410-1978
+392,Wells LLC Hospital,97873 Kelly Rest,Laval,Quebec,L6E 4U0,Canada,418-080-4349,wellsllc@hospital.ca,Specialized,10 AM - 8 PM,Certified,
+393,"Moore, Fox and Brandt Hospital",211 Gary Extension Apt. 997,Dorval,Quebec,S0V 0T0,Canada,450-114-0049,moorefoxandbrandt@medcenter.ca,General,9 AM - 5 PM,Certified,438-730-9803
+394,Thompson-Anderson Hospital,75702 Malone Cape,Drummondville,Quebec,B7M 3M2,Canada,438-624-6223,thompsonanderson@healthcare.com,Clinic,10 AM - 8 PM,Certified,418-211-1397
+395,Perry Group Hospital,8264 Michael Point Apt. 939,Mascouche,Quebec,E0K 6F4,Canada,514-121-1946,perrygroup@hospital.ca,Clinic,7 AM - 7 PM,Pending,514-527-6769
+396,Perez Group Hospital,55701 April Junctions Suite 501,Quebec City,Quebec,B8V 6F5,Canada,514-379-3430,perezgroup@clinic.ca,General,8 AM - 6 PM,Pending,
+397,"Thomas, Perez and Gray Hospital",79956 Kaitlyn Ford Suite 554,Laval,Quebec,N2D 2N3,Canada,450-006-7488,thomasperezandgray@healthcare.com,General,8 AM - 6 PM,Pending,450-444-3339
+398,Bradley-Conway Hospital,394 David Loop Apt. 072,Trois-Rivières,Quebec,J6M 9M3,Canada,438-611-2164,bradleyconway@medcenter.ca,Clinic,9 AM - 5 PM,Pending,450-674-3098
+399,"Burke, Lamb and Kim Hospital",5790 Sparks Ridge,Dorval,Quebec,K9G 1S5,Canada,438-291-6998,burkelambandkim@healthcare.com,Specialized,8 AM - 6 PM,Pending,438-561-2932
+400,Simmons-Morton Hospital,933 Juan Dale,Dollard-Des Ormeaux,Quebec,T2B 8N4,Canada,438-789-5850,simmonsmorton@clinic.ca,Clinic,7 AM - 7 PM,Pending,418-633-1657
+401,"Jones, Lee and Rich Hospital",71579 Brenda Station,Mascouche,Quebec,A3T 7V6,Canada,418-308-2914,jonesleeandrich@healthcare.com,General,7 AM - 7 PM,Certified,450-336-4641
+402,Dickson-Anderson Hospital,5121 Joseph Grove,Sherbrooke,Quebec,M5U 9Y0,Canada,450-709-0314,dicksonanderson@clinic.ca,Specialized,10 AM - 8 PM,Accredited,514-436-4410
+403,"Price, Wade and Wright Hospital",500 Christina Mall,Montreal,Quebec,Y2D 4T3,Canada,438-791-5576,pricewadeandwright@medcenter.ca,Clinic,10 AM - 8 PM,Certified,
+404,Ramos LLC Hospital,32817 Lindsay Expressway,Laval,Quebec,A3V 5I7,Canada,418-788-2357,ramosllc@medcenter.ca,Clinic,7 AM - 7 PM,Pending,514-236-0147
+405,Fernandez-Davis Hospital,410 Karen Course,Pointe-Claire,Quebec,A8E 7X9,Canada,450-961-8035,fernandezdavis@clinic.ca,Specialized,8 AM - 6 PM,Certified,514-976-3770
+406,Gilbert LLC Hospital,689 Linda Drives Suite 796,Dorval,Quebec,G9F 9O4,Canada,514-856-3212,gilbertllc@healthcare.com,Specialized,10 AM - 8 PM,Pending,438-105-6210
+407,Smith PLC Hospital,7110 Ortega Plain Apt. 643,Sherbrooke,Quebec,Z0F 8F1,Canada,450-695-0729,smithplc@healthcare.com,Clinic,7 AM - 7 PM,Pending,
+408,"Smith, Ford and Garcia Hospital",7685 Danielle Walk,Beaconsfield,Quebec,X4R 3J3,Canada,418-502-6380,smithfordandgarcia@medcenter.ca,Specialized,7 AM - 7 PM,Certified,
+409,Johnson Inc Hospital,942 Jessica Crest,Quebec City,Quebec,N2K 6I3,Canada,438-778-5550,johnsoninc@clinic.ca,Specialized,24/7,Certified,438-461-1927
+410,Woodard-Page Hospital,151 Carey Pass,Drummondville,Quebec,N3E 6C4,Canada,438-909-7434,woodardpage@healthcare.com,Specialized,9 AM - 5 PM,Pending,450-359-7114
+411,Rodriguez Ltd Hospital,342 Amy Brook,Brossard,Quebec,J0Y 6I8,Canada,450-708-3821,rodriguezltd@healthcare.com,Specialized,9 AM - 5 PM,Accredited,514-288-6027
+412,"Andrade, Miller and Bennett Hospital",4291 Colleen Lane,Mascouche,Quebec,P3A 2H7,Canada,514-201-2000,andrademillerandbennett@medcenter.ca,General,7 AM - 7 PM,Certified,
+413,Farley-Bennett Hospital,390 John Spring Suite 251,Trois-Rivières,Quebec,C7P 0E2,Canada,450-311-7380,farleybennett@clinic.ca,Specialized,24/7,Certified,438-974-9360
+414,Davis-Fletcher Hospital,840 Michelle Fort Suite 206,Repentigny,Quebec,T1O 7Q8,Canada,514-340-0920,davisfletcher@healthcare.com,Clinic,8 AM - 6 PM,Accredited,418-933-3685
+415,Tanner PLC Hospital,507 Holly Radial,Quebec City,Quebec,V0A 2X8,Canada,450-933-2116,tannerplc@hospital.ca,General,9 AM - 5 PM,Certified,
+416,Wilson-Walters Hospital,8448 Stephen Plain,Blainville,Quebec,K5Q 6L1,Canada,438-701-5330,wilsonwalters@clinic.ca,General,24/7,Accredited,438-112-7514
+417,"Adams, Harris and Manning Hospital",21334 Nathan Glen Apt. 646,Beaconsfield,Quebec,S3L 4M6,Canada,418-311-6512,adamsharrisandmanning@healthcare.com,Specialized,24/7,Pending,450-428-6434
+418,Foster-Marshall Hospital,420 Pratt Fords,Montreal,Quebec,A4F 4R9,Canada,450-460-3806,fostermarshall@clinic.ca,General,8 AM - 6 PM,Certified,450-197-8778
+419,Hernandez-Hill Hospital,674 Terry Plains Suite 664,Dorval,Quebec,T5S 5R9,Canada,450-346-5366,hernandezhill@hospital.ca,Specialized,24/7,Certified,418-133-4545
+420,"Raymond, Vazquez and Clark Hospital",9108 Donna Terrace Apt. 073,Drummondville,Quebec,M0K 2R9,Canada,418-553-1386,raymondvazquezandclark@healthcare.com,Clinic,8 AM - 6 PM,Certified,418-855-5332
+421,"Jackson, Lawrence and Lambert Hospital",4206 Serrano Square,Gatineau,Quebec,L3G 8Q2,Canada,418-844-0181,jacksonlawrenceandlambert@clinic.ca,Clinic,9 AM - 5 PM,Certified,438-385-4035
+422,Webb Inc Hospital,53405 Diana Run Suite 154,Drummondville,Quebec,R6E 9P8,Canada,418-627-3360,webbinc@clinic.ca,General,10 AM - 8 PM,Certified,450-897-2451
+423,Pratt Inc Hospital,13514 Troy Shoal Apt. 860,Trois-Rivières,Quebec,M7B 1X4,Canada,418-101-4654,prattinc@hospital.ca,General,7 AM - 7 PM,Pending,438-210-5615
+424,Gomez LLC Hospital,4421 Ruiz Common,Kirkland,Quebec,B2O 0O2,Canada,438-823-2484,gomezllc@hospital.ca,Specialized,24/7,Accredited,450-743-0610
+425,Schmidt-Moore Hospital,03878 Vanessa Mountains Apt. 208,Gatineau,Quebec,C1T 6H4,Canada,514-860-1806,schmidtmoore@clinic.ca,Clinic,10 AM - 8 PM,Certified,450-955-6001
+426,"Sullivan, Lyons and Payne Hospital",85294 Cheryl Motorway Apt. 814,Drummondville,Quebec,D2U 1U7,Canada,438-471-2645,sullivanlyonsandpayne@clinic.ca,Clinic,9 AM - 5 PM,Accredited,438-257-0218
+427,"Faulkner, Green and Smith Hospital",9321 Jenkins Walk Apt. 048,Mascouche,Quebec,A3M 4U0,Canada,514-331-1862,faulknergreenandsmith@clinic.ca,General,9 AM - 5 PM,Certified,514-574-7137
+428,"Roberts, Morales and Hooper Hospital",961 Jessica Extensions Suite 694,Trois-Rivières,Quebec,H1H 7L4,Canada,450-180-1078,robertsmoralesandhooper@healthcare.com,Specialized,24/7,Pending,438-013-7749
+429,Chavez-Lucero Hospital,1563 Raymond Lock,Repentigny,Quebec,C6G 1Z0,Canada,514-786-8114,chavezlucero@healthcare.com,General,10 AM - 8 PM,Accredited,514-183-2880
+430,"Cook, Knight and Rivera Hospital",82881 Rebecca Islands,Dorval,Quebec,T1W 0D5,Canada,438-648-1105,cookknightandrivera@medcenter.ca,Clinic,24/7,Accredited,418-363-6663
+431,Barnes Inc Hospital,38607 Colton Inlet,Trois-Rivières,Quebec,I8Y 5Q9,Canada,418-807-7655,barnesinc@medcenter.ca,Clinic,7 AM - 7 PM,Pending,
+432,Salazar Inc Hospital,342 David Lakes Suite 954,Gatineau,Quebec,S0P 1Y7,Canada,450-070-1699,salazarinc@clinic.ca,General,9 AM - 5 PM,Pending,450-075-6535
+433,"Hernandez, Mcdowell and Huff Hospital",983 Philip Orchard Suite 246,Drummondville,Quebec,L8G 6M1,Canada,438-444-8973,hernandezmcdowellandhuff@medcenter.ca,Specialized,7 AM - 7 PM,Certified,
+434,Krueger PLC Hospital,330 Jenna Flat Apt. 787,Dollard-Des Ormeaux,Quebec,M5Z 3R9,Canada,418-043-8476,kruegerplc@healthcare.com,Specialized,10 AM - 8 PM,Accredited,418-763-6376
+435,Reynolds and Sons Hospital,0208 Paul Mission Apt. 841,Kirkland,Quebec,K1M 1W3,Canada,438-636-0745,reynoldsandsons@hospital.ca,Clinic,9 AM - 5 PM,Accredited,514-432-6638
+436,"Hunter, Smith and White Hospital",648 Ronald Highway Apt. 595,Drummondville,Quebec,C4W 1W9,Canada,418-333-6423,huntersmithandwhite@healthcare.com,Specialized,7 AM - 7 PM,Pending,438-312-2791
+437,Perry-Keller Hospital,0441 Hurst Park,Kirkland,Quebec,Q9H 1B9,Canada,450-893-2032,perrykeller@hospital.ca,Clinic,8 AM - 6 PM,Certified,
+438,"Wolf, Rogers and Horton Hospital",57545 Patricia Prairie Apt. 778,Laval,Quebec,P9T 7S2,Canada,418-357-8559,wolfrogersandhorton@hospital.ca,Specialized,9 AM - 5 PM,Pending,438-459-0083
+439,"Marshall, Adkins and Spencer Hospital",8810 Navarro Island,Montreal,Quebec,A5Q 4S8,Canada,418-357-6034,marshalladkinsandspencer@healthcare.com,General,9 AM - 5 PM,Accredited,450-618-2480
+440,Strong-Gonzalez Hospital,8327 Sean Isle,Trois-Rivières,Quebec,I0R 2B9,Canada,450-357-4683,stronggonzalez@healthcare.com,General,10 AM - 8 PM,Accredited,438-712-9043
+441,Moore Inc Hospital,2474 Christensen Corners,Mascouche,Quebec,G7O 0N7,Canada,418-863-3687,mooreinc@medcenter.ca,Specialized,7 AM - 7 PM,Pending,514-677-5247
+442,"Webb, Swanson and Warren Hospital",321 Nicholas Prairie Suite 229,Granby,Quebec,V7H 9D7,Canada,514-290-0194,webbswansonandwarren@medcenter.ca,Clinic,10 AM - 8 PM,Pending,
+443,"Carlson, Smith and Torres Hospital",74767 Alice Prairie Suite 408,Drummondville,Quebec,S0N 1T9,Canada,514-035-5340,carlsonsmithandtorres@clinic.ca,Specialized,9 AM - 5 PM,Accredited,
+444,Clayton-Wilkerson Hospital,3632 Kim Motorway,Blainville,Quebec,P3C 5K6,Canada,514-084-3797,claytonwilkerson@hospital.ca,General,24/7,Pending,450-046-0379
+445,Martin-Frey Hospital,229 Boone Run,Trois-Rivières,Quebec,L7Q 2I5,Canada,514-454-2081,martinfrey@medcenter.ca,Clinic,24/7,Pending,418-077-2294
+446,"Christensen, Hale and Johnston Hospital",786 Crosby Vista Apt. 125,Laval,Quebec,B6R 9W3,Canada,438-949-3060,christensenhaleandjohnston@clinic.ca,Specialized,7 AM - 7 PM,Certified,418-620-0260
+447,Long Group Hospital,4690 Amy Camp,Mascouche,Quebec,Z2O 6N5,Canada,450-839-0322,longgroup@healthcare.com,Clinic,9 AM - 5 PM,Certified,
+448,Anderson Ltd Hospital,91590 Lori Grove,Longueuil,Quebec,P3N 0I8,Canada,438-831-9714,andersonltd@healthcare.com,General,10 AM - 8 PM,Accredited,438-341-0096
+449,Martinez-Fuller Hospital,687 Solis Shoal Apt. 656,Laval,Quebec,S7D 4S4,Canada,514-016-2674,martinezfuller@clinic.ca,Clinic,24/7,Accredited,
+450,Terry-Manning Hospital,4203 Adrian Via Suite 358,Gatineau,Quebec,M1L 6R5,Canada,450-534-9131,terrymanning@healthcare.com,Clinic,8 AM - 6 PM,Certified,438-477-4009
+451,Moyer-Carpenter Hospital,66629 Nicholas Lock Apt. 176,Mascouche,Quebec,H5V 1P6,Canada,450-088-6921,moyercarpenter@hospital.ca,General,9 AM - 5 PM,Certified,
+452,Hernandez Group Hospital,9479 Holly Street Suite 169,Pointe-Claire,Quebec,W4M 6R6,Canada,418-995-0726,hernandezgroup@clinic.ca,Specialized,8 AM - 6 PM,Certified,
+453,Hodges-Powell Hospital,6360 Hernandez Passage,Pointe-Claire,Quebec,N3O 6I9,Canada,438-512-5683,hodgespowell@clinic.ca,Specialized,24/7,Accredited,
+454,Henry Inc Hospital,339 Jillian Pines Suite 196,Pointe-Claire,Quebec,X0U 8O2,Canada,418-971-3677,henryinc@healthcare.com,General,24/7,Accredited,
+455,Mcgee PLC Hospital,536 Thomas Causeway Apt. 661,Gatineau,Quebec,F6K 1N7,Canada,418-205-0012,mcgeeplc@medcenter.ca,Clinic,9 AM - 5 PM,Pending,450-042-0956
+456,Jones PLC Hospital,37716 Morgan Cliff,Brossard,Quebec,H9Q 7Z7,Canada,438-700-6896,jonesplc@medcenter.ca,Clinic,8 AM - 6 PM,Certified,418-010-3279
+457,Novak-Jones Hospital,3740 Reginald Flat Apt. 375,Repentigny,Quebec,I3V 1N0,Canada,450-053-6782,novakjones@hospital.ca,Specialized,10 AM - 8 PM,Certified,
+458,"Lewis, Allen and Long Hospital",316 Carl Plains Suite 048,Blainville,Quebec,M7I 5X7,Canada,418-534-8488,lewisallenandlong@clinic.ca,Clinic,7 AM - 7 PM,Accredited,438-719-8563
+459,"Graves, Johnson and Jimenez Hospital",84937 Scott Burg Apt. 459,Kirkland,Quebec,X1O 5R7,Canada,438-525-0468,gravesjohnsonandjimenez@hospital.ca,General,9 AM - 5 PM,Certified,418-337-3770
+460,"Hayes, Byrd and Turner Hospital",487 Melissa Mountains,Dollard-Des Ormeaux,Quebec,P0J 7D7,Canada,418-155-1134,hayesbyrdandturner@medcenter.ca,Specialized,7 AM - 7 PM,Pending,438-310-1219
+461,Barajas-Rodriguez Hospital,5714 Carrie Locks Apt. 404,Longueuil,Quebec,U3L 9D6,Canada,418-989-1889,barajasrodriguez@healthcare.com,Clinic,8 AM - 6 PM,Accredited,514-466-1794
+462,Page Inc Hospital,20711 Nixon Circle,Trois-Rivières,Quebec,Y0K 0Z7,Canada,418-480-3979,pageinc@clinic.ca,Specialized,9 AM - 5 PM,Certified,418-966-7484
+463,Jones Group Hospital,09548 Murphy Street,Repentigny,Quebec,N3P 6L1,Canada,514-711-3915,jonesgroup@medcenter.ca,General,9 AM - 5 PM,Accredited,450-739-8036
+464,Ellis-Smith Hospital,07990 Tina Circle Suite 493,Repentigny,Quebec,Q8L 3N0,Canada,514-511-9023,ellissmith@hospital.ca,Specialized,9 AM - 5 PM,Certified,
+465,Randall Ltd Hospital,96205 Suzanne Lock Suite 991,Montreal,Quebec,U7X 8W1,Canada,418-859-5322,randallltd@hospital.ca,General,9 AM - 5 PM,Pending,514-271-1304
+466,English Ltd Hospital,4670 Bates Ways Apt. 896,Dorval,Quebec,C5R 5E8,Canada,514-363-5405,englishltd@healthcare.com,Clinic,10 AM - 8 PM,Pending,418-474-9428
+467,Guzman Group Hospital,2620 Sims Plains,Dorval,Quebec,Q5Z 8L4,Canada,450-252-7817,guzmangroup@clinic.ca,Specialized,7 AM - 7 PM,Accredited,438-672-0453
+468,Leonard and Sons Hospital,51316 Morales Mills,Kirkland,Quebec,R7M 7H4,Canada,514-845-8654,leonardandsons@healthcare.com,General,7 AM - 7 PM,Certified,
+469,Hansen-Allison Hospital,96390 Reid Square Apt. 164,Laval,Quebec,K4P 6V1,Canada,450-599-0079,hansenallison@healthcare.com,General,10 AM - 8 PM,Certified,
+470,"Hurst, Nguyen and Hall Hospital",850 Eric Vista,Gatineau,Quebec,E7L 8Y5,Canada,418-656-4931,hurstnguyenandhall@healthcare.com,Specialized,9 AM - 5 PM,Pending,
+471,Garcia LLC Hospital,11787 Whitaker Points Apt. 971,Brossard,Quebec,K0R 5H9,Canada,438-045-1347,garciallc@clinic.ca,Specialized,7 AM - 7 PM,Certified,
+472,Rogers-Owens Hospital,8276 Wheeler Roads,Pointe-Claire,Quebec,P0X 5W3,Canada,438-778-5688,rogersowens@clinic.ca,General,8 AM - 6 PM,Accredited,
+473,Martin-Johnson Hospital,38184 David Drive,Gatineau,Quebec,M9Z 8Y8,Canada,450-212-3895,martinjohnson@hospital.ca,General,8 AM - 6 PM,Certified,438-867-3950
+474,"Wilson, Rodriguez and Lloyd Hospital",59947 Paul Isle Apt. 396,Sherbrooke,Quebec,Q8O 8H5,Canada,418-849-7081,wilsonrodriguezandlloyd@medcenter.ca,Specialized,7 AM - 7 PM,Pending,
+475,Chase Inc Hospital,724 Little Oval,Dollard-Des Ormeaux,Quebec,A0N 9R7,Canada,514-158-3156,chaseinc@hospital.ca,Clinic,7 AM - 7 PM,Pending,438-060-4086
+476,Melton-Holden Hospital,532 Morton Canyon,Laval,Quebec,D9I 5D4,Canada,418-046-8796,meltonholden@hospital.ca,Clinic,24/7,Certified,418-714-1833
+477,"Mitchell, Duncan and Benson Hospital",210 Gregory Orchard,Laval,Quebec,T9G 6G5,Canada,514-722-0013,mitchellduncanandbenson@clinic.ca,Clinic,8 AM - 6 PM,Pending,514-425-2510
+478,Barrett LLC Hospital,3520 Hunter Junctions Suite 978,Dorval,Quebec,X7C 7V7,Canada,450-909-4456,barrettllc@medcenter.ca,General,10 AM - 8 PM,Accredited,450-375-7193
+479,Barnes Ltd Hospital,839 Stanley Pine Apt. 479,Montreal,Quebec,R2V 9E4,Canada,418-564-1654,barnesltd@healthcare.com,Specialized,9 AM - 5 PM,Accredited,
+480,"Jones, Ibarra and Guerra Hospital",311 Lucas Crest,Brossard,Quebec,R7H 9A0,Canada,514-224-3971,jonesibarraandguerra@hospital.ca,Clinic,9 AM - 5 PM,Accredited,
+481,Aguilar LLC Hospital,032 Stark Mill Suite 883,Blainville,Quebec,G5T 1R6,Canada,418-980-5229,aguilarllc@hospital.ca,Clinic,24/7,Certified,418-389-0233
+482,Perez Ltd Hospital,4717 Debra Garden Suite 867,Beaconsfield,Quebec,Q4C 3N8,Canada,438-121-0049,perezltd@healthcare.com,Clinic,9 AM - 5 PM,Accredited,
+483,Bowers-Young Hospital,731 Lewis Throughway,Laval,Quebec,O5R 5H2,Canada,514-176-5907,bowersyoung@clinic.ca,Specialized,8 AM - 6 PM,Accredited,438-190-2678
+484,"Wilkerson, Anderson and White Hospital",08659 Heather Harbor,Mascouche,Quebec,C7L 0R8,Canada,438-487-4374,wilkersonandersonandwhite@clinic.ca,General,10 AM - 8 PM,Certified,514-279-9067
+485,"Walker, Baker and Jordan Hospital",800 White Dale,Drummondville,Quebec,Y6G 3Q6,Canada,450-018-9907,walkerbakerandjordan@medcenter.ca,Clinic,24/7,Certified,438-845-0127
+486,Bell-Turner Hospital,712 Gray Highway,Gatineau,Quebec,G3K 4L3,Canada,438-725-8631,bellturner@medcenter.ca,Specialized,24/7,Pending,450-285-3526
+487,Wright and Sons Hospital,3680 Valerie Crest,Brossard,Quebec,M9K 2W6,Canada,438-089-7411,wrightandsons@medcenter.ca,General,8 AM - 6 PM,Certified,438-505-5790
+488,Boone PLC Hospital,2314 Bailey Camp Apt. 520,Blainville,Quebec,F2U 6Z5,Canada,514-908-0300,booneplc@clinic.ca,General,7 AM - 7 PM,Pending,438-927-4978
+489,Gomez PLC Hospital,10598 Bowman Path,Brossard,Quebec,O1F 6Z6,Canada,450-611-3639,gomezplc@healthcare.com,General,24/7,Certified,450-946-9358
+490,Leach and Sons Hospital,802 Bradford Path Apt. 351,Brossard,Quebec,K9Y 7V4,Canada,418-887-1771,leachandsons@clinic.ca,General,24/7,Certified,450-064-3486
+491,Bradford-Johnson Hospital,359 Torres Harbors Suite 813,Blainville,Quebec,D0S 4L3,Canada,438-916-5706,bradfordjohnson@healthcare.com,General,7 AM - 7 PM,Pending,514-787-0795
+492,"Garcia, Cole and Whitehead Hospital",6775 Whitney Brooks Apt. 636,Granby,Quebec,E6O 6H0,Canada,418-656-9762,garciacoleandwhitehead@clinic.ca,Clinic,10 AM - 8 PM,Pending,418-206-8842
+493,"Levine, Fernandez and Glenn Hospital",8129 Jessica Oval Apt. 074,Dorval,Quebec,V7O 1B0,Canada,418-414-4919,levinefernandezandglenn@healthcare.com,Specialized,24/7,Certified,438-799-3181
+494,Smith-Chapman Hospital,13758 Mathis Drive Apt. 364,Dollard-Des Ormeaux,Quebec,R9C 3O4,Canada,514-167-9067,smithchapman@hospital.ca,Specialized,24/7,Pending,514-706-9755
+495,Crawford Group Hospital,6619 Katherine Extensions,Granby,Quebec,Q1Q 2V0,Canada,418-160-7060,crawfordgroup@hospital.ca,Clinic,9 AM - 5 PM,Pending,438-710-1834
+496,"Flores, Smith and Harper Hospital",74256 Jimenez Crescent Apt. 652,Montreal,Quebec,R5S 7E4,Canada,438-282-9056,floressmithandharper@medcenter.ca,General,8 AM - 6 PM,Accredited,450-504-8770
+497,Walls Ltd Hospital,16668 Melanie Forges Suite 774,Blainville,Quebec,G7W 2O4,Canada,450-699-7488,wallsltd@medcenter.ca,Clinic,10 AM - 8 PM,Accredited,438-541-1166
+498,Gardner-Ward Hospital,4515 Michael Circle,Montreal,Quebec,T0Y 1O5,Canada,514-544-8867,gardnerward@healthcare.com,Specialized,9 AM - 5 PM,Pending,514-000-1314
+499,Johnson Group Hospital,5029 Lamb Greens Suite 155,Dorval,Quebec,K3U 5W5,Canada,450-215-0546,johnsongroup@healthcare.com,Clinic,8 AM - 6 PM,Certified,
+500,"Cooper, Barker and Andrews Hospital",6696 Kristina Street,Gatineau,Quebec,C8R 8D0,Canada,438-825-6688,cooperbarkerandandrews@medcenter.ca,Specialized,7 AM - 7 PM,Certified,514-510-0233
