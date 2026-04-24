@@ -16,6 +16,11 @@ models:
 
       - name: donation_id
         description: "Identifier of the donation associated with this inventory unit."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_blood_donations')
+                field: donation_id
         
 
       - name: blood_group
@@ -61,6 +66,11 @@ models:
 
       - name: recipient_id
         description: "Identifier of the recipient if the blood unit has been allocated."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_recipients')
+                field: recipient_id
 
   - name: stg_blood_tests
     description: "Staging model for blood test records sourced from raw.blood_tests.
@@ -79,9 +89,19 @@ models:
         description: "Identifier of the donor associated with the blood test."
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_donors')
+                field: donor_id
+
 
       - name: technician_id
         description: "Identifier of the technician who performed the test."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_technicians')
+                field: technician_id
 
       - name: test_date
         description: "Date on which the blood test was conducted. Invalid placeholder dates are converted to NULL."
@@ -155,18 +175,49 @@ models:
         description: "Identifier of the donor who made the donation."
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_donors')
+                field: donor_id
+
 
       - name: hospital_id
         description: "Identifier of the hospital where the donation was collected."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_hospitals')
+                field: hospital_id
+
 
       - name: recipient_id
         description: "Identifier of the recipient linked to the donation (if allocated)."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_recipients')
+                field: recipient_id
+
+
 
       - name: collection_technician_id
         description: "Technician responsible for collecting the blood."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_technicians')
+                field: technician_id
+
 
       - name: processed_by_technician_id
         description: "Technician responsible for processing the blood."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_technicians')
+                field: technician_id
+
+
 
       - name: test_result_id
         description: "Identifier referencing the associated blood test result."
@@ -228,9 +279,21 @@ models:
         description: "Identifier of the donor associated with the reaction record."
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_donors')
+                field: donor_id
+
 
       - name: donation_id
         description: "Identifier of the related donation."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_blood_donations')
+                field: donation_id
+
+
 
       - name: reaction
         description: "Type of post-donation reaction experienced by the donor (stored in lowercase)."
@@ -474,10 +537,23 @@ models:
 
       - name: recipient_id
         description: "Identifier of the recipient associated with the request."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_recipients')
+                field: recipient_id
+
         
 
       - name: hospital_id
         description: "Identifier of the hospital where the request was made."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_hospitals')
+                field: hospital_id
+
+      
 
       - name: recipient_blood_group
         description: "Blood group required by the recipient (standardized to uppercase)."
@@ -497,14 +573,6 @@ models:
           - accepted_values:
               arguments:
                 values: ['low', 'medium', 'high']
-
-      - name: units_required
-        description: "Number of units required for the blood request."
-        tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              arguments:
-                expression: "> 0"
 
 
   - name: stg_technician_tasks
@@ -547,10 +615,23 @@ models:
 
       - name: hospital_id
         description: "Identifier of the hospital where the technician is currently working."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_hospitals')
+                field: hospital_id
+
         
 
       - name: assigned_hospital_id
         description: "Identifier of the hospital the technician is assigned to (if different)."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_hospitals')
+                field: hospital_id
+
+      
 
       - name: name
         description: "Full name of the technician (standardized using INITCAP)."

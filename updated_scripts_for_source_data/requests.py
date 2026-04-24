@@ -1,3 +1,70 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – BLOOD REQUESTS (FACT TABLE)
+# ============================================================
+
+# 1. Requests represent demand (fact table)
+# - Each record represents a blood request raised for a recipient
+# - Linked to dim_recipients via recipient_id
+# - Acts as the primary source of demand in demand vs supply analysis
+
+# 2. Separation of dimension and fact
+# - Recipient attributes are NOT duplicated here
+# - Only transactional data (request details) is stored
+# - Ensures proper dimensional modeling
+
+# 3. Controlled demand distribution (business-driven)
+# - Blood groups assigned using weighted probabilities
+# - High-demand groups (A+, O+, B+) appear more frequently
+# - Rare groups have lower frequency
+# - Helps create realistic imbalance scenarios in reporting
+
+# 4. Recipient consistency
+# - recipient_id is selected based on matching blood group
+# - Ensures logical consistency between recipient and request
+
+# 5. Urgency distribution
+# - Requests categorized as low, medium, high urgency
+# - Majority are medium urgency (~50%)
+# - High urgency limited (~25%) to simulate critical cases
+
+# 6. Time-based request behavior (active vs inactive)
+# - ~70% requests are future-dated (active demand)
+# - ~15% are for today (immediate demand)
+# - ~15% are past-dated (inactive/fulfilled demand)
+# - Enables filtering logic for active demand in reports
+
+# 7. Urgency-driven timing
+# - High urgency → near-term dates (0–2 days)
+# - Medium urgency → short-term (2–10 days)
+# - Low urgency → longer-term (5–25 days)
+# - Ensures realistic prioritization of requests
+
+# 8. Hospital association
+# - Most requests (~90%) are linked to a hospital
+# - Some records intentionally left null to simulate incomplete data
+
+# 9. Large-scale data handling
+# - Dataset generated in chunks (100k rows)
+# - Supports scalable data generation without memory issues
+
+# 10. Data integrity rules
+# - request_id is unique
+# - blood_group always aligns with selected recipient
+# - No invalid or conflicting relationships
+
+# 11. Purpose of dataset
+# - Supports analysis such as:
+#   • Demand vs supply comparison
+#   • Urgency-based prioritization
+#   • Active vs inactive demand tracking
+#   • Blood group demand patterns
+
+# 12. Design focus
+# - Controlled randomness with business logic
+# - Designed specifically to create meaningful analytical insights
+# ============================================================
+
+
 import pandas as pd
 import random
 from datetime import datetime, timedelta
@@ -61,13 +128,6 @@ for chunk_start in range(0, NUM_REQUESTS, CHUNK_SIZE):
             weights=[0.25, 0.50, 0.25]
         )[0]
 
-        #  FIXED units (less aggressive)
-        if urgency == 'low':
-            units_required = 1
-        elif urgency == 'medium':
-            units_required = random.randint(1, 2)
-        else:
-            units_required = random.randint(2, 3)
 
         #  Improved active/inactive balance
         r = random.random()
@@ -90,7 +150,7 @@ for chunk_start in range(0, NUM_REQUESTS, CHUNK_SIZE):
             required_date = today - timedelta(days=random.randint(1, 15))
 
         # Hospital
-        hospital_id = random.randint(1, 300) if random.random() < 0.9 else None
+        hospital_id = random.randint(1, 500) if random.random() < 0.9 else None
 
         chunk_data.append([
             request_id,
@@ -98,15 +158,14 @@ for chunk_start in range(0, NUM_REQUESTS, CHUNK_SIZE):
             hospital_id,
             blood_group,
             required_date,
-            urgency,
-            units_required
+            urgency
         ])
 
         request_id += 1
 
     chunk_df = pd.DataFrame(chunk_data, columns=[
         "request_id","recipient_id","hospital_id",
-        "blood_group","required_date","urgency","units_required"
+        "blood_group","required_date","urgency"
     ])
 
     chunk_df["hospital_id"] = chunk_df["hospital_id"].astype("Int64")

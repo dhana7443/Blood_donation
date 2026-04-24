@@ -1,3 +1,74 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – DONORS
+# ============================================================
+
+# 1. Donor master dataset (core dimension)
+# - Each record represents a unique donor with demographic and health attributes
+# - Acts as a primary reference table for donations, tests, and history
+
+# 2. Demographic realism
+# - Includes attributes like age, gender, weight, and location
+# - Age restricted to realistic donor range (18–65)
+# - Gender includes inclusive categories (Male, Female, Other)
+
+# 3. Blood group assignment
+# - Each donor is assigned one valid blood group
+# - Additional binary flags created for each blood group (for flexible filtering/reporting)
+
+# 4. Donation history tracking
+# - last_donation_date generated within past 3 years
+# - days_since_last_donation calculated for analytical use
+# - Some donors (~10%) have no prior donations (new donors)
+
+# 5. Eligibility logic (business rule)
+# - Donor is eligible if:
+#     • No previous donation OR
+#     • Last donation was more than 90 days ago
+# - Reflects standard donation eligibility guidelines
+
+# 6. Donation behavior
+# - donations_count simulates past donation activity (0–5)
+# - Helps in identifying frequent vs occasional donors
+
+# 7. Contact information handling
+# - Contact method randomly chosen (phone/email)
+# - Phone numbers follow structured format
+# - Ensures realistic communication data
+
+# 8. Optional/nullable operational fields
+# - registered_by_staff_id and primary_contact_id are partially populated
+# - Simulates real-world incomplete operational data
+
+# 9. Health monitoring
+# - last_health_check_date available for most donors (~80%)
+# - Supports health-based eligibility and analysis
+
+# 10. Donation constraints
+# - donation_frequency_allowed defines how often a donor can donate
+# - Includes null values to simulate missing or undefined rules
+
+# 11. Notes and qualitative data
+# - Notes added for a subset (~30%) of donors
+# - Provides contextual information such as health history or donor behavior
+
+# 12. Data consistency and integrity
+# - days_since_last_donation derived from last_donation_date
+# - Blood group flags aligned with assigned blood group
+# - Ensures no conflicting or unrealistic data
+
+# 13. Purpose of dataset
+# - Supports analysis such as:
+#   • Donor demographics and segmentation
+#   • Eligibility tracking
+#   • Donor retention and activity patterns
+#   • Health and risk analysis
+
+# 14. Design focus
+# - Combination of structured attributes and controlled randomness
+# - Ensures dataset is both realistic and analytically useful
+# ============================================================
+
+
 import pandas as pd
 import random
 from faker import Faker

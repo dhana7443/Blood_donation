@@ -1,3 +1,51 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – RECIPIENTS (DIMENSION)
+# ============================================================
+
+# 1. Recipient master dataset (dimension table)
+# - Each record represents a unique patient/recipient
+# - Used as a reference for blood requests (fact table)
+
+# 2. Realistic blood group distribution
+# - Blood groups are assigned using weighted probabilities
+# - Common groups (A+, O+, B+) have higher frequency
+# - Rare groups (AB-, O-) have lower frequency
+# - Helps create realistic demand patterns in analysis
+
+# 3. Age distribution modeling
+# - Age is generated across multiple ranges:
+#     • Children (1–17)
+#     • Young adults (18–40)
+#     • Middle-aged (41–60)
+#     • Seniors (61–90)
+# - Supports demographic analysis
+
+# 4. Geographic consistency
+# - Majority (~80%) of recipients are from Quebec cities
+# - Remaining records use random cities for variability
+# - Enables location-based reporting
+
+# 5. Data integrity rules
+# - recipient_id is unique and acts as primary key
+# - Each recipient has exactly one valid blood group
+# - No conflicting or derived fields
+
+# 6. Lightweight dimension design
+# - Limited number of attributes to keep joins efficient
+# - Suitable for large-scale fact tables
+
+# 7. Purpose of dataset
+# - Supports analysis such as:
+#   • Demand segmentation by blood group
+#   • Geographic demand patterns
+#   • Age-based analysis of recipients
+
+# 8. Design focus
+# - Clean, stable, and reusable dimension
+# - Optimized for performance and analytical clarity
+# ============================================================
+
+
 import pandas as pd
 import random
 from faker import Faker

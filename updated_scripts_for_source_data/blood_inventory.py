@@ -1,169 +1,69 @@
-# import pandas as pd
-# import random
-# from datetime import timedelta
+# ============================================================
+# MOCK DATA GENERATION LOGIC – BLOOD INVENTORY
+# ============================================================
 
-# # Load donations
-# donations_df = pd.read_csv("donations.csv")
+# 1. Inventory depends on donations
+# - Each inventory record is derived from donation data
+# - Pending donations are excluded (only valid donations considered)
 
-# NUM_RECORDS = len(donations_df)
+# 2. Controlled inflow into inventory
+# - Not all donations reach inventory (~40% selected)
+# - Simulates real-world loss, processing delays, or rejection
 
-# data = []
-# inventory_id = 1
-# today = pd.Timestamp.today().date()
+# 3. Blood group supply imbalance (business-driven)
+# - High demand groups (A+, B+, O+) intentionally have reduced supply
+# - Other groups have relatively higher supply
+# - Ensures realistic "demand vs supply" imbalance for reporting
 
-# #  High demand groups → will create shortages
-# high_demand_groups = ['A+', 'B+', 'O+']
+# 4. Volume and unit calculation
+# - Available volume is slightly reduced from donation quantity (65–95%)
+# - Units derived from volume (approx. 1 unit ≈ 60 ml)
+# - Additional randomness added to avoid uniform patterns
 
-# CHUNK_SIZE = 100000
-# file_name = "blood_inventory.csv"
+# 5. Lifecycle consistency (no backward transitions)
+# - Inventory status is derived from donation status
+# - Ensures forward-only progression:
+#   complete → stored/tested/discarded
+#   tested → tested/distributed
+#   distributed → remains distributed
+# - Prevents unrealistic status changes
 
-# # Write header
-# pd.DataFrame(columns=[
-#     "inventory_id","donation_id","blood_group","units_available",
-#     "quality","status","date_received","expiration_date",
-#     "temperature","volume","recipient_id"
-# ]).to_csv(file_name, index=False)
+# 6. Quality rules
+# - Distributed blood is always marked as 'Good'
+# - Other records have small probability of contamination (~10%)
 
-# for chunk_start in range(0, NUM_RECORDS, CHUNK_SIZE):
+# 7. Expiry handling
+# - Expired units are automatically marked as 'discarded'
+# - Near-expiry units (<3 days) have reduced availability
+# - Ensures realistic wastage and shelf-life behavior
 
-#     chunk = donations_df.iloc[chunk_start:chunk_start + CHUNK_SIZE]
+# 8. Supply reduction after distribution
+# - Distributed units reduce available inventory (simulates consumption)
+# - Prevents overestimation of supply
 
-#     chunk_data = []
+# 9. Recipient assignment logic
+# - Recipient is assigned ONLY for distributed records
+# - Ensures business correctness (inventory is linked to requests only when used)
+# - If missing, a valid recipient_id is assigned within known range (1–20000)
 
-#     for _, row in chunk.iterrows():
+# 10. Data realism and constraints
+# - Minimum 1 unit enforced for non-discarded records
+# - Temperature fixed at 4°C (standard storage condition)
+# - Dates follow logical sequence: donation → received → expiry
 
-#         donation_status = row["status"]
+# 11. Performance optimization
+# - Data is processed in chunks (100k rows) to handle large datasets efficiently
+# - Prevents memory overflow and improves execution time
 
-#         #  skip pending donations
-#         if donation_status == 'pending':
-#             continue
+# 12. Goal of data generation
+# - Create realistic supply patterns
+# - Introduce controlled imbalance across blood groups
+# - Support analytical use cases like:
+#   • Demand vs Supply
+#   • Shortage detection
+#   • Inventory lifecycle analysis
+# ============================================================
 
-#         # Only some donations reach inventory
-#         if random.random() > 0.8:
-#             continue
-
-#         donation_id = int(row["donation_id"])
-#         blood_group = row["blood_group"]
-#         donation_date = pd.to_datetime(row["date"]).date()
-#         donation_type = row["donation_type"]
-#         donation_quantity = row["quantity"]
-#         donation_expiry = row["expiration_date"]
-
-#         # Date received
-#         date_received = donation_date + timedelta(days=random.randint(0, 2))
-
-#         # Expiration logic
-#         if pd.notna(donation_expiry):
-#             expiration_date = pd.to_datetime(donation_expiry).date()
-#         else:
-#             if donation_type == 'whole_blood':
-#                 expiry_days = 42
-#             elif donation_type == 'platelets':
-#                 expiry_days = 5
-#             else:
-#                 expiry_days = 365
-
-#             expiration_date = date_received + timedelta(days=expiry_days)
-
-#         # Volume
-#         volume = int(donation_quantity * random.uniform(0.6, 0.9))
-
-#         # Base units
-#         units_available = int(volume / 60)
-
-#         #  Supply bias
-#         if blood_group in high_demand_groups:
-#             units_available = int(units_available * 0.5)
-#         else:
-#             units_available = int(units_available * 1.8)
-
-#         if units_available < 1:
-#             units_available = 1
-
-#         #  Lifecycle-based status (CRITICAL FIX)
-#         if donation_status == 'distributed':
-#             status = 'distributed'
-
-#         elif donation_status == 'tested':
-#             status = random.choices(
-#                 ['tested', 'distributed'],
-#                 weights=[0.6, 0.4]
-#             )[0]
-
-#         elif donation_status == 'complete':
-#             status = random.choices(
-#                 ['stored', 'tested', 'discarded'],
-#                 weights=[0.6, 0.3, 0.1]
-#             )[0]
-
-#         else:
-#             continue
-
-#         # Quality
-#         if status == 'distributed':
-#             quality = 'Good'
-#         else:
-#             quality = 'Good' if random.random() < 0.9 else 'Contaminated'
-
-#         temperature = 4.0
-
-#         # Expiry handling
-#         if expiration_date < today:
-#             status = 'discarded'
-#             units_available = 0
-#         elif (expiration_date - today).days < 3:
-#             units_available = int(units_available * 0.7)
-
-#         # Distribution impact
-#         if status == 'distributed':
-#             units_available = int(units_available * 0.3)
-
-#         if status == 'discarded':
-#             units_available = 0
-
-#         if units_available < 1 and status != 'discarded':
-#             units_available = 1
-
-#         #  STRICT recipient logic (FIXED)
-#         if status == 'distributed':
-#             if pd.notna(row["recipient_id"]):
-#                 recipient_id = int(row["recipient_id"])
-#             else:
-#                 recipient_id = random.randint(1, 100000)
-#         else:
-#             recipient_id = None
-
-#         chunk_data.append([
-#             inventory_id,
-#             donation_id,
-#             blood_group,
-#             units_available,
-#             quality,
-#             status,
-#             date_received,
-#             expiration_date,
-#             temperature,
-#             volume,
-#             recipient_id
-#         ])
-
-#         inventory_id += 1
-
-#     chunk_df = pd.DataFrame(chunk_data, columns=[
-#         "inventory_id","donation_id","blood_group","units_available",
-#         "quality","status","date_received","expiration_date",
-#         "temperature","volume","recipient_id"
-#     ])
-
-#     # Fix nullable integers
-#     chunk_df["donation_id"] = chunk_df["donation_id"].astype("Int64")
-#     chunk_df["recipient_id"] = chunk_df["recipient_id"].astype("Int64")
-
-#     chunk_df.to_csv(file_name, mode='a', header=False, index=False)
-
-#     print(f"Processed {inventory_id - 1} inventory rows")
-
-# print("blood_inventory.csv generated successfully")
 
 import pandas as pd
 import random
@@ -298,7 +198,7 @@ for chunk_start in range(0, NUM_RECORDS, CHUNK_SIZE):
             if pd.notna(row["recipient_id"]):
                 recipient_id = int(row["recipient_id"])
             else:
-                recipient_id = random.randint(1, 100000)
+                recipient_id = random.randint(1, 20000)
         else:
             recipient_id = None
 

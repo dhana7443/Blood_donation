@@ -1,3 +1,55 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – DONOR HISTORY
+# ============================================================
+
+# 1. Donor history derived from donations
+# - Each history record is linked to an existing donation_id and donor_id
+# - Ensures consistency between donation events and donor reactions
+
+# 2. Subset selection (not all donations included)
+# - Only a sample (200k) of total donations is used
+# - Reflects real-world scenario where not every donation has recorded feedback
+
+# 3. Reaction distribution (realistic behavior)
+# - Majority (~70%) → no reaction
+# - Some (~25%) → mild reaction
+# - Very few (~5%) → severe reaction
+# - Mimics real-world post-donation outcomes
+
+# 4. Reaction-dependent notes
+# - Notes are generated based on reaction severity
+# - Ensures logical consistency between reaction and description
+# - Avoids random or contradictory data
+
+# 5. One-to-one mapping with donation
+# - Each selected donation gets one history record
+# - Maintains clear relationship between donation and donor experience
+
+# 6. No additional randomness in relationships
+# - donor_id is always derived from donation data (not randomly assigned)
+# - Prevents data integrity issues
+
+# 7. Chunk-based processing for performance
+# - Data generated in chunks (50k rows)
+# - Efficient for large-scale data generation and avoids memory issues
+
+# 8. No temporal attributes included
+# - History is tied to donation events rather than separate timestamps
+# - Simplifies analysis while still providing useful behavioral insights
+
+# 9. Purpose of dataset
+# - Supports analysis such as:
+#   • Donor experience and safety monitoring
+#   • Reaction rate analysis
+#   • Identifying high-risk donors
+#   • Enhancing donor retention strategies
+
+# 10. Data realism focus
+# - Distribution and notes designed to resemble real-world medical observations
+# - Includes both normal and adverse scenarios for meaningful analytics
+# ============================================================
+
+
 import pandas as pd
 import random
 

@@ -1,3 +1,55 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – TASKS (REFERENCE DIMENSION)
+# ============================================================
+
+# 1. Task reference dataset
+# - Each record represents a predefined operational task
+# - Acts as a lookup/dimension table for operational or workforce-related analysis
+
+# 2. Domain-driven task list (not random)
+# - Tasks are manually curated based on real-world blood bank operations
+# - Covers end-to-end processes:
+#     • Collection (Blood collection, Donor screening)
+#     • Testing (Blood typing, Cross-matching)
+#     • Storage (Cold chain monitoring, Inventory management)
+#     • Logistics (Transport, Shipment coordination)
+#     • Compliance (Regulatory checks, Audits)
+#     • Support activities (Training, Awareness campaigns)
+
+# 3. Unique task identification
+# - Each task is assigned a unique task_id
+# - Ensures consistency and easy referencing in downstream systems
+
+# 4. No duplication or ambiguity
+# - Each task description is distinct and clearly defined
+# - Avoids overlapping or redundant task definitions
+
+# 5. Static reference table
+# - Dataset is small and does not change frequently
+# - Suitable to be used as a dimension/lookup table in the warehouse
+
+# 6. Supports operational analytics
+# - Can be used for:
+#   • Task assignment tracking
+#   • Workforce or technician activity analysis
+#   • Process-level monitoring
+#   • Compliance and audit reporting
+
+# 7. Simplified structure
+# - Only includes task_id and description
+# - Keeps the table lightweight and easy to join
+
+# 8. No randomness involved
+# - Fully deterministic dataset
+# - Ensures consistency across runs
+
+# 9. Design focus
+# - Provides structured representation of operational workflows
+# - Enhances analytical depth beyond core fact tables
+
+# ============================================================
+
+
 import pandas as pd
 
 # Base task list (your existing + extended)

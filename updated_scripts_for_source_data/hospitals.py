@@ -1,3 +1,56 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – HOSPITALS
+# ============================================================
+
+# 1. Hospital master dataset (dimension table)
+# - Each record represents a healthcare facility
+# - Used as a reference for donations, requests, and operations
+
+# 2. Geographic consistency
+# - All hospitals are located within Quebec, Canada
+# - Cities are selected from a predefined list to ensure realistic distribution
+# - Supports regional analysis and geographic segmentation
+
+# 3. Clean and realistic naming
+# - Hospital names are derived from company names with "Hospital" suffix
+# - Email addresses are cleaned to remove special characters
+# - Ensures consistent and usable text data
+
+# 4. Structured contact information
+# - Phone numbers follow a consistent Canadian format
+# - Postal codes follow standard Canadian pattern (e.g., A1A 1A1)
+# - Emergency contact is optional (~80% availability)
+
+# 5. Operational attributes
+# - Includes hospital_type (General, Clinic, Specialized)
+# - Accreditation status reflects compliance levels (Accredited, Certified, Pending)
+# - Operating hours vary to simulate different service models
+
+# 6. Controlled randomness
+# - Randomization used within predefined valid options
+# - Avoids unrealistic or invalid values
+
+# 7. No duplicate or conflicting records
+# - Each hospital_id is unique
+# - Attributes are independently generated but logically consistent
+
+# 8. Data completeness vs realism balance
+# - Most fields are populated, but some optional fields are null
+# - Simulates real-world incomplete administrative data
+
+# 9. Lightweight dimension design
+# - Small dataset (~500 records)
+# - Suitable for joins with large fact tables without performance issues
+
+# 10. Purpose of dataset
+# - Supports analysis such as:
+#   • Donation/request distribution by location
+#   • Hospital performance and activity
+#   • Regional demand vs supply patterns
+
+# ============================================================
+
+
 import pandas as pd
 import random
 from faker import Faker

@@ -1,3 +1,54 @@
+# ============================================================
+# MOCK DATA GENERATION LOGIC – BLOOD TESTS
+# ============================================================
+
+# 1. Test records are linked to donors
+# - Each test is associated with a donor_id
+# - Donor blood group is referenced to ensure consistency in blood typing tests
+
+# 2. Multiple test types simulated
+# - Blood Typing → confirms donor blood group (always valid/positive)
+# - Disease Screening → checks for infections (HIV, Hepatitis, Malaria, etc.)
+# - General Health → evaluates donor fitness for donation
+# - Mimics real-world testing pipeline before blood usage
+
+# 3. Controlled data quality issues (intentional)
+# - Small percentage of invalid dates (e.g., '0000-00-00')
+# - Some records with missing disease_tested values
+# - Helps test data validation and cleaning logic in downstream layers
+
+# 4. Realistic result distribution
+# - Disease tests are mostly 'Negative' (~85%) to reflect healthy donor base
+# - Small percentage of 'Positive' results to simulate risk cases
+# - General health tests mostly positive (fit donors)
+
+# 5. Conditional logic between fields
+# - Blood Typing → always has valid blood group confirmation
+# - Disease Screening → disease_tested may be null (bad data simulation)
+# - Comments generated based on test type and result
+# - Ensures logical consistency across columns
+
+# 6. Technician assignment
+# - Most tests (~90%) have a technician_id
+# - Some records intentionally left null to simulate operational gaps
+
+# 7. Date distribution
+# - Tests spread across past 3 years
+# - Helps in trend analysis and time-based reporting
+
+# 8. Data realism focus
+# - Comments are context-aware (based on result and test type)
+# - Mix of clean and imperfect data for robust analytics
+
+# 9. Purpose of dataset
+# - Support analysis such as:
+#   • Donor health trends
+#   • Disease detection rates
+#   • Testing volume over time
+#   • Data quality validation in staging layer
+# ============================================================
+
+
 import pandas as pd
 import random
 from datetime import datetime, timedelta
@@ -34,7 +85,7 @@ for chunk_start in range(0, NUM_RECORDS, CHUNK_SIZE):
         donor_id = random.choice(donor_ids)
 
         # Technician
-        technician_id = random.randint(1, 1000) if random.random() < 0.9 else None
+        technician_id = random.randint(1, 10000) if random.random() < 0.9 else None
 
         #  Fast date (with some invalids)
         if random.random() < 0.02:
