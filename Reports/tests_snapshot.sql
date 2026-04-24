@@ -1,4 +1,3 @@
-
 with tests_per_day as (
     select 
 		d.full_date,

@@ -332,6 +332,31 @@ This model can support dashboards and SQL analysis for:
 - positive vs. negative blood test trends
 - recipient demand patterns by blood type
 
+## Reports
+
+The repository also includes a dedicated `Reports/` folder containing ready-to-run analytical SQL queries built on top of the `analytics` schema. These reports demonstrate how the dimensional and fact models can be used for business reporting and operational monitoring.
+
+Current report queries include:
+
+- `donations_snapshot.sql` shows total completed, tested, or distributed donations by day
+- `tests_snapshot.sql` shows the number of blood tests performed per day
+- `urgent_requests.sql` summarizes active blood requests by recipient blood group and highlights high-urgency demand
+- `demand_vs_supply.sql` compares active request demand against available good-quality blood inventory by blood group
+- `donor_retention_risk.sql` identifies eligible donors at risk of churn based on long inactivity since the last donation
+- `monthly_donation_trends.sql` summarizes donation counts and collected volume by month and donor blood group
+- `donors_for_each_blood_group.sql` shows the donor base distribution across blood groups
+- `geographic_distribution_of_donors.sql` shows donor counts by location
+
+These report queries are useful for:
+
+- operational monitoring of donations, tests, and requests
+- identifying shortages in blood supply
+- understanding donor population coverage by geography and blood group
+- tracking donor engagement and retention risk
+- creating dashboards and ad hoc analytics outputs directly from the warehouse
+
+To run a report, execute the SQL file against the database after the dbt models have been built.
+
 ## Notes and Assumptions
 
 - Raw CSV files are ignored in version control via `.gitignore`
