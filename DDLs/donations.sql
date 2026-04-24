@@ -16,5 +16,3 @@ CREATE TABLE raw.donations (
   donation_type               TEXT   -- Type of donation (whole_blood, platelets, plasma, etc.)
 )
 
--- copy command to load data into the donations table
-\copy raw.donations FROM 'C:\Users\Dhanalakshmi Karri\Downloads\donations.csv' WITH(FORMAT csv,HEADER,NULL '');

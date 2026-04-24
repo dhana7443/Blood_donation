@@ -9,5 +9,3 @@ CREATE TABLE raw.blood_tests (
   comments       TEXT   -- Additional observations or notes
 );
 
--- copy command to load data into the blood_tests table
-\copy raw.blood_tests FROM 'C:\Users\Dhanalakshmi Karri\Downloads\blood_tests.csv' WITH(FORMAT csv,HEADER,NULL '');

@@ -28,5 +28,3 @@ CREATE TABLE raw.donors (
   blood_group_AB_plus         TEXT
 );
 
--- copy command to load data into the donors table
-\copy raw.donors FROM 'C:\Users\Dhanalakshmi Karri\Downloads\donors.csv' WITH(FORMAT csv,HEADER,NULL '');

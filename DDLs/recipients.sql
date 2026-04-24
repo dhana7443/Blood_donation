@@ -9,5 +9,3 @@ CREATE TABLE raw.recipients (
   location       TEXT   -- Location of the recipient
 );
 
--- copy command to load data into the recipients table
-\copy raw.recipients FROM 'C:\Users\Dhanalakshmi Karri\Downloads\recipients.csv' WITH(FORMAT csv,HEADER,NULL '');

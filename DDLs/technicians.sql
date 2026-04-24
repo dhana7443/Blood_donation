@@ -8,6 +8,3 @@ CREATE TABLE raw.technicians (
   email_address         TEXT   -- Primary contact email address
 );
 
--- copy command to load data into the technicians table
-
-\copy raw.technicians FROM 'C:\Users\Dhanalakshmi Karri\Downloads\technicians.csv' WITH(FORMAT csv,HEADER,NULL '');

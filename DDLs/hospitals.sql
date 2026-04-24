@@ -14,5 +14,3 @@ CREATE TABLE raw.hospitals (
   emergency_contact     TEXT   -- Emergency contact number
 );
 
--- copy command to load data into the hospitals table
-\copy raw.hospitals FROM 'C:\Users\Dhanalakshmi Karri\Downloads\hospitals.csv' WITH(FORMAT csv,HEADER,NULL '');

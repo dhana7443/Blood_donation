@@ -12,5 +12,3 @@ CREATE TABLE raw.blood_inventory (
   recipient_id      TEXT    -- Recipient identifier
 );
 
--- copy command to load data into the blood_inventory table
-\copy raw.blood_inventory FROM 'C:\Users\Dhanalakshmi Karri\Downloads\blood_inventory.csv' WITH(FORMAT csv,HEADER,NULL '');
