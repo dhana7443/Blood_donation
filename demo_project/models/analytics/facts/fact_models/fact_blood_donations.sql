@@ -36,7 +36,6 @@ with_dims as (
         s.recipient_id,
         ddate.date_id as donation_date_id,
         s.status,
-        ddonor.donor_blood_group,
         s.donation_type,
         s.quantity,
         s.stg_load_timestamp
@@ -45,9 +44,6 @@ with_dims as (
 
     left join {{ ref("dim_dates") }} ddate
       on s.donation_date = ddate.full_date
-
-    left join {{ ref("dim_donors") }} ddonor
-      on s.donor_id = ddonor.donor_id
 
 
 )
@@ -59,7 +55,6 @@ select
     recipient_id,
     donation_date_id,
     status,
-    donor_blood_group,
     donation_type,
     quantity,
     stg_load_timestamp

@@ -33,7 +33,7 @@ final as (
     select
 
         s.request_id,
-        dr.recipient_id,
+        s.recipient_id,
         s.hospital_id,
         dd.date_id as required_date_id,
         s.urgency,
@@ -48,9 +48,6 @@ final as (
 
     left join {{ ref("dim_dates") }} dd
         on dd.full_date = s.required_date
-    
-    left join {{ ref("dim_recipients") }} dr
-        on s.recipient_id = dr.recipient_id
     
 
 )

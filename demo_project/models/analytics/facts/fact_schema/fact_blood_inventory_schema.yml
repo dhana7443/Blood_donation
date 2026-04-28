@@ -16,6 +16,7 @@ models:
         description: "Foreign key to fact_donations identifying the donation that produced this inventory unit."
         data_type: int
         tests:
+          - unique
           - relationships:
               arguments:
                   to: ref('fact_blood_donations')
