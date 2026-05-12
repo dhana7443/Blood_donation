@@ -25,7 +25,16 @@ with src as (
     from {{ ref('stg_blood_donations') }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (select coalesce(max(stg_load_timestamp), '1900-01-01') from {{ this }})
+        where
+            stg_load_timestamp
+            > (
+                select
+                    coalesce(
+                        max({{ this }}.stg_load_timestamp),
+                        '1900-01-01'
+                    )
+                from {{ this }}
+            )
     {% endif %}
 
 ),
@@ -43,11 +52,10 @@ with_dims as (
         s.quantity,
         s.stg_load_timestamp
 
-    from src s
+    from src as s
 
-    left join {{ ref("dim_dates") }} ddate
-      on s.donation_date = ddate.full_date
-
+    left join {{ ref("dim_dates") }} as ddate
+        on s.donation_date = ddate.full_date
 
 )
 

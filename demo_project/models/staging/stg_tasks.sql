@@ -6,8 +6,8 @@
   )
 }}
 SELECT
-  CAST(task_id AS BIGINT) AS task_id,
-  TRIM(description)      AS description,
-  {{ current_timestamp() }} AS stg_load_timestamp
-  
+    CAST(task_id AS BIGINT) AS task_id,
+    TRIM(description) AS description,
+    NOW() AS stg_load_timestamp
+
 FROM {{ source('raw', 'tasks') }}

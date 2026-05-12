@@ -23,10 +23,16 @@ with src as (
     from {{ ref("stg_blood_tests") }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (
-        select coalesce(max(stg_load_timestamp), '1900-01-01')
-        from {{ this }}
-    )
+        where
+            stg_load_timestamp
+            > (
+                select
+                    coalesce(
+                        max({{ this }}.stg_load_timestamp),
+                        '1900-01-01'
+                    )
+                from {{ this }}
+            )
     {% endif %}
 
 ),
@@ -42,9 +48,9 @@ final as (
         s.test_type,
         s.stg_load_timestamp
 
-    from src s
+    from src as s
 
-    left join {{ ref("dim_dates") }} ddate
+    left join {{ ref("dim_dates") }} as ddate
         on s.test_date = ddate.full_date
 
 )

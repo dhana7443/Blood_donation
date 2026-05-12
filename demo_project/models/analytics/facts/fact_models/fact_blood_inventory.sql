@@ -26,7 +26,16 @@ with src as (
     from {{ ref("stg_blood_inventory") }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (select max(stg_load_timestamp) from {{ this }})
+        where
+            stg_load_timestamp
+            > (
+                select
+                    coalesce(
+                        max({{ this }}.stg_load_timestamp),
+                        '1900-01-01'
+                    )
+                from {{ this }}
+            )
     {% endif %}
 
 ),
@@ -45,13 +54,13 @@ dated as (
         s.volume,
         s.stg_load_timestamp
 
-    from src s
+    from src as s
 
-    left join {{ ref("dim_dates") }} d
-      on d.full_date = s.date_received
+    left join {{ ref("dim_dates") }} as d
+        on s.date_received = d.full_date
 
-    left join {{ ref("dim_dates") }} de
-      on de.full_date = s.expiration_date
+    left join {{ ref("dim_dates") }} as de
+        on s.expiration_date = de.full_date
 
 )
 

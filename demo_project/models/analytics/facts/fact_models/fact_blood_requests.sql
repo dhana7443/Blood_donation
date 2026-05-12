@@ -2,7 +2,7 @@
     config(
         materialized='incremental',
         unique_key='request_id',
-        incremental_strategy='merge',
+        incremental_strategy='delete+insert',
         indexes=[
             {'columns': ['request_id'], 'unique': True}
         ]
@@ -19,15 +19,20 @@ with snap as (
         urgency,
         request_status,
         stg_load_timestamp
-        
-        
+
     from {{ ref("stg_requests") }}
 
     {% if is_incremental() %}
-    where stg_load_timestamp > (
-        select coalesce(max(stg_load_timestamp), '1900-01-01')
-        from {{ this }}
-    )
+        where
+            stg_load_timestamp
+            > (
+                select
+                    coalesce(
+                        max({{ this }}.stg_load_timestamp),
+                        '1900-01-01'
+                    )
+                from {{ this }}
+            )
     {% endif %}
 ),
 
@@ -40,18 +45,17 @@ final as (
         s.hospital_id,
         dd.date_id as required_date_id,
         s.urgency,
-        CASE
-            WHEN request_id is not null THEN 1
-            ELSE 0
-        END AS units_required,
         s.request_status,
-        s.stg_load_timestamp
+        s.stg_load_timestamp,
+        case
+            when s.request_id is not null then 1
+            else 0
+        end as units_required
 
-    from snap s
+    from snap as s
 
-    left join {{ ref("dim_dates") }} dd
-        on dd.full_date = s.required_date
-    
+    left join {{ ref("dim_dates") }} as dd
+        on s.required_date = dd.full_date
 
 )
 
