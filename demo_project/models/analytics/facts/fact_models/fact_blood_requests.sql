@@ -2,7 +2,10 @@
     config(
         materialized='incremental',
         unique_key='request_id',
-        incremental_strategy='delete+insert'
+        incremental_strategy='merge',
+        indexes=[
+            {'columns': ['request_id'], 'unique': True}
+        ]
     )
 }}
 

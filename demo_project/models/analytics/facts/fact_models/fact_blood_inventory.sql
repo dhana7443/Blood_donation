@@ -2,7 +2,10 @@
     config(
         materialized = 'incremental',
         unique_key = 'inventory_id',
-        incremental_strategy = 'delete+insert'
+        incremental_strategy = 'delete+insert',
+        indexes = [
+            {'columns': ['inventory_id'], 'unique': True}
+        ]
     )
 }}
 
